@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src * vscode-resource: https: 'unsafe-inline' 'unsafe-eval';
+        script-src vscode-resource: https: 'unsafe-inline' 'unsafe-eval';
+        style-src vscode-resource: https: 'unsafe-inline';
+        img-src vscode-resource: https:;
+        connect-src vscode-resource: https: http:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Map View">
+    <title>Map View</title>
+    <style>
+      body {
+        background:#fff;
+        color: #333;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #message {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: red;
+        font-size: 11pt;
+        text-align: center;
+        padding-top: 10px;
+      }
+
+      #map {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">Loading Map View...</div>
+    <div id="map" width="400" height="400"></div>
+    <script type="text/javascript">
+      let vscode, message, map, mapConfig;
+      document.addEventListener('DOMContentLoaded', event => {
+        // initialize page elements
+        message = document.getElementById('message');
+        map = document.getElementById('map');
+        try {
+          // notify webview
+          vscode = acquireVsCodeApi();
+          vscode.postMessage({command: 'refresh'});
+        }
+        catch (error) {
+          // ignore: must be loaded outside of vscode webview
+        }
+      });
+
+      // vega spec update handler
+      window.addEventListener('message', event => {
+        switch (event.data.command) {
+          case 'showMessage':
+            showMessage(event.data.message);
+            break;
+          case 'refresh':
+            try {
+              vscode.setState({uri: event.data.uri});
+              mapConfig = event.data.config;
+              view(mapConfig);
+            }
+            catch (error) {
+              console.error('map.view:', error.message);
+              showMessage(error.message);
+            }
+            break;
+        }
+      });
+
+      // map view update
+      function view(mapConfig) {
+        showMessage(''); // 'Loading map view...';
+        try {
+          // TODO
+        }
+        catch (error) {
+          console.error('map.view:', error.message);
+          showMessage(error.message);
+        };
+      }
+
+      function showHelp() {
+        vscode.postMessage({command: 'showHelp'});
+      }
+
+      function showMessage(text) {
+        message.innerText = text;
+      }
+    </script>
+  </body>
+</html>
