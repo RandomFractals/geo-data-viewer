@@ -60,7 +60,7 @@
       {
         "command": "view.map",
         "title": "View Map",
-        "category": "Map",
+        "category": "Geo",
         "icon": {
           "light": "./images/map.svg",
           "dark": "./images/map.svg"
