@@ -39,7 +39,7 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onCommand:view.map",
+    "onCommand:map.view",
     "onWebviewPanel:map.view",
     "onLanguage:geojson"
   ],
@@ -58,7 +58,7 @@
     ],
     "commands": [
       {
-        "command": "view.map",
+        "command": "map.view",
         "title": "View Map",
         "category": "Geo",
         "icon": {
@@ -69,28 +69,28 @@
     ],
     "keybindings": [
       {
-        "command": "view.map",
+        "command": "map.view",
         "key": "ctrl+alt+m"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "view.map",
+          "command": "map.view",
           "when": "resourceFilename =~ /.*\\.(geojson)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
-          "command": "view.map",
+          "command": "map.view",
           "when": "resourceFilename =~ /.*\\.(geojson)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
-          "command": "view.map",
+          "command": "map.view",
           "when": "resourceFilename =~ /.*\\.(geojson)/",
           "group": "navigation"
         }
