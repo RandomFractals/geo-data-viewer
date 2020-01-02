@@ -8,4 +8,11 @@ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [keple
 - Convert/transform geo data files to different formats
 - Save geo data viz map 🗺️ in image, html, and JSON map config formats
 - Share geo data viz via https://kepler.gl/demo map URL links and gists
+
 ...
+
+TODO: add kepler.gl view for the map display ...
+
+![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
+ "Geo Data Viewer")
+
