@@ -1,0 +1,131 @@
+{
+  "version": "v1",
+  "config": {
+    "visState": {
+      "filters": [],
+      "layers": [
+        {
+          "id": "oep8tz",
+          "type": "geojson",
+          "config": {
+            "dataId": "county_unemployment",
+            "label": "counties-unemployment",
+            "color": [
+              119,
+              110,
+              87,
+              255
+            ],
+            "columns": {
+              "geojson": "_geojson"
+            },
+            "isVisible": true,
+            "visConfig": {
+              "opacity": 0.8,
+              "thickness": 2,
+              "colorRange": {
+                "name": "ColorBrewer RdPu-9",
+                "type": "sequential",
+                "category": "ColorBrewer",
+                "colors": [
+                  "#fff7f3",
+                  "#fde0dd",
+                  "#fcc5c0",
+                  "#fa9fb5",
+                  "#f768a1",
+                  "#dd3497",
+                  "#ae017e",
+                  "#7a0177",
+                  "#49006a"
+                ],
+                "reversed": false
+              },
+              "radius": 10,
+              "sizeRange": [
+                0,
+                10
+              ],
+              "radiusRange": [
+                0,
+                50
+              ],
+              "heightRange": [
+                0,
+                500
+              ],
+              "elevationScale": 5,
+              "hi-precision": false,
+              "stroked": false,
+              "filled": true,
+              "enable3d": false,
+              "wireframe": false
+            }
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "unemployment_rate",
+              "type": "real"
+            },
+            "colorScale": "quantile",
+            "sizeField": null,
+            "sizeScale": "linear",
+            "heightField": null,
+            "heightScale": "linear",
+            "radiusField": null,
+            "radiusScale": "linear"
+          }
+        }
+      ],
+      "interactionConfig": {
+        "tooltip": {
+          "fieldsToShow": {
+            "jd4v637ja": [
+              "NAME",
+              "unemployment_rate",
+              "labor_force",
+              "employed",
+              "unemployment_level"
+            ]
+          },
+          "enabled": true
+        },
+        "brush": {
+          "size": 0.5,
+          "enabled": false
+        }
+      },
+      "layerBlending": "normal",
+      "splitMaps": []
+    },
+    "mapState": {
+      "bearing": 0,
+      "dragRotate": false,
+      "latitude": 40.01741700014381,
+      "longitude": -102.64721123797095,
+      "pitch": 0,
+      "zoom": 2.9517613432554,
+      "isSplit": false
+    },
+    "mapStyle": {
+      "styleType": "light",
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "border": false,
+        "building": true,
+        "label": true,
+        "land": true,
+        "road": true,
+        "water": true
+      },
+      "buildingLayer": {
+        "color": [
+          237,
+          237,
+          237
+        ],
+        "isVisible": false,
+        "opacity": 0.7
+      }
+    }
+  }
+}
