@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const vscode_1 = require("vscode");
 const path = require("path");
@@ -7,6 +7,7 @@ const logger_1 = require("./logger");
 const map_view_1 = require("./map.view");
 const view_manager_1 = require("./view.manager");
 const template_manager_1 = require("./template.manager");
+// extension logger
 const logger = new logger_1.Logger('geo.data.viewer:', config.logLevel);
 /**
  * Activates this extension per rules set in package.json.
@@ -15,29 +16,29 @@ const logger = new logger_1.Logger('geo.data.viewer:', config.logLevel);
  */
 function activate(context) {
     const extensionPath = context.extensionPath;
-    // logger.logMessage(LogLevel.Info, 'activate(): activating from extPath:', context.extensionPath);
-    // initialize charts preview webview panel templates
+    // logger.info('activate(): activating from extPath:', context.extensionPath);
+    // initialize geo data viewer webview panel templates
     const templateManager = new template_manager_1.TemplateManager(context.asAbsolutePath('templates'));
     const mapViewTemplate = templateManager.getTemplate('map.view.html');
     // register map view serializer for restore on vscode restart
     vscode_1.window.registerWebviewPanelSerializer('map.view', new map_view_1.MapViewSerializer('map.view', extensionPath, mapViewTemplate));
     // add Geo: View Map command
-    const mapWebview = createViewMapCommand('view.map', extensionPath, mapViewTemplate);
+    const mapWebview = createMapViewCommand('map.view', extensionPath, mapViewTemplate);
     context.subscriptions.push(mapWebview);
     // refresh associated map view on geo data file save
     vscode_1.workspace.onDidSaveTextDocument((document) => {
         if (isGeoDataFile(document)) {
-            const uri = document.uri.with({ scheme: 'map' });
+            const uri = document.uri.with({ scheme: 'map.view' });
             const mapView = view_manager_1.viewManager.find(uri);
             if (mapView) {
                 mapView.refresh();
             }
         }
     });
-    // reset associated preview on chart config file change
+    // reset associated map view on geo data file change
     vscode_1.workspace.onDidChangeTextDocument((changeEvent) => {
         if (isGeoDataFile(changeEvent.document)) {
-            const uri = changeEvent.document.uri.with({ scheme: 'map' });
+            const uri = changeEvent.document.uri.with({ scheme: 'map.view' });
             const mapView = view_manager_1.viewManager.find(uri);
             if (mapView && changeEvent.contentChanges.length > 0) {
                 // TODO: add refresh interval before enabling this
@@ -60,12 +61,12 @@ function deactivate() {
 }
 exports.deactivate = deactivate;
 /**
- * Creates view.map command.
+ * Creates map.view command.
  * @param viewType View command type.
  * @param extensionPath Extension path for loading scripts, examples and data.
  * @param viewTemplate View html template.
  */
-function createViewMapCommand(viewType, extensionPath, viewTemplate) {
+function createMapViewCommand(viewType, extensionPath, viewTemplate) {
     const mapWebview = vscode_1.commands.registerCommand(viewType, (uri) => {
         let resource = uri;
         let viewColumn = getViewColumn();
@@ -85,7 +86,7 @@ function createViewMapCommand(viewType, extensionPath, viewTemplate) {
     return mapWebview;
 }
 /**
- * Gets 2nd panel view column if chart json config document is open.
+ * Gets 2nd panel view column if geo data document is open.
  */
 function getViewColumn() {
     let viewColumn = vscode_1.ViewColumn.One;
@@ -100,6 +101,7 @@ function getViewColumn() {
  * @param document The vscode text document to check.
  */
 function isGeoDataFile(document) {
-    return path.basename(document.uri.fsPath).endsWith('.geojson');
+    const fileName = path.basename(document.uri.fsPath);
+    return config.supportedDataFiles.test(fileName);
 }
 //# sourceMappingURL=extension.js.map

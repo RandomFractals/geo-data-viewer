@@ -33,19 +33,19 @@ class ViewManager {
      * @param uri view uri.
      */
     find(uri) {
-        return this._views.find(p => p.viewUri.toString() === uri.toString());
+        return this._views.find(view => view.viewUri.toString() === uri.toString());
     }
     /**
      * Returns active view instance.
      */
     active() {
-        return this._views.find(p => p.visible);
+        return this._views.find(view => view.visible);
     }
     /**
      * Reloads open views on extension config changes.
      */
     configure() {
-        this._views.forEach(p => p.configure());
+        this._views.forEach(view => view.configure());
     }
 }
 exports.ViewManager = ViewManager;

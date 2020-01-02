@@ -6,6 +6,7 @@ export class ViewManager {
     
   // singleton instance
   private static _instance: ViewManager;
+
   // tracked views for config/restore updates
   private _views: MapView[] = [];
 
@@ -42,22 +43,22 @@ export class ViewManager {
    * Returns matching view for the specified uri.
    * @param uri view uri.
    */
-  public find(uri: Uri): MapView {        
-    return this._views.find(p => p.viewUri.toString() === uri.toString());
+  public find(uri: Uri): MapView | undefined {
+    return this._views.find(view => view.viewUri.toString() === uri.toString());
   }
 
   /**
    * Returns active view instance.
    */
-  public active(): MapView {
-    return this._views.find(p => p.visible);
+  public active(): MapView | undefined {
+    return this._views.find(view => view.visible);
   }
     
   /**
    * Reloads open views on extension config changes.
    */
   public configure(): void {
-    this._views.forEach(p => p.configure());
+    this._views.forEach(view => view.configure());
   }
 }
 

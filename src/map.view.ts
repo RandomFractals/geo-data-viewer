@@ -15,7 +15,7 @@ import {
 import * as fs from 'fs';
 import * as path from 'path';
 import * as config from './config';
-import {Logger, LogLevel} from './logger';
+import {Logger} from './logger';
 import {viewManager} from './view.manager';
 import {Template} from './template.manager';
 
@@ -44,7 +44,7 @@ export class MapViewSerializer implements WebviewPanelSerializer {
    * @param state Saved web view panel state.
    */
   async deserializeWebviewPanel(webviewPanel: WebviewPanel, state: any) {
-    this._logger.logMessage(LogLevel.Debug, 'deserializeWeviewPanel(): url:', state.uri.toString());
+    this._logger.debug('deserializeWeviewPanel(): url:', state.uri.toString());
     const viewColumn: ViewColumn = (webviewPanel.viewColumn) ? webviewPanel.viewColumn : ViewColumn.One;
     viewManager.add(
       new MapView(
@@ -59,7 +59,7 @@ export class MapViewSerializer implements WebviewPanelSerializer {
 }
 
 /**
- * Main map view webview implementation for this vscode extension.
+ * Map view implementation for this vscode extension.
  */
 export class MapView {
     
@@ -77,8 +77,8 @@ export class MapView {
    * Creates new map view.
    * @param viewType webview type, i.e. map.view.
    * @param extensionPath Extension path for loading webview scripts, etc.
-   * @param uri map view data uri.
-   * @param viewColumn vscode IDE view column to display chart preview in.
+   * @param uri data source uri.
+   * @param viewColumn vscode IDE view column to display this view in.
    * @param template Webview html template reference.
    * @param panel Optional webview panel reference for restore on vscode IDE reload.
    */
@@ -94,7 +94,7 @@ export class MapView {
     this._extensionPath = extensionPath;
     this._uri = uri;
     this._fileName = path.basename(uri.fsPath);
-    this._viewUri = this._uri.with({scheme: 'map'});
+    this._viewUri = this._uri.with({scheme: 'map.view'});
     this._logger = new Logger(`${viewType}:`, config.logLevel);
 
     // create webview panel title
@@ -114,8 +114,9 @@ export class MapView {
     if (template) {
       this._html = template.content.replace(/\{scripts\}/g, scriptsPath);
     }*/
-    this._html = template?.name;
-
+    if (template) {
+      this._html = template?.content;
+    }
 
     // initialize webview panel
     this._panel = this.initWebview(viewType, viewColumn, panel);
@@ -141,7 +142,7 @@ export class MapView {
       this._panel = viewPanel;
     }
 
-    // dispose preview panel 
+    // dispose view
     viewPanel.onDidDispose(() => {
       this.dispose();
     }, null, this._disposables);
@@ -201,12 +202,12 @@ export class MapView {
     /* TODO:
     localResourceRoots.push(Uri.file(path.join(this._extensionPath, './node_modules/chart.js/dist')));
     */
-    this._logger.logMessage(LogLevel.Debug, 'getLocalResourceRoots():', localResourceRoots);
+    this._logger.debug('getLocalResourceRoots():', localResourceRoots);
     return localResourceRoots;
   }
 
   /**
-   * Configures webview html for preview.
+   * Configures webview html for view display.
    */
   public configure(): void {
     this.webview.html = this.html;
@@ -223,7 +224,7 @@ export class MapView {
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
     // open map view data text document
     workspace.openTextDocument(this.uri).then(document => {
-      this._logger.logMessage(LogLevel.Debug, 'refresh(): file:', this._fileName);
+      this._logger.debug('refresh(): file:', this._fileName);
       const mapData: string = document.getText();
       try {
         const mapConfig = JSON.parse(mapData);
@@ -235,7 +236,7 @@ export class MapView {
         });
       }
       catch (error) {
-        this._logger.logMessage(LogLevel.Error, 'refresh():', error.message);
+        this._logger.debug('refresh():', error.message);
         this.webview.postMessage({error: error});
       }
     });
