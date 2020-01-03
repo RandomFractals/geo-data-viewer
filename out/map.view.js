@@ -183,12 +183,14 @@ class MapView {
             this._logger.debug('refresh(): file:', this._fileName);
             const mapData = document.getText();
             try {
-                const mapConfig = JSON.parse(mapData);
+                // TODO: add map.json config loading
+                // const mapConfig = JSON.parse(mapData);
                 this.webview.postMessage({
                     command: 'refresh',
                     fileName: this._fileName,
                     uri: this._uri.toString(),
-                    config: mapConfig,
+                    // config: mapConfig,
+                    mapData: mapData
                 });
             }
             catch (error) {
