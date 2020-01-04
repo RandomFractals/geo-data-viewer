@@ -57,13 +57,22 @@
         ]
       },
       {
-        "id": "geojson",
+        "id": "json",
         "extensions": [
+          ".json",
           ".geojson"
         ],
         "aliases": [
+          "JSON",
           "GEOJSON"
-        ]
+        ],
+        "configuration": "./json-language-configuration.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "*.geojson",
+        "url": "https://geojson.org/schema/GeoJSON.json"
       }
     ],
     "commands": [
