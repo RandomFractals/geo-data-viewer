@@ -51,7 +51,7 @@ export function activate(context: ExtensionContext) {
 		}).then((mapUrl) => {
 			if (mapUrl && mapUrl !== undefined && mapUrl.length > 0) {
 				const mapUri: Uri = Uri.parse(mapUrl);
-			// launch new remote Vega spec preview
+				// launch new remote map view
 				commands.executeCommand('map.view', mapUri);
 			}  
 		});

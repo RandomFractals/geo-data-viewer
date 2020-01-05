@@ -34,7 +34,7 @@ function activate(context) {
         }).then((mapUrl) => {
             if (mapUrl && mapUrl !== undefined && mapUrl.length > 0) {
                 const mapUri = vscode_1.Uri.parse(mapUrl);
-                // launch new remote Vega spec preview
+                // launch new remote map view
                 vscode_1.commands.executeCommand('map.view', mapUri);
             }
         });

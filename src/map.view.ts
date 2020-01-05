@@ -12,6 +12,7 @@ import {
   WebviewPanelSerializer,
   commands
 } from 'vscode';
+import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as config from './config';
@@ -66,10 +67,12 @@ export class MapView {
   protected _disposables: Disposable[] = [];
   private _extensionPath: string;
   private _uri: Uri;
-  private _viewUri: Uri;
+  private _url: string;  
   private _fileName: string;
   private _title: string;
+  private _content: string = '';
   private _html: string = '';
+  private _viewUri: Uri;
   private _panel: WebviewPanel;
   private _logger: Logger;
 
@@ -93,7 +96,15 @@ export class MapView {
     // save ext path, document uri, and create view uri
     this._extensionPath = extensionPath;
     this._uri = uri;
+    this._url = uri.toString(true);
     this._fileName = path.basename(uri.fsPath);
+    if (this._url.startsWith('https://kepler.gl/demo?mapUrl=')) {
+      // init map view uri from kepler.gl demo map config url query string
+      this._url = this._url.replace('https://kepler.gl/demo?mapUrl=', '');
+      this._uri = Uri.parse(this._url);
+      const pathTokens: Array<string> = this._uri.path.split('/');
+      this._fileName = pathTokens[pathTokens.length-1]; // last in url
+    }
     this._viewUri = this._uri.with({scheme: 'map.view'});
     this._logger = new Logger(`${viewType}:`, config.logLevel);
 
@@ -222,26 +233,42 @@ export class MapView {
   public refresh(): void {
     // reveal corresponding map view panel
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
-    // open map view data text document
-    workspace.openTextDocument(this.uri).then(document => {
-      this._logger.debug('refresh(): file:', this._fileName);
-      const mapData: string = document.getText();
-      try {
-        // TODO: add map.json config loading
-        // const mapConfig = JSON.parse(mapData);
-        this.webview.postMessage({
-          command: 'refresh',
-          fileName: this._fileName,
-          uri: this._uri.toString(),
-          // config: mapConfig,
-          mapData: mapData
-        });
-      }
-      catch (error) {
-        this._logger.debug('refresh():', error.message);
-        this.webview.postMessage({error: error});
-      }
-    });
+    if (this._url.startsWith('https://')) {
+      // refresh remote map config view
+      // TODO: add remote map config content loading
+      this._content = '';
+      this.refreshView();
+    }
+    else { 
+      // open map view data text document
+      workspace.openTextDocument(this.uri).then(document => {
+        this._logger.debug('refresh(): file:', this._fileName);
+        this._content = document.getText();
+        this.refreshView();
+      });
+    }
+  }
+
+  /**
+   * Sends updated map config and data to map webview.
+   */
+  public refreshView() {
+    try {
+      // TODO: add map.json config loading
+      // const mapConfig = JSON.parse(mapData);
+      this.webview.postMessage({
+        command: 'refresh',
+        fileName: this._fileName,
+        uri: this._uri.toString(),
+        // TODO:
+        // config: mapConfig,
+        // mapData: mapData
+      });
+    }
+    catch (error) {
+      this._logger.debug('refresh():', error.message);
+      this.webview.postMessage({error: error});
+    }
   }
 
   /**

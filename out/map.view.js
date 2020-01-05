@@ -60,11 +60,20 @@ class MapView {
     constructor(viewType, extensionPath, uri, viewColumn, template, panel) {
         var _a;
         this._disposables = [];
+        this._content = '';
         this._html = '';
         // save ext path, document uri, and create view uri
         this._extensionPath = extensionPath;
         this._uri = uri;
+        this._url = uri.toString(true);
         this._fileName = path.basename(uri.fsPath);
+        if (this._url.startsWith('https://kepler.gl/demo?mapUrl=')) {
+            // init map view uri from kepler.gl demo map config url query string
+            this._url = this._url.replace('https://kepler.gl/demo?mapUrl=', '');
+            this._uri = vscode_1.Uri.parse(this._url);
+            const pathTokens = this._uri.path.split('/');
+            this._fileName = pathTokens[pathTokens.length - 1]; // last in url
+        }
         this._viewUri = this._uri.with({ scheme: 'map.view' });
         this._logger = new logger_1.Logger(`${viewType}:`, config.logLevel);
         // create webview panel title
@@ -178,26 +187,38 @@ class MapView {
     refresh() {
         // reveal corresponding map view panel
         this._panel.reveal(this._panel.viewColumn, true); // preserve focus
-        // open map view data text document
-        vscode_1.workspace.openTextDocument(this.uri).then(document => {
-            this._logger.debug('refresh(): file:', this._fileName);
-            const mapData = document.getText();
-            try {
-                // TODO: add map.json config loading
-                // const mapConfig = JSON.parse(mapData);
-                this.webview.postMessage({
-                    command: 'refresh',
-                    fileName: this._fileName,
-                    uri: this._uri.toString(),
-                    // config: mapConfig,
-                    mapData: mapData
-                });
-            }
-            catch (error) {
-                this._logger.debug('refresh():', error.message);
-                this.webview.postMessage({ error: error });
-            }
-        });
+        if (this._url.startsWith('https://')) {
+            // refresh remote map config view
+            // TODO: add remote map config content loading
+            this._content = '';
+            this.refreshView();
+        }
+        else {
+            // open map view data text document
+            vscode_1.workspace.openTextDocument(this.uri).then(document => {
+                this._logger.debug('refresh(): file:', this._fileName);
+                this._content = document.getText();
+                this.refreshView();
+            });
+        }
+    }
+    /**
+     * Sends updated map config and data to map webview.
+     */
+    refreshView() {
+        try {
+            // TODO: add map.json config loading
+            // const mapConfig = JSON.parse(mapData);
+            this.webview.postMessage({
+                command: 'refresh',
+                fileName: this._fileName,
+                uri: this._uri.toString(),
+            });
+        }
+        catch (error) {
+            this._logger.debug('refresh():', error.message);
+            this.webview.postMessage({ error: error });
+        }
     }
     /**
      * Disposes this view resources.
