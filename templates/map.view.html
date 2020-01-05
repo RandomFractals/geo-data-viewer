@@ -12,12 +12,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Map View">
     <title>Map View</title>
-    <style>
+    <!--Uber Font-->
+    <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
+    <!--MapBox css-->
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
+    <!-- Load React/Redux -->
+    <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
+    <script src="https://unpkg.com/react-redux@5.1.1/dist/react-redux.min.js" crossorigin></script>
+    <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
+    <!-- Load Kepler.gl -->
+    <script src="https://unpkg.com/kepler.gl@1.1.12/umd/keplergl.min.js" crossorigin></script>    
+    <style type="text/css">
       body {
-        background:#fff;
-        color: #333;
+        background-color: var(--vscode-editor-background);
         margin: 0px;
         padding: 0px;
+        overflow: hidden;
       }
 
       #message {
@@ -35,8 +47,101 @@
   </head>
   <body>
     <div id="message">Loading Map View...</div>
-    <div id="map" width="400" height="400"></div>
+    <div id="app" width="400" height="400"></div>
     <script type="text/javascript">
+      // TODO: move mapbox token to config
+      const MAPBOX_TOKEN = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2p5aHB5bzEzMDI3MjNucWx4dmhvbW5wYyJ9.ZjLMWjog4imdrZhtheCOtA';
+      const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl.';
+      // validate mapbox token
+      if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
+        alert(WARNING_MESSAGE);
+      }
+
+      // create keplerGL redux reducer
+      const reducers = (function createReducers(redux, keplerGl) {
+        return redux.combineReducers({
+          // mount keplerGl reducer
+          keplerGl: keplerGl.keplerGlReducer.initialState({
+            uiState: {
+              readOnly: false
+             }
+          })
+        });
+      }(Redux, KeplerGl));
+
+      // add keplerGL middlewares
+      const middleWares = (function createMiddlewares(keplerGl) {
+        return keplerGl.enhanceReduxMiddleware([
+            // add other middlewares here
+          ]);
+      }(KeplerGl));
+
+      // create redux enhancers
+      const enhancers = (function craeteEnhancers(redux, middles) {
+        return redux.applyMiddleware(...middles);
+      }(Redux, middleWares));
+
+      // create redux store
+      const store = (function createStore(redux, enhancers) {
+        const initialState = {};
+        return redux.createStore(
+          reducers,
+          initialState,
+          redux.compose(enhancers)
+        );
+      }(Redux, enhancers));
+
+      // create kepler.gl map components
+      let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
+        // create logo
+        let LogoSvg = function LogoSvg() {
+          return react.createElement('div',
+            { className: 'logo', style: {position: 'fixed', zIndex: 10000, padding: '4px'} });
+        };
+
+        // create kepler.gl app
+        return function App() {
+          var rootElm = react.useRef(null);
+          var _useState = react.useState({
+            width: window.innerWidth,
+            height: window.innerHeight
+          });
+          var windowDimension = _useState[0];
+          var setDimension = _useState[1];
+          react.useEffect(function sideEffect(){
+            function handleResize() {
+              setDimension({width: window.innerWidth, height: window.innerHeight});
+            };
+            window.addEventListener('resize', handleResize);
+            return function() {window.removeEventListener('resize', handleResize);};
+          }, []);
+          return react.createElement('div',
+            {style: {position: 'absolute', left: 0, width: '100vw', height: '100vh'}},
+            react.createElement(keplerGl.KeplerGl, {
+              mapboxApiAccessToken: mapboxToken,
+              id: 'map',
+              width: windowDimension.width,
+              height: windowDimension.height
+            })
+          );
+        }
+      }(React, KeplerGl, MAPBOX_TOKEN));
+
+      // create kepler.gl map app
+      const app = (function createReactReduxProvider(react, reactRedux, KeplerElement) {
+        return react.createElement(
+          reactRedux.Provider,
+          {store},
+          react.createElement(KeplerElement, null)
+        );
+      }(React, ReactRedux, KeplerElement));
+
+      // render kepler.gl map app
+      (function render(react, reactDOM, app) {
+        reactDOM.render(app, document.getElementById('app'));
+      }(React, ReactDOM, app));
+
+      // customize map
       let vscode, message, map, mapConfig;
       document.addEventListener('DOMContentLoaded', event => {
         // initialize page elements
@@ -52,7 +157,7 @@
         }
       });
 
-      // vega spec update handler
+      // map config/data update handler
       window.addEventListener('message', event => {
         switch (event.data.command) {
           case 'showMessage':
