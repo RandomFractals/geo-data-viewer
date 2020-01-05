@@ -24,6 +24,7 @@
     "map view",
     "geojson",
     "gis",
+    "map gist",
     "preview",
     "dataViz",
     "dev tools"
@@ -40,6 +41,7 @@
   ],
   "activationEvents": [
     "onCommand:map.view",
+    "onCommand:map.view.url",
     "onWebviewPanel:map.view",
     "onLanguage:csv",
     "onLanguage:geojson"
@@ -84,9 +86,18 @@
           "light": "./images/map.svg",
           "dark": "./images/map.svg"
         }
+      },
+      {
+        "command": "map.view.url",
+        "title": "View Map from URL",
+        "category": "Geo"
       }
     ],
     "keybindings": [
+      {
+        "command": "map.view.url",
+        "key": "ctrl+alt+u"
+      },
       {
         "command": "map.view",
         "key": "ctrl+alt+m"

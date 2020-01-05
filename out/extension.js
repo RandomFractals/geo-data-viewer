@@ -25,6 +25,21 @@ function activate(context) {
     // add Geo: View Map command
     const mapWebview = createMapViewCommand('map.view', extensionPath, mapViewTemplate);
     context.subscriptions.push(mapWebview);
+    // add Geo: View Map from URL command
+    const viewRemoteMap = vscode_1.commands.registerCommand('map.view.url', () => {
+        vscode_1.window.showInputBox({
+            ignoreFocusOut: true,
+            placeHolder: 'https://gist.github.com/.../*.json or https://kepler.gl/#/demo?mapUrl=...',
+            prompt: 'Input map config URL'
+        }).then((mapUrl) => {
+            if (mapUrl && mapUrl !== undefined && mapUrl.length > 0) {
+                const mapUri = vscode_1.Uri.parse(mapUrl);
+                // launch new remote Vega spec preview
+                vscode_1.commands.executeCommand('map.view', mapUri);
+            }
+        });
+    });
+    context.subscriptions.push(viewRemoteMap);
     // refresh associated map view on geo data file save
     vscode_1.workspace.onDidSaveTextDocument((document) => {
         if (isGeoDataFile(document)) {

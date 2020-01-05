@@ -42,6 +42,22 @@ export function activate(context: ExtensionContext) {
     createMapViewCommand('map.view', extensionPath, mapViewTemplate);
 	context.subscriptions.push(mapWebview);
 
+	// add Geo: View Map from URL command
+	const viewRemoteMap: Disposable = commands.registerCommand('map.view.url', () => {
+		window.showInputBox({
+			ignoreFocusOut: true,
+			placeHolder: 'https://gist.github.com/.../*.json or https://kepler.gl/#/demo?mapUrl=...',
+			prompt: 'Input map config URL'
+		}).then((mapUrl) => {
+			if (mapUrl && mapUrl !== undefined && mapUrl.length > 0) {
+				const mapUri: Uri = Uri.parse(mapUrl);
+			// launch new remote Vega spec preview
+				commands.executeCommand('map.view', mapUri);
+			}  
+		});
+	});
+	context.subscriptions.push(viewRemoteMap);
+
 	// refresh associated map view on geo data file save
 	workspace.onDidSaveTextDocument((document: TextDocument) => {
 		if (isGeoDataFile(document)) {
