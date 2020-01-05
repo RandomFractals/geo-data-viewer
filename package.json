@@ -44,6 +44,7 @@
     "onCommand:map.view.url",
     "onWebviewPanel:map.view",
     "onLanguage:csv",
+    "onLanguage:json",
     "onLanguage:geojson"
   ],
   "main": "./out/extension.js",
@@ -107,21 +108,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
           "group": "navigation"
         }
       ]
