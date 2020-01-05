@@ -85,15 +85,9 @@ class MapView {
                 this._title = 'Map Help';
                 break;
         }
-        // create html template for the webview with scripts path replaced
-        /* TODO
-        const scriptsPath: string = Uri.file(path.join(this._extensionPath, './node_modules/chart.js/dist'))
-          .with({scheme: 'vscode-resource'}).toString(true);
+        // create html template for the webview
         if (template) {
-          this._html = template.content.replace(/\{scripts\}/g, scriptsPath);
-        }*/
-        if (template) {
-            this._html = (_a = template) === null || _a === void 0 ? void 0 : _a.content;
+            this._html = (_a = template) === null || _a === void 0 ? void 0 : _a.content.replace(/\{mapboxToken\}/g, config.mapboxToken);
         }
         // initialize webview panel
         this._panel = this.initWebview(viewType, viewColumn, panel);

@@ -118,15 +118,9 @@ export class MapView {
         break;
     }
 
-    // create html template for the webview with scripts path replaced
-    /* TODO
-    const scriptsPath: string = Uri.file(path.join(this._extensionPath, './node_modules/chart.js/dist'))
-      .with({scheme: 'vscode-resource'}).toString(true);
+    // create html template for the webview
     if (template) {
-      this._html = template.content.replace(/\{scripts\}/g, scriptsPath);
-    }*/
-    if (template) {
-      this._html = template?.content;
+      this._html = template?.content.replace(/\{mapboxToken\}/g, config.mapboxToken);
     }
 
     // initialize webview panel

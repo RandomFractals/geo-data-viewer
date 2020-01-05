@@ -50,7 +50,7 @@
     <div id="app" width="400" height="400"></div>
     <script type="text/javascript">
       // TODO: move mapbox token to config
-      const MAPBOX_TOKEN = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2p5aHB5bzEzMDI3MjNucWx4dmhvbW5wYyJ9.ZjLMWjog4imdrZhtheCOtA';
+      const MAPBOX_TOKEN = '{mapboxToken}';
       const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl.';
       // validate mapbox token
       if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
@@ -141,7 +141,7 @@
         reactDOM.render(app, document.getElementById('app'));
       }(React, ReactDOM, app));
 
-      // customize map
+      // TODO: customize map and load map data and config from webview
       let vscode, message, map, mapConfig;
       document.addEventListener('DOMContentLoaded', event => {
         // initialize page elements
