@@ -6,23 +6,23 @@
 
 Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl)
 
-# Target Features
-
-- Display [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson), CSV and other geo data files in a custom Map View 🗺️
-- Convert/transform geo data files to different formats
-- Save geo data viz map 🗺️ in image, html, and JSON map config formats
-- Share geo data viz via https://kepler.gl/demo map URL links and gists
-
-...
-
-TODO: add [kepler.gl](https://kepler.gl) view for the map display ...
-
 ![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
  "Geo Data Viewer")
 
+# Target Features
+
+- Display [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson), CSV and other geo data files in a custom Map View 🗺️
+- Preview geo data CSV with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid/charts 📊 vscode extension.
+- Convert/transform geo data files to different formats
+- Save map 🗺️ in image, html, and JSON map config formats
+- Share map 🗺️ via https://kepler.gl/demo map URL links and gists
+- Load map config from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or gists
+- View map from ⭐️ Starred Gists in [GistPad](https://github.com/vsls-contrib/gistpad)
+
 # Usage 
 
-Run `Geo: View Map` command on an open geo data document to view 🗺️
+- Run `Geo: View Map` command on an open geo data document to view 🗺️
+- Use `Geo: View Map from Url` command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or gist
 
 # Dev Log
 
