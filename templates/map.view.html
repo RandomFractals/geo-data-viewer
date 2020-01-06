@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" 
-      content="default-src * vscode-resource: https: 'unsafe-inline' 'unsafe-eval';
+      content="default-src 'self' vscode-resource: https://*;
         script-src vscode-resource: https: 'unsafe-inline' 'unsafe-eval';
         style-src vscode-resource: https: 'unsafe-inline';
-        img-src vscode-resource: https:;
-        connect-src vscode-resource: https: http:;">
+        img-src 'self' vscode-resource: https://* blob: data:;
+        font-src 'self' vscode-resource: https://* blob: data:;
+        connect-src 'self' vscode-resource: https://* wss://*;
+        worker-src 'self' vscode-resource: https://* blob: data:">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Map View">
     <title>Map View</title>
