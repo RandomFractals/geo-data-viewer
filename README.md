@@ -24,15 +24,15 @@
 - Run `Geo: View Map` command on an open geo data document to view 🗺️
 - Use `Geo: View Map from Url` command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
 
-# Recommended VSCode Extensions
+# Recommended Extensions
 
-Other extensions Geo Data Viewer 🗺️  replaces, enhances or supplements for working with geo data formats in VSCode:
+Other extensions 🗺️ Geo Data Viewer replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
 
 | Extension | Description |
 | --- | --- |
 | [Data Preivew 🈸](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-data-preview) | Data Preview 🈸 extension for importing 📤 viewing 🔎 slicing 🔪 dicing 🎲 charting 📊 & exporting 📥 large JSON array/config, YAML, Apache Arrow, Avro & Excel data files |
 | [GistPad 📒](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) | VS Code extension for managing and sharing code snippets, notes and interactive samples using GitHub Gists |
-|
+
 # Dev Log
 
 See [#GeoDataViewer 🗺️ tag on Twitter](https://twitter.com/hashtag/GeoDataViewer) for the latest & greatest updates on this vscode extension & what's in store next.
