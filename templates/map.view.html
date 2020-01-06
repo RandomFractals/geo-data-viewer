@@ -49,14 +49,7 @@
     <div id="message">Loading Map View...</div>
     <div id="app" width="400" height="400"></div>
     <script type="text/javascript">
-      // TODO: move mapbox token to config
       const MAPBOX_TOKEN = '{mapboxToken}';
-      const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl.';
-      // validate mapbox token
-      if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
-        alert(WARNING_MESSAGE);
-      }
-
       // create keplerGL redux reducer
       const reducers = (function createReducers(redux, keplerGl) {
         return redux.combineReducers({
