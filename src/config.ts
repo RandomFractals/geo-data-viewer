@@ -5,4 +5,4 @@ export const logLevel: LogLevel = LogLevel.Info; // change to .Debug for ext. de
 
 export const supportedDataFiles: RegExp = /.*\.(csv|json|geojson)/;
 
-export const mapboxToken: string = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2p5aHB5bzEzMDI3MjNucWx4dmhvbW5wYyJ9.ZjLMWjog4imdrZhtheCOtA';
+export const mapboxToken: string = 'pk.eyJ1IjoiZGF0YXBpeHkiLCJhIjoiY2s1Mm10bHB1MThnbDNrdGVmemptd3J5eSJ9.xewq9dOWQLemerED1-qPXQ';
