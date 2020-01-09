@@ -18,7 +18,7 @@ function activate(context) {
     const extensionPath = context.extensionPath;
     // logger.info('activate(): activating from extPath:', context.extensionPath);
     // initialize geo data viewer webview panel templates
-    const templateManager = new template_manager_1.TemplateManager(context.asAbsolutePath('templates'));
+    const templateManager = new template_manager_1.TemplateManager(context.asAbsolutePath('web'));
     const mapViewTemplate = templateManager.getTemplate('map.view.html');
     // register map view serializer for restore on vscode restart
     vscode_1.window.registerWebviewPanelSerializer('map.view', new map_view_1.MapViewSerializer('map.view', extensionPath, mapViewTemplate));
