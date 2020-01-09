@@ -86,8 +86,12 @@ class MapView {
                 break;
         }
         // create html template for the webview
+        const stylesPath = vscode_1.Uri.file(path.join(this._extensionPath, 'web/styles'))
+            .with({ scheme: 'vscode-resource' }).toString(true);
+        const scriptsPath = vscode_1.Uri.file(path.join(this._extensionPath, 'web/scripts'))
+            .with({ scheme: 'vscode-resource' }).toString(true);
         if (template) {
-            this._html = (_a = template) === null || _a === void 0 ? void 0 : _a.content.replace(/\{mapboxToken\}/g, config.mapboxToken);
+            this._html = (_a = template) === null || _a === void 0 ? void 0 : _a.content.replace(/\{mapboxToken\}/g, config.mapboxToken).replace(/\{styles\}/g, stylesPath).replace(/\{scripts\}/g, scriptsPath);
         }
         // initialize webview panel
         this._panel = this.initWebview(viewType, viewColumn, panel);
@@ -159,10 +163,9 @@ class MapView {
         else if (!this.uri.scheme || this.uri.scheme === 'file') {
             localResourceRoots.push(vscode_1.Uri.file(path.dirname(this.uri.fsPath)));
         }
-        // add map view js scripts
-        /* TODO:
-        localResourceRoots.push(Uri.file(path.join(this._extensionPath, './node_modules/chart.js/dist')));
-        */
+        // add web view styles and scripts folders
+        localResourceRoots.push(vscode_1.Uri.file(path.join(this._extensionPath, './web/styles')));
+        localResourceRoots.push(vscode_1.Uri.file(path.join(this._extensionPath, './web/scripts')));
         this._logger.debug('getLocalResourceRoots():', localResourceRoots);
         return localResourceRoots;
     }
