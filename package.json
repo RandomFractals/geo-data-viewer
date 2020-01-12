@@ -48,7 +48,8 @@
     "onWebviewPanel:map.view",
     "onLanguage:csv",
     "onLanguage:json",
-    "onLanguage:geojson"
+    "onLanguage:geojson",
+    "onLanguage:kgl"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -66,11 +67,13 @@
         "id": "json",
         "extensions": [
           ".json",
-          ".geojson"
+          ".geojson",
+          ".kgl"
         ],
         "aliases": [
           "JSON",
-          "GEOJSON"
+          "GeoJSON",
+          "KeplerGL JSON"
         ],
         "configuration": "./json-language-configuration.json"
       }
@@ -111,21 +114,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl)/",
           "group": "navigation"
         }
       ]
