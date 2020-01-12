@@ -37,7 +37,7 @@
           <option value=".geojson">{} &nbsp;geojson</option>
           <option value=".html">&lt;&gt;html</option>
         </select>
-        <a id="help-button" title="Map View Help" href="#"
+        <a id="help-button" title="View Map Help" href="#"
           style="color: orange;"
           onClick="showHelp()">?</a>
         <a id="buy-coffee-button" title="Buy Coffee"  href="#"
@@ -45,29 +45,17 @@
           onClick="buyCoffee()">☕️</a>          
       </div>
       <div id="toolbar-left">
-        <a id="map-view-button" title="Launch new Map View" href="#"
-          onClick="loadMapView()">
-          <span id="map-view-icon">🗺️</span>
-        </a>
-        <a id="view-map-config-button" title="View Map Config" href="#" 
-          onClick="viewMapConfig()">
-          <span class="label">☲</span>
-        </a>
-        <a id="title" title="Load Map View Config" href="#" 
-          onClick="loadMapConfig()">{title}</a>
-        <select id="table-selector" title="Select Data Table" 
-          style="display: none;" 
-          onChange="loadTableData()">
-        </select>
+        <a id="title" title="View Map Source" href="#" 
+          onClick="viewMapSource()">...</a>
         <!-- |
         <a title="Undo" href="#" onclick="undoConfig()"> ↩ </a>
         <a title="Redo" href="#" onclick="redoConfig()"> ↪ </a>
         -->
-        <a id="refresh-data-button" title="Refresh Map" href="#"
+        <a id="refresh-map-button" title="Refresh Map" href="#"
           style="color: orange;"
-          onclick="reloadData()">🔃</a>
-        <a id="open-file-button" title="Open Data File" href="#" 
-          onClick="openFile()">📤</a>
+          onclick="reloadMap()">🔃</a>
+        <a id="open-file-button" title="Open Geo Data File" href="#"
+          onClick="openMapFile()">📤</a>
         <input id="data-url-input" type="text" title="Enter new Geo Data File Path or URL"
           onKeyPress="loadMapViewFromUrl()" />
       </div>

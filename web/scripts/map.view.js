@@ -85,10 +85,15 @@ const app = (function createReactReduxProvider(
 })(React, ReactDOM, app);
 
 // TODO: customize map and load map data and config from webview
-let vscode, message, map, mapConfig;
+let vscode, title, message, map, mapConfig,
+  saveFileTypeSelector, dataUrlInput;
+
 document.addEventListener('DOMContentLoaded', event => {
   // initialize page elements
+  title = document.getElementById('title');
   message = document.getElementById('message');
+  dataUrlInput = document.getElementById('data-url-input');
+  saveFileTypeSelector = document.getElementById('save-file-type-selector');  
   map = document.getElementById('map');
   try {
     // notify webview
@@ -109,6 +114,7 @@ window.addEventListener('message', event => {
       try {
         vscode.setState({ uri: event.data.uri });
         mapConfig = event.data.config;
+        title.innerText = event.data.fileName;
         view(mapConfig);
       } catch (error) {
         console.error('map.view:', error.message);
