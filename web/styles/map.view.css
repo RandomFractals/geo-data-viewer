@@ -89,3 +89,7 @@ select {
 .side-panel__panel-header {
   display: none !important;
 }
+.side-panel__content__title {
+  font-size: 12px !important;
+  font-weight: bold;
+}
