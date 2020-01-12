@@ -86,7 +86,8 @@ const app = (function createReactReduxProvider(
 
 // TODO: customize map and load map data and config from webview
 let vscode, title, message, map, mapConfig,
-  saveFileTypeSelector, dataUrlInput;
+  saveFileTypeSelector, dataUrlInput,
+  dataUrl, dataFileName;
 
 document.addEventListener('DOMContentLoaded', event => {
   // initialize page elements
@@ -115,6 +116,8 @@ window.addEventListener('message', event => {
         vscode.setState({ uri: event.data.uri });
         mapConfig = event.data.config;
         title.innerText = event.data.fileName;
+        dataUrl = event.data.uri;
+        dataFileName = event.data.fileName;
         view(mapConfig);
       } catch (error) {
         console.error('map.view:', error.message);
@@ -132,6 +135,29 @@ function view(mapConfig) {
   } catch (error) {
     console.error('map.view:', error.message);
     showMessage(error.message);
+  }
+}
+
+// view raw map source code
+function viewMapSource() {
+  vscode.postMessage({
+    command: 'loadView',
+    viewName: 'vscode.open',
+    uri: dataUrl
+  });
+}
+
+// launch map view for url
+function loadMapViewFromUrl(e) {
+  if (!e) e = window.event;
+  const keyCode = e.keyCode || e.which;
+  if (keyCode == '13') { // enter key
+    const url = dataUrlInput.value;
+    vscode.postMessage({
+      command: 'loadView',
+      viewName: 'map.view',
+      uri: url
+    });
   }
 }
 
