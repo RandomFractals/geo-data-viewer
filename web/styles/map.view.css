@@ -31,6 +31,7 @@ body {
   font-weight: normal;
   display: inline-block;
   white-space: nowrap;
+  height: 25px;
 }
 #toolbar-left {
   width: calc(100% - 120);
@@ -40,7 +41,7 @@ body {
   top: 7px;
   right: 0px;
   width: 140px;
-  height: 32px;
+  height: 25px;
   padding-left: 5px;
   background-color: var(--vscode-editor-background);
 }

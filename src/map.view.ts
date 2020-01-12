@@ -175,16 +175,58 @@ export class MapView {
             window.showTextDocument(document, ViewColumn.One);
           });
           break;
-        case 'showHelp':
-          const helpUri: Uri = Uri.parse('https://github.com/RandomFractals/geo-data-viewer#usage');
-          commands.executeCommand('vscode.open', helpUri);
-          break;  
+        case 'loadView':
+          // launch new view
+          this.loadView(message.viewName, message.uri);
+          break;          
       }
     }, null, this._disposables);
 
     return viewPanel;
   } // end of initWebview()
 
+ /**
+   * Launches new view via commands.executeCommand interface.
+   * @param viewName View name to launch.
+   * @param url View document url parameter.
+   * @see https://code.visualstudio.com/api/extension-guides/command
+   */
+  private loadView(viewName: string, url: string): void {
+    const fileUri: Uri = Uri.parse(url);
+    try {
+      this._logger.debug(`loadView(): loading view... \n ${viewName}`, url); 
+        //fileUri.toString(true)); // skip encoding
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        // launch requested remote data view command
+        this._logger.debug(`loadView():executeCommand: \n ${viewName}`, url);
+        commands.executeCommand(viewName, fileUri);
+      }
+      else if (fs.existsSync(fileUri.fsPath)) {
+        // launch requested local data view command
+        this._logger.debug(`loadView():executeCommand: \n ${viewName}`, fileUri.fsPath);
+        commands.executeCommand(viewName, fileUri);
+      } 
+      else {
+        // try to find requested data file(s) in open workspace
+        workspace.findFiles(`**/${url}`).then(files => {
+          if (files.length > 0) {
+            // pick the 1st matching file from the workspace
+            const dataUri: Uri = files[0];
+            // launch requested view command
+            this._logger.debug(`loadView():executeCommand: \n ${viewName}`, dataUri.toString(true)); // skip encoding
+            commands.executeCommand(viewName, dataUri);
+          } else {
+            this._logger.error(`loadView(): Error:\n no such files in this workspace:`, url);
+            window.showErrorMessage(`No '**/${url}' file(s) found in this workspace!`);
+          }
+        });
+      }
+    } catch (error) {
+      this._logger.error(`loadView(${url}): Error:\n`, error.message);
+      window.showErrorMessage(`Failed to load '${viewName}' for document: '${url}'! Error:\n${error.message}`);
+    }
+  } // end of loadView()
+  
   /**
    * Creates webview options with local resource roots, etc. for map webview display.
    */

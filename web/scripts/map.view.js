@@ -30,14 +30,6 @@ const store = (function createStore(redux, enhancers) {
 
 // create kepler.gl map components
 let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
-  // create logo
-  let LogoSvg = function LogoSvg() {
-    return react.createElement("div", {
-      className: "logo",
-      style: { position: "fixed", zIndex: 10000, padding: "4px" }
-    });
-  };
-
   // create kepler.gl app
   return function App() {
     var rootElm = react.useRef(null);
@@ -51,24 +43,22 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
       function handleResize() {
         setDimension({ width: window.innerWidth, height: window.innerHeight });
       }
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
       return function() {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }, []);
-    return react.createElement(
-      "div",
-      {
+    return react.createElement('div', {
         style: {
-          position: "absolute",
+          position: 'absolute',
           left: 0,
-          width: "100vw",
-          height: "100vh"
+          width: '100vw',
+          height: '100vh'
         }
       },
       react.createElement(keplerGl.KeplerGl, {
         mapboxApiAccessToken: mapboxToken,
-        id: "map",
+        id: 'map',
         width: windowDimension.width,
         height: windowDimension.height
       })
@@ -91,37 +81,37 @@ const app = (function createReactReduxProvider(
 
 // render kepler.gl map app
 (function render(react, reactDOM, app) {
-  reactDOM.render(app, document.getElementById("app"));
+  reactDOM.render(app, document.getElementById('app'));
 })(React, ReactDOM, app);
 
 // TODO: customize map and load map data and config from webview
 let vscode, message, map, mapConfig;
-document.addEventListener("DOMContentLoaded", event => {
+document.addEventListener('DOMContentLoaded', event => {
   // initialize page elements
-  message = document.getElementById("message");
-  map = document.getElementById("map");
+  message = document.getElementById('message');
+  map = document.getElementById('map');
   try {
     // notify webview
     vscode = acquireVsCodeApi();
-    vscode.postMessage({ command: "refresh" });
+    vscode.postMessage({command: 'refresh'});
   } catch (error) {
     // ignore: must be loaded outside of vscode webview
   }
 });
 
 // map config/data update handler
-window.addEventListener("message", event => {
+window.addEventListener('message', event => {
   switch (event.data.command) {
-    case "showMessage":
+    case 'showMessage':
       showMessage(event.data.message);
       break;
-    case "refresh":
+    case 'refresh':
       try {
         vscode.setState({ uri: event.data.uri });
         mapConfig = event.data.config;
         view(mapConfig);
       } catch (error) {
-        console.error("map.view:", error.message);
+        console.error('map.view:', error.message);
         showMessage(error.message);
       }
       break;
@@ -130,17 +120,31 @@ window.addEventListener("message", event => {
 
 // map view update
 function view(mapConfig) {
-  showMessage(""); // 'Loading map view...';
+  showMessage(''); // 'Loading map view...';
   try {
     // TODO
   } catch (error) {
-    console.error("map.view:", error.message);
+    console.error('map.view:', error.message);
     showMessage(error.message);
   }
 }
 
+// show help page
 function showHelp() {
-  vscode.postMessage({ command: "showHelp" });
+  vscode.postMessage({
+    command: 'loadView',
+    viewName: 'vscode.open',
+    uri: 'https://github.com/RandomFractals/geo-data-viewer#usage'
+  });
+}
+
+// show buy coffee page :)
+function buyCoffee() {
+  vscode.postMessage({
+    command: 'loadView',
+    viewName: 'vscode.open',
+    uri: 'https://ko-fi.com/datapixy'
+  });
 }
 
 function showMessage(text) {
