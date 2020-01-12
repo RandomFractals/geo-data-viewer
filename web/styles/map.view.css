@@ -17,6 +17,66 @@ body {
   padding: 0px;
 }
 
+#map-view-icon {
+  color: orange;
+  font-weight: bold;
+  font-size: 11pt;
+}
+#toolbar {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  padding-left: 7px;
+  font-size: 10pt;
+  font-weight: normal;
+  display: inline-block;
+  white-space: nowrap;
+}
+#toolbar-left {
+  width: calc(100% - 120);
+}
+#toolbar-right {
+  position: absolute;
+  top: 7px;
+  right: 0px;
+  width: 140px;
+  height: 32px;
+  padding-left: 5px;
+  background-color: var(--vscode-editor-background);
+}
+#toolbar a {
+  color: dodgerblue;
+  text-decoration: none;
+  padding: 2px 5px 2px 5px;
+}
+#title {
+  margin: 0px;
+  padding: 0px;
+}
+#data-url-input {
+  width: 200px;
+  color: var(--vscode-editor-foreground);
+  background-color: var(--vscode-editor-background);
+  border: 1px solid #999;
+}
+#data-viewer {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.hidden {
+  display: none;
+}
+.label {
+  color: var(--vscode-editor-foreground);
+}
+select {
+  color: var(--vscode-editor-foreground);
+  background-color: var(--vscode-editor-background);
+}
+
 /* kepler.gl map styles */
 .side-panel--container {
   padding: 0px !important;

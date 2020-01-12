@@ -25,6 +25,52 @@
     <script src="https://unpkg.com/kepler.gl@1.1.12/umd/keplergl.min.js" crossorigin></script>
   </head>
   <body>
+    <div id="toolbar">
+      <div id="toolbar-right">
+        <select id="save-file-type-selector" 
+          title="Save Map View"
+          onChange="saveData()">
+          <option value="">📥&nbsp;Save</option>
+          <option value=".config">⚙️ &nbsp;config</option>
+          <option value=".csv">,,, csv</option>
+          <option value=".json">{} &nbsp;json</option>
+          <option value=".geojson">{} &nbsp;geojson</option>
+          <option value=".html">&lt;&gt;html</option>
+        </select>
+        <a id="help-button" title="Map View Help" href="#"
+          style="color: orange;"
+          onClick="loadHelp()">?</a>
+        <a title="buy coffee" style="color: orangered; font-weight: bold"
+          href="#" onclick="buyCoffee()">☕️</a>          
+      </div>
+      <div id="toolbar-left">
+        <a id="map-view-button" title="Launch new Map View" href="#"
+          onClick="loadMapView()">
+          <span id="map-view-icon">🗺️</span>
+        </a>
+        <a id="view-map-config-button" title="View Map Config" href="#" 
+          onClick="viewMapConfig()">
+          <span class="label">☲</span>
+        </a>
+        <a id="title" title="Load Map View Config" href="#" 
+          onClick="loadMapConfig()">{title}</a>
+        <select id="table-selector" title="Select Data Table" 
+          style="display: none;" 
+          onChange="loadTableData()">
+        </select>
+        <!-- |
+        <a title="Undo" href="#" onclick="undoConfig()"> ↩ </a>
+        <a title="Redo" href="#" onclick="redoConfig()"> ↪ </a>
+        -->
+        <a id="refresh-data-button" title="Refresh Map" href="#"
+          style="color: orange;"
+          onclick="reloadData()">🔃</a>
+        <a id="open-file-button" title="Open Data File" href="#" 
+          onClick="openFile()">📤</a>
+        <input id="data-url-input" type="text" title="Enter new Geo Data File Path or URL"
+          onKeyPress="loadMapViewFromUrl()" />
+      </div>
+    </div>    
     <div id="message">Loading Map View...</div>
     <div id="app" width="400" height="400"></div>
     <script type="text/javascript">
