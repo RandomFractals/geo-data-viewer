@@ -19,11 +19,11 @@ body {
 
 /* kepler.gl map styles */
 .side-panel--container {
-  padding: 0px;
+  padding: 0px !important;
 }
 .side-bar__close {
-  top: 4px;
-  right: 4px;
+  top: 4px !important;
+  right: 4px !important;
 }
 .side-panel__panel-header {
   display: none !important;
