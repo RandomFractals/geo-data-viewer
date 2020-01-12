@@ -175,6 +175,9 @@ export class MapView {
             window.showTextDocument(document, ViewColumn.One);
           });
           break;
+        case 'openGeoDataFile':
+          this.openGeoDataFile();
+          break;
         case 'loadView':
           // launch new view
           this.loadView(message.viewName, message.uri);
@@ -184,6 +187,29 @@ export class MapView {
 
     return viewPanel;
   } // end of initWebview()
+
+  /**
+   * Shows open file dialog for launchign new geo data map view.
+   */
+  private async openGeoDataFile() {
+    // display open geo data file dialog
+    let openFolderUri: Uri = Uri.parse(this._url).with({scheme: 'file'});
+    const workspaceFolders: Array<WorkspaceFolder> | undefined = workspace.workspaceFolders;
+    if (workspaceFolders && workspaceFolders.length >= 1) {
+      // change open file folder uri to the 1st workspace folder, usuallay workspace root
+      openFolderUri = workspaceFolders[0].uri;
+    }
+    const selectedFiles: Array<Uri> | undefined = await window.showOpenDialog({
+      defaultUri: openFolderUri,
+      canSelectMany: false,
+      canSelectFolders: false, 
+      filters: config.openFileFilters
+    });
+    if (selectedFiles && selectedFiles.length >= 1) {
+      // launch new map view for the selected geo data file
+      this.loadView('map.view', selectedFiles[0].toString(true)); // skip encoding
+    }
+  }
 
  /**
    * Launches new view via commands.executeCommand interface.

@@ -161,6 +161,11 @@ function loadMapViewFromUrl(e) {
   }
 }
 
+// open geo data file
+function openGeoDataFile() {
+  vscode.postMessage({command: 'openGeoDataFile'});
+}
+
 // show help page
 function showHelp() {
   vscode.postMessage({
