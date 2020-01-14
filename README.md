@@ -24,6 +24,9 @@
 - Run `Geo: View Map` (`ctrl/cmd + alt + m`) command on an open geo data document to view 🗺️
 - Use `Geo: View Map from Url` (`ctrl/cmd + alt + u`) command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
 
+![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true 
+ "Geo Data Viewer Gist")
+
 # Recommended Extensions
 
 Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
