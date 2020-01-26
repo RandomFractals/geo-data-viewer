@@ -143,10 +143,11 @@ function saveData() {
   const dataFileType = saveFileTypeSelector.value;
 	switch (dataFileType) {
     case '.kgl.json':
-      const config = KeplerGl.KeplerGlSchema.getConfigToSave(store.getState().keplerGl.map);
+      // save keplergl map config
+      const mapConfig = KeplerGl.KeplerGlSchema.getConfigToSave(store.getState().keplerGl.map);
       vscode.postMessage({
         command:'saveData',
-        data: JSON.stringify(config, null, 2),
+        data: JSON.stringify(mapConfig, null, 2),
         fileType: dataFileType
       });
       break;
@@ -154,7 +155,13 @@ function saveData() {
       // TODO
       break;
     case '.json':
-      // TODO
+      // save keplergl map data
+      const mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(store.getState().keplerGl.map);
+      vscode.postMessage({
+        command:'saveData',
+        data: JSON.stringify(mapData, null, 2),
+        fileType: dataFileType
+      });
       break;
     case '.geojson':
       // TODO
