@@ -144,7 +144,11 @@ function saveData() {
 	switch (dataFileType) {
     case '.kgl.json':
       const config = KeplerGl.KeplerGlSchema.getConfigToSave(store.getState().keplerGl.map);
-      console.log(JSON.stringify(config));
+      vscode.postMessage({
+        command:'saveData',
+        data: JSON.stringify(config, null, 2),
+        fileType: dataFileType
+      });
       break;
     case '.csv':
       // TODO

@@ -168,7 +168,12 @@ export class MapView {
     this.webview.onDidReceiveMessage(message => {
       switch (message.command) {
         case 'refresh':
+          // loads map view, config and data
           this.refresh();
+          break;
+        case 'saveData':
+          // saves map config, json data, html, or map png image
+          this.saveData(message.data, message.fileType);
           break;
         case 'openFile':
           workspace.openTextDocument(this._uri).then(document => {
@@ -337,6 +342,45 @@ export class MapView {
       this.webview.postMessage({error: error});
     }
   }
+
+  /**
+   * Saves posted data from map view.
+   * @param fileData File data to save.
+   * @param fileType Data file type.
+   */
+  private async saveData(fileData: any, fileType: string): Promise<void> {
+    let dataFileName: string = this._fileName.substring(0, this._fileName.lastIndexOf('.')); // - .ext
+    // add requested data file extension
+    dataFileName += fileType;
+
+    // create full data file path for saving data
+    let dataFilePath: string = path.dirname(this._uri.fsPath);
+    const workspaceFolders: Array<WorkspaceFolder> = workspace.workspaceFolders;
+    if (this._isRemoteData && workspaceFolders && workspaceFolders.length > 0) {
+      // use 'rootPath' workspace folder for saving remote data file
+      dataFilePath = workspace.workspaceFolders[0].uri.fsPath;
+    }
+    dataFilePath = path.join(dataFilePath, dataFileName);
+    this._logger.debug('saveData(): saving data file:', dataFilePath);
+
+    // display save file dialog
+    const dataFileUri: Uri = await window.showSaveDialog({
+      defaultUri: Uri.parse(dataFilePath).with({scheme: 'file'})
+    });
+
+    if (dataFileUri) { // save data
+      fs.writeFile(dataFileUri.fsPath, fileData, (error) => {
+        if (error) {
+          this._logger.error(`saveData(): Error saving '${dataFileUri.fsPath}'. \n\t Error:`, error.message);
+          window.showErrorMessage(`Unable to save data file: '${dataFileUri.fsPath}'. \n\t Error: ${error.message}`);
+        }
+        else { // if (this.openSavedFileEditor) {
+          // open saved data file
+          this.loadView('vscode.open', dataFileUri.with({scheme: 'file'}).toString(false)); // skip encoding
+        }
+      });
+    }
+  } // end of saveData()
 
   /**
    * Disposes this view resources.
