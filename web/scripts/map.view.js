@@ -138,6 +138,32 @@ function view(mapConfig) {
   }
 }
 
+// save map data
+function saveData() {
+  const dataFileType = saveFileTypeSelector.value;
+	switch (dataFileType) {
+    case '.kgl.json':
+      const config = KeplerGl.KeplerGlSchema.getConfigToSave(store.getState().keplerGl.map);
+      console.log(JSON.stringify(config));
+      break;
+    case '.csv':
+      // TODO
+      break;
+    case '.json':
+      // TODO
+      break;
+    case '.geojson':
+      // TODO
+      break;
+    case '.html':
+      // TODO
+      break;
+    case '.png':
+      // TODO
+      break;
+  }
+}
+
 // view raw map source code
 function viewMapSource() {
   vscode.postMessage({
