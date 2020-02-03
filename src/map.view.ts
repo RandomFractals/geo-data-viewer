@@ -70,6 +70,7 @@ export class MapView {
   private _url: string;  
   private _fileName: string;
   private _title: string;
+  private _isRemoteData: boolean = false;
   private _content: string = '';
   private _html: string = '';
   private _viewUri: Uri;
@@ -104,6 +105,7 @@ export class MapView {
       this._uri = Uri.parse(this._url);
       const pathTokens: Array<string> = this._uri.path.split('/');
       this._fileName = pathTokens[pathTokens.length-1]; // last in url
+      this._isRemoteData = true;
     }
     this._viewUri = this._uri.with({scheme: 'map.view'});
     this._logger = new Logger(`${viewType}:`, config.logLevel);
@@ -355,16 +357,16 @@ export class MapView {
 
     // create full data file path for saving data
     let dataFilePath: string = path.dirname(this._uri.fsPath);
-    const workspaceFolders: Array<WorkspaceFolder> = workspace.workspaceFolders;
+    const workspaceFolders: Array<WorkspaceFolder> | undefined = workspace.workspaceFolders;
     if (this._isRemoteData && workspaceFolders && workspaceFolders.length > 0) {
       // use 'rootPath' workspace folder for saving remote data file
-      dataFilePath = workspace.workspaceFolders[0].uri.fsPath;
+      dataFilePath = workspaceFolders[0].uri.fsPath;
     }
     dataFilePath = path.join(dataFilePath, dataFileName);
     this._logger.debug('saveData(): saving data file:', dataFilePath);
 
     // display save file dialog
-    const dataFileUri: Uri = await window.showSaveDialog({
+    const dataFileUri: Uri | undefined = await window.showSaveDialog({
       defaultUri: Uri.parse(dataFilePath).with({scheme: 'file'})
     });
 
