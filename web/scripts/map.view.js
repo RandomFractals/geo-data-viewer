@@ -140,11 +140,15 @@ function view(mapConfig) {
 
 // save map data
 function saveData() {
+  // get requested file type
   const dataFileType = saveFileTypeSelector.value;
+  // get keplergl map info with visState, mapState, mapStyle and uiState
+  const mapInfo = store.getState().keplerGl.map;
+  console.log(Object.keys(mapInfo.uiState));
 	switch (dataFileType) {
     case '.kgl.json':
       // save keplergl map config
-      const mapConfig = KeplerGl.KeplerGlSchema.getConfigToSave(store.getState().keplerGl.map);
+      const mapConfig = KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo);
       vscode.postMessage({
         command:'saveData',
         data: JSON.stringify(mapConfig, null, 2),
@@ -156,7 +160,7 @@ function saveData() {
       break;
     case '.json':
       // save keplergl map data
-      const mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(store.getState().keplerGl.map);
+      const mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo);
       vscode.postMessage({
         command:'saveData',
         data: JSON.stringify(mapData, null, 2),
