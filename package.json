@@ -37,7 +37,7 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.41.0",
+    "vscode": "^1.42.0",
     "node": ">=10.2.0"
   },
   "categories": [
@@ -154,6 +154,5 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "kepler.gl": "^1.1.13"
   }
 }

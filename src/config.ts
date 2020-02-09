@@ -29,7 +29,7 @@ export const KEPLER_GL_VERSION: string = '1.1.13';
  * @param {string} version Version of Kepler.gl to load
  * @see https://github.com/keplergl/kepler.gl/blob/master/src/templates/export-map-html.js
  */
-export const mapDataToHtml = (options, version = KEPLER_GL_VERSION) => {
+export const mapDataToHtml = (options: any, version: string = KEPLER_GL_VERSION) => {
   return `
     <!DOCTYPE html>
     <html>
