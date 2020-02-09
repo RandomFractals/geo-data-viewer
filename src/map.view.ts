@@ -373,9 +373,14 @@ export class MapView {
     if (dataFileUri) {
       // create file data to save
       let fileData = mapData;
+      let fileEncoding = 'utf8';
       switch (fileType) {
         case '.kgl.html':
           fileData = config.mapDataToHtml(mapData);
+          break;
+        case '.png':
+          fileData = mapData.replace('data:image/png;base64,', '');
+          fileEncoding = 'base64';
           break;
         default: // .kgl.json map config, or .json map data
           fileData = JSON.stringify(mapData, null, 2);
@@ -383,7 +388,7 @@ export class MapView {
       }
 
       // write map data to disk
-      fs.writeFile(dataFileUri.fsPath, fileData, (error) => {
+      fs.writeFile(dataFileUri.fsPath, fileData, fileEncoding, (error) => {
         if (error) {
           this._logger.error(`saveData(): Error saving '${dataFileUri.fsPath}'. \n\t Error:`, error.message);
           window.showErrorMessage(`Unable to save data file: '${dataFileUri.fsPath}'. \n\t Error: ${error.message}`);

@@ -150,6 +150,7 @@ function saveData() {
     case '.kgl.json':
       // get keplergl map config
       mapData = KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo);
+      postMapData('saveData', mapData, dataFileType);
       break;
     case '.csv':
       // TODO
@@ -157,6 +158,7 @@ function saveData() {
     case '.json':
       // get keplergl map data
       mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo);
+      postMapData('saveData', mapData, dataFileType);
       break;
     case '.geojson':
       // TODO
@@ -168,19 +170,26 @@ function saveData() {
         mapboxApiAccessToken: MAPBOX_TOKEN,
         mode: 'EDIT'
       };
+      postMapData('saveData', mapData, dataFileType);
       break;
     case '.png':
-      // TODO
+      const mapNode = document.getElementById('kepler-gl__map');
+      domtoimage.toPng(mapNode).then(dataUrl => {
+        postMapData('saveData', dataUrl, dataFileType);
+      })
+      //.catch(error => showMessage(error.message));
       break;
   }
+} // end of saveData()
 
-  // save data
+// posts map data for saving
+function postMapData(command, mapData, dataFileType) {
   vscode.postMessage({
-    command:'saveData',
+    command: command,
     data: mapData,
     fileType: dataFileType
   });
-} // end of saveData()
+}
 
 // view raw map source code
 function viewMapSource() {
