@@ -144,40 +144,43 @@ function saveData() {
   const dataFileType = saveFileTypeSelector.value;
   // get keplergl map info with visState, mapState, mapStyle and uiState
   const mapInfo = store.getState().keplerGl.map;
-  console.log(Object.keys(mapInfo.uiState));
+  // get corresponding map data
+  let mapData = {};
 	switch (dataFileType) {
     case '.kgl.json':
-      // save keplergl map config
-      const mapConfig = KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo);
-      vscode.postMessage({
-        command:'saveData',
-        data: JSON.stringify(mapConfig, null, 2),
-        fileType: dataFileType
-      });
+      // get keplergl map config
+      mapData = KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo);
       break;
     case '.csv':
       // TODO
       break;
     case '.json':
-      // save keplergl map data
-      const mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo);
-      vscode.postMessage({
-        command:'saveData',
-        data: JSON.stringify(mapData, null, 2),
-        fileType: dataFileType
-      });
+      // get keplergl map data
+      mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo);
       break;
     case '.geojson':
       // TODO
       break;
-    case '.html':
-      // TODO
+    case 'kgl.html': // keplergl html
+      // create html map data
+      mapData = {
+        ...KeplerGl.KeplerGlSchema.save(mapInfo),
+        mapboxApiAccessToken: MAPBOX_TOKEN,
+        mode: 'EDIT'
+      };
       break;
     case '.png':
       // TODO
       break;
   }
-}
+
+  // save data
+  vscode.postMessage({
+    command:'saveData',
+    data: mapData,
+    fileType: dataFileType
+  });
+} // end of saveData()
 
 // view raw map source code
 function viewMapSource() {

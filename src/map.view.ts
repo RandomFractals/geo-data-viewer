@@ -370,8 +370,20 @@ export class MapView {
       defaultUri: Uri.parse(dataFilePath).with({scheme: 'file'})
     });
 
-    if (dataFileUri) { // save data
-      fs.writeFile(dataFileUri.fsPath, fileData, (error) => {
+    if (dataFileUri) {
+      // create map data to save
+      let mapData = fileData;
+      switch (fileType) {
+        case '.kgl.html':
+          mapData = config.mapDataToHtml(fileData);
+          break;
+        default: // .kgl.json map config, or .json map data
+          mapData = JSON.stringify(mapData, null, 2);
+          break;
+      }
+
+      // write map data to disk
+      fs.writeFile(dataFileUri.fsPath, mapData, (error) => {
         if (error) {
           this._logger.error(`saveData(): Error saving '${dataFileUri.fsPath}'. \n\t Error:`, error.message);
           window.showErrorMessage(`Unable to save data file: '${dataFileUri.fsPath}'. \n\t Error: ${error.message}`);
