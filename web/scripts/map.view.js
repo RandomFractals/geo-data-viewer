@@ -161,7 +161,7 @@ function saveData() {
     case '.geojson':
       // TODO
       break;
-    case 'kgl.html': // keplergl html
+    case '.kgl.html': // keplergl html
       // create html map data
       mapData = {
         ...KeplerGl.KeplerGlSchema.save(mapInfo),

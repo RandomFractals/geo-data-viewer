@@ -22,7 +22,7 @@ export const KEPLER_GL_VERSION: string = '1.1.13';
 
 /**
  * Creates an html file content for standalone kepler.gl map preview
- * @param {Object} options Map data and html config optioins
+ * @param {Object} options Map data and html config options
  * @param {string} options.mapboxApiAccessToken Mapbox token used to fetch mapbox tiles
  * @param {Array<Object>} options.datasets Data to include in the map
  * @param {Object} options.config Full kepler.gl instance configuration {mapState, mapStyle, visState}
