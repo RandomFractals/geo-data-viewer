@@ -1,14 +1,6 @@
 [
   {
-    "version": "v1",
     "data": {
-      "id": "vvzpce4kr",
-      "label": "Top Expat Destinations.csv",
-      "color": [
-        143,
-        47,
-        191
-      ],
       "allData": [
         [
           "Argentina",
@@ -1127,43 +1119,58 @@
           null
         ]
       ],
+      "color": [
+        143,
+        47,
+        191
+      ],
       "fields": [
         {
+          "analyzerType": "STRING",
+          "format": "",
           "name": "Country",
-          "type": "string",
-          "format": ""
+          "type": "string"
         },
         {
+          "analyzerType": "FLOAT",
+          "format": "",
           "name": "Latitude",
-          "type": "real",
-          "format": ""
+          "type": "real"
         },
         {
+          "analyzerType": "FLOAT",
+          "format": "",
           "name": "Longitude",
-          "type": "real",
-          "format": ""
+          "type": "real"
         },
         {
+          "analyzerType": "INT",
+          "format": "",
           "name": "2014",
-          "type": "integer",
-          "format": ""
+          "type": "integer"
         },
         {
+          "analyzerType": "INT",
+          "format": "",
           "name": "2015",
-          "type": "integer",
-          "format": ""
+          "type": "integer"
         },
         {
+          "analyzerType": "INT",
+          "format": "",
           "name": "2016",
-          "type": "integer",
-          "format": ""
+          "type": "integer"
         },
         {
+          "analyzerType": "INT",
+          "format": "",
           "name": "2017",
-          "type": "integer",
-          "format": ""
+          "type": "integer"
         }
-      ]
-    }
+      ],
+      "id": "vvzpce4kr",
+      "label": "Top Expat Destinations.csv"
+    },
+    "version": "v1"
   }
 ]
