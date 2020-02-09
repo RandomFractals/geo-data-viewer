@@ -347,10 +347,10 @@ export class MapView {
 
   /**
    * Saves posted data from map view.
-   * @param fileData File data to save.
+   * @param mapData Map data to save.
    * @param fileType Data file type.
    */
-  private async saveData(fileData: any, fileType: string): Promise<void> {
+  private async saveData(mapData: any, fileType: string): Promise<void> {
     let dataFileName: string = this._fileName.substring(0, this._fileName.lastIndexOf('.')); // - .ext
     // add requested data file extension
     dataFileName += fileType;
@@ -371,19 +371,19 @@ export class MapView {
     });
 
     if (dataFileUri) {
-      // create map data to save
-      let mapData = fileData;
+      // create file data to save
+      let fileData = mapData;
       switch (fileType) {
         case '.kgl.html':
-          mapData = config.mapDataToHtml(fileData);
+          fileData = config.mapDataToHtml(mapData);
           break;
         default: // .kgl.json map config, or .json map data
-          mapData = JSON.stringify(mapData, null, 2);
+          fileData = JSON.stringify(mapData, null, 2);
           break;
       }
 
       // write map data to disk
-      fs.writeFile(dataFileUri.fsPath, mapData, (error) => {
+      fs.writeFile(dataFileUri.fsPath, fileData, (error) => {
         if (error) {
           this._logger.error(`saveData(): Error saving '${dataFileUri.fsPath}'. \n\t Error:`, error.message);
           window.showErrorMessage(`Unable to save data file: '${dataFileUri.fsPath}'. \n\t Error: ${error.message}`);
