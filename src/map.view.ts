@@ -15,9 +15,10 @@ import {
 import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as xlsx from 'xlsx';
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
-import {Logger} from './logger';
+import {Logger, LogLevel} from './logger';
 import {viewManager} from './view.manager';
 import {Template} from './template.manager';
 
@@ -70,12 +71,14 @@ export class MapView {
   private _uri: Uri;
   private _url: string;  
   private _fileName: string;
-  private _fileExtension: string;  
+  private _fileExtension: string;
+  private _fileSize: number = 0;
   private _title: string;
   private _isRemoteData: boolean = false;
   private _content: string = '';
   private _mapData: any = [];
   private _mapConfig: any = {};
+  private _rowCount: number = 0;
   private _html: string = '';
   private _viewUri: Uri;
   private _panel: WebviewPanel;
@@ -358,7 +361,15 @@ export class MapView {
           // TODO
           break;
         case '.csv':
-          // TODO
+          // get csv map data
+          const workBook: xlsx.WorkBook = xlsx.read(this._content, {
+            type: 'string',
+            cellDates: true,
+          });
+          let sheetName: string = workBook.SheetNames[0];
+          const workSheet: xlsx.Sheet = workBook.Sheets[sheetName];
+          this._mapData = xlsx.utils.sheet_to_json(workSheet);
+          this.logDataStats(this._mapData);
           break;
       }
 
@@ -374,6 +385,24 @@ export class MapView {
     catch (error) {
       this._logger.debug('refresh():', error.message);
       this.webview.postMessage({error: error});
+    }
+  } // end of refreshView()
+
+   /**
+   * Logs data stats and optional data schema or metadata for debug 
+   * and updates map view status bar item.
+   * @param dataRows Data rows array.
+   * @param dataSchema Optional data schema or metadata for debug logging.
+   */
+  private logDataStats(dataRows: Array<any>, dataSchema: any = null): void {
+    // get data file size in bytes
+    this._fileSize = fileUtils.getFileSize(this._uri.fsPath); //this._dataUrl);
+    this._rowCount = dataRows.length;
+    // this.updateStats(this._columns, this._rowCount);
+    if (dataRows.length > 0 && dataRows.constructor !== Uint8Array) {
+      const firstRow = dataRows[0];
+      this._logger.debug('logDataStats(): 1st row:', firstRow);
+      this._logger.debug('logDataStats(): rowCount:', this._rowCount);
     }
   }
 
