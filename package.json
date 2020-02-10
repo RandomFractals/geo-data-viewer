@@ -155,6 +155,7 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "superagent": "^5.2.1"
+    "superagent": "^5.2.1",
+    "xlsx": "^0.15.5"
   }
 }
