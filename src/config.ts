@@ -72,7 +72,7 @@ export const mapDataToHtml = (options: any, version: string = KEPLER_GL_VERSION)
         <script src="https://unpkg.com/kepler.gl@${version}/umd/keplergl.min.js" crossorigin></script>
 
         <style type="text/css">
-          body {margin: 0; padding: 0; overflow: hidden;}
+          body {margin: 0; padding: 0; overflow: hidden; background-color: #222}
         </style>
 
         <!--MapBox token-->
