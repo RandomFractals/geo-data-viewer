@@ -27,6 +27,10 @@
 ![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true 
  "Geo Data Viewer Gist")
 
+# Supported File Formats
+
+See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) documentation for the supported geo data files.
+
 # Recommended Extensions
 
 Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
