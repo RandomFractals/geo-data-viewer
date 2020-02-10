@@ -69,9 +69,12 @@ export class MapView {
   private _uri: Uri;
   private _url: string;  
   private _fileName: string;
+  private _fileExtension: string;  
   private _title: string;
   private _isRemoteData: boolean = false;
   private _content: string = '';
+  private _mapData: any = [];
+  private _mapConfig: any = {};
   private _html: string = '';
   private _viewUri: Uri;
   private _panel: WebviewPanel;
@@ -99,6 +102,7 @@ export class MapView {
     this._uri = uri;
     this._url = uri.toString(true);
     this._fileName = path.basename(uri.fsPath);
+    this._fileExtension = path.extname(this._fileName);
     if (this._url.startsWith('https://kepler.gl/demo?mapUrl=')) {
       // init map view uri from kepler.gl demo map config url query string
       this._url = this._url.replace('https://kepler.gl/demo?mapUrl=', '');
@@ -328,15 +332,35 @@ export class MapView {
    */
   public refreshView() {
     try {
-      // TODO: add map.json config loading
-      // const mapConfig = JSON.parse(mapData);
+      // load map data
+      switch (this._fileExtension) {
+        case '.json':
+          // parse json data content
+          const data = JSON.parse(this._content);
+          if (Array.isArray(data)) {
+            // must be map data
+            this._mapData = data;
+          }
+          else {
+            // assume map config
+            this._mapConfig = data;
+          }
+          break;
+        case '.geojson':
+          // TODO
+          break;
+        case '.csv':
+          // TODO
+          break;
+      }
+
+      // update map view
       this.webview.postMessage({
         command: 'refresh',
         fileName: this._fileName,
         uri: this._uri.toString(),
-        // TODO:
-        // config: mapConfig,
-        // mapData: mapData
+        mapConfig: this._mapConfig,
+        mapData: this._mapData
       });
     }
     catch (error) {
