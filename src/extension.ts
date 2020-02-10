@@ -124,13 +124,14 @@ function createMapViewCommand(viewType: string,
 }
 
 /**
- * Gets 2nd panel view column if geo data document is open.
+ * Gets map view display view column
+ * based on active editor view column.
  */
 function getViewColumn(): ViewColumn {
 	let viewColumn: ViewColumn = ViewColumn.One;
 	const activeEditor = window.activeTextEditor;
 	if (activeEditor && activeEditor.viewColumn) {
-		viewColumn = activeEditor.viewColumn + 1;
+		viewColumn = activeEditor.viewColumn; // + 1; // for view on side ...
 	}
 	return viewColumn;
 }
