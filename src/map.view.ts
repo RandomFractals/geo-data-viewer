@@ -16,6 +16,7 @@ import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as config from './config';
+import * as fileUtils from './utils/file.utils';
 import {Logger} from './logger';
 import {viewManager} from './view.manager';
 import {Template} from './template.manager';
@@ -311,13 +312,12 @@ export class MapView {
   /**
    * Reload map view on map data save changes or vscode IDE reload.
    */
-  public refresh(): void {
+  public async refresh(): Promise<void> {
     // reveal corresponding map view panel
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
     if (this._url.startsWith('https://')) {
-      // refresh remote map config view
-      // TODO: add remote map config content loading
-      this._content = '';
+      // load remote keplergl map data and config file
+      this._content = String(await fileUtils.readDataFile(this._url, 'utf8'));
       this.refreshView();
     }
     else { 
