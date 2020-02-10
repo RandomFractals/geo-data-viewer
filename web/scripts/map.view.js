@@ -195,6 +195,17 @@ function saveData() {
       mapData = KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo);
       postMapData('saveData', mapData, dataFileType);
       break;
+    case '.map.json':
+      mapData = {
+        "config": KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo),
+        "datasets": KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo),
+        "info": {
+          "app": "GeoDataViewer",
+          "created_at": new Date(Date.now()).toUTCString()
+        }
+      }
+      postMapData('saveData', mapData, dataFileType);
+      break;
     case '.geojson':
       // TODO
       break;

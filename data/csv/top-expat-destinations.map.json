@@ -1,15 +1,439 @@
 {
+  "config": {
+    "config": {
+      "mapState": {
+        "bearing": 0,
+        "dragRotate": false,
+        "isSplit": false,
+        "latitude": 15.961342680719374,
+        "longitude": 26.963756185099957,
+        "pitch": 0,
+        "zoom": 2
+      },
+      "mapStyle": {
+        "mapStyles": {},
+        "styleType": "muted_night",
+        "threeDBuildingColor": [
+          9.665468314072013,
+          17.18305478057247,
+          31.1442867897876
+        ],
+        "topLayerGroups": {},
+        "visibleLayerGroups": {
+          "border": true,
+          "building": false,
+          "label": true,
+          "land": true,
+          "road": false,
+          "water": true
+        }
+      },
+      "visState": {
+        "animationConfig": {
+          "currentTime": null,
+          "speed": 1
+        },
+        "filters": [],
+        "interactionConfig": {
+          "brush": {
+            "enabled": false,
+            "size": 0.5
+          },
+          "coordinate": {
+            "enabled": false
+          },
+          "tooltip": {
+            "enabled": true,
+            "fieldsToShow": {
+              "vvzpce4kr": [
+                "Country",
+                "2014",
+                "2015",
+                "2016",
+                "2017"
+              ]
+            }
+          }
+        },
+        "layerBlending": "normal",
+        "layers": [
+          {
+            "config": {
+              "color": [
+                218,
+                112,
+                191
+              ],
+              "columns": {
+                "altitude": "2017",
+                "lat": "Latitude",
+                "lng": "Longitude"
+              },
+              "dataId": "vvzpce4kr",
+              "isVisible": true,
+              "label": "2017",
+              "textLabel": [
+                {
+                  "alignment": "center",
+                  "anchor": "start",
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "field": null,
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "size": 18
+                }
+              ],
+              "visConfig": {
+                "colorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "filled": true,
+                "fixedRadius": false,
+                "opacity": 1,
+                "outline": false,
+                "radius": 20,
+                "radiusRange": [
+                  0,
+                  50
+                ],
+                "strokeColor": [
+                  218,
+                  112,
+                  191
+                ],
+                "strokeColorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "thickness": 2
+              }
+            },
+            "id": "a6kif8",
+            "type": "point",
+            "visualChannels": {
+              "colorField": {
+                "name": "2017",
+                "type": "integer"
+              },
+              "colorScale": "quantize",
+              "sizeField": null,
+              "sizeScale": "linear",
+              "strokeColorField": null,
+              "strokeColorScale": "quantile"
+            }
+          },
+          {
+            "config": {
+              "color": [
+                241,
+                92,
+                23
+              ],
+              "columns": {
+                "altitude": "2016",
+                "lat": "Latitude",
+                "lng": "Longitude"
+              },
+              "dataId": "vvzpce4kr",
+              "isVisible": true,
+              "label": "2016",
+              "textLabel": [
+                {
+                  "alignment": "center",
+                  "anchor": "start",
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "field": null,
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "size": 18
+                }
+              ],
+              "visConfig": {
+                "colorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "filled": true,
+                "fixedRadius": false,
+                "opacity": 1,
+                "outline": false,
+                "radius": 30,
+                "radiusRange": [
+                  0,
+                  50
+                ],
+                "strokeColor": [
+                  241,
+                  92,
+                  23
+                ],
+                "strokeColorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "thickness": 2
+              }
+            },
+            "id": "2j8ln5g",
+            "type": "point",
+            "visualChannels": {
+              "colorField": {
+                "name": "2016",
+                "type": "integer"
+              },
+              "colorScale": "quantize",
+              "sizeField": null,
+              "sizeScale": "linear",
+              "strokeColorField": null,
+              "strokeColorScale": "quantile"
+            }
+          },
+          {
+            "config": {
+              "color": [
+                255,
+                203,
+                153
+              ],
+              "columns": {
+                "altitude": "2015",
+                "lat": "Latitude",
+                "lng": "Longitude"
+              },
+              "dataId": "vvzpce4kr",
+              "isVisible": true,
+              "label": "2015",
+              "textLabel": [
+                {
+                  "alignment": "center",
+                  "anchor": "start",
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "field": null,
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "size": 18
+                }
+              ],
+              "visConfig": {
+                "colorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "filled": true,
+                "fixedRadius": false,
+                "opacity": 1,
+                "outline": false,
+                "radius": 40,
+                "radiusRange": [
+                  0,
+                  50
+                ],
+                "strokeColor": [
+                  255,
+                  203,
+                  153
+                ],
+                "strokeColorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "thickness": 2
+              }
+            },
+            "id": "6rkgfob",
+            "type": "point",
+            "visualChannels": {
+              "colorField": {
+                "name": "2015",
+                "type": "integer"
+              },
+              "colorScale": "quantize",
+              "sizeField": null,
+              "sizeScale": "linear",
+              "strokeColorField": null,
+              "strokeColorScale": "quantile"
+            }
+          },
+          {
+            "config": {
+              "color": [
+                119,
+                110,
+                87
+              ],
+              "columns": {
+                "altitude": "2014",
+                "lat": "Latitude",
+                "lng": "Longitude"
+              },
+              "dataId": "vvzpce4kr",
+              "isVisible": true,
+              "label": "2014",
+              "textLabel": [
+                {
+                  "alignment": "center",
+                  "anchor": "start",
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "field": null,
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "size": 18
+                }
+              ],
+              "visConfig": {
+                "colorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "filled": true,
+                "fixedRadius": false,
+                "opacity": 1,
+                "outline": false,
+                "radius": 50,
+                "radiusRange": [
+                  0,
+                  50
+                ],
+                "strokeColor": [
+                  119,
+                  110,
+                  87
+                ],
+                "strokeColorRange": {
+                  "category": "Uber",
+                  "colors": [
+                    "#00939C",
+                    "#5DBABF",
+                    "#BAE1E2",
+                    "#F8C0AA",
+                    "#DD7755",
+                    "#C22E00"
+                  ],
+                  "name": "Uber Viz Diverging 1.5",
+                  "reversed": false,
+                  "type": "diverging"
+                },
+                "thickness": 2
+              }
+            },
+            "id": "gj02nln",
+            "type": "point",
+            "visualChannels": {
+              "colorField": {
+                "name": "2017",
+                "type": "integer"
+              },
+              "colorScale": "quantize",
+              "sizeField": null,
+              "sizeScale": "linear",
+              "strokeColorField": null,
+              "strokeColorScale": "quantile"
+            }
+          }
+        ],
+        "splitMaps": []
+      }
+    },
+    "version": "v1"
+  },
   "datasets": [
     {
-      "version": "v1",
       "data": {
-        "id": "vvzpce4kr",
-        "label": "Top Expat Destinations.csv",
-        "color": [
-          143,
-          47,
-          191
-        ],
         "allData": [
           [
             "Argentina",
@@ -1128,316 +1552,63 @@
             null
           ]
         ],
+        "color": [
+          143,
+          47,
+          191
+        ],
         "fields": [
           {
+            "analyzerType": "STRING",
+            "format": "",
             "name": "Country",
-            "type": "string",
-            "format": ""
+            "type": "string"
           },
           {
+            "analyzerType": "FLOAT",
+            "format": "",
             "name": "Latitude",
-            "type": "real",
-            "format": ""
+            "type": "real"
           },
           {
+            "analyzerType": "FLOAT",
+            "format": "",
             "name": "Longitude",
-            "type": "real",
-            "format": ""
+            "type": "real"
           },
           {
+            "analyzerType": "INT",
+            "format": "",
             "name": "2014",
-            "type": "integer",
-            "format": ""
+            "type": "integer"
           },
           {
+            "analyzerType": "INT",
+            "format": "",
             "name": "2015",
-            "type": "integer",
-            "format": ""
+            "type": "integer"
           },
           {
+            "analyzerType": "INT",
+            "format": "",
             "name": "2016",
-            "type": "integer",
-            "format": ""
+            "type": "integer"
           },
           {
+            "analyzerType": "INT",
+            "format": "",
             "name": "2017",
-            "type": "integer",
-            "format": ""
-          }
-        ]
-      }
-    }
-  ],
-  "config": {
-    "version": "v1",
-    "config": {
-      "visState": {
-        "filters": [],
-        "layers": [
-          {
-            "id": "a6kif8",
-            "type": "point",
-            "config": {
-              "dataId": "vvzpce4kr",
-              "label": "2017",
-              "color": [
-                218,
-                112,
-                191
-              ],
-              "columns": {
-                "lat": "Latitude",
-                "lng": "Longitude",
-                "altitude": "2017"
-              },
-              "isVisible": true,
-              "visConfig": {
-                "radius": 20,
-                "fixedRadius": false,
-                "opacity": 1,
-                "outline": false,
-                "thickness": 2,
-                "colorRange": {
-                  "name": "Uber Viz Diverging 1.5",
-                  "type": "diverging",
-                  "category": "Uber",
-                  "colors": [
-                    "#00939C",
-                    "#5DBABF",
-                    "#BAE1E2",
-                    "#F8C0AA",
-                    "#DD7755",
-                    "#C22E00"
-                  ],
-                  "reversed": false
-                },
-                "radiusRange": [
-                  0,
-                  50
-                ],
-                "hi-precision": false
-              }
-            },
-            "visualChannels": {
-              "colorField": {
-                "name": "2017",
-                "type": "integer"
-              },
-              "colorScale": "quantize",
-              "sizeField": null,
-              "sizeScale": "linear"
-            }
-          },
-          {
-            "id": "2j8ln5g",
-            "type": "point",
-            "config": {
-              "dataId": "vvzpce4kr",
-              "label": "2016",
-              "color": [
-                241,
-                92,
-                23
-              ],
-              "columns": {
-                "lat": "Latitude",
-                "lng": "Longitude",
-                "altitude": "2016"
-              },
-              "isVisible": true,
-              "visConfig": {
-                "radius": 30,
-                "fixedRadius": false,
-                "opacity": 1,
-                "outline": false,
-                "thickness": 2,
-                "colorRange": {
-                  "name": "Uber Viz Diverging 1.5",
-                  "type": "diverging",
-                  "category": "Uber",
-                  "colors": [
-                    "#00939C",
-                    "#5DBABF",
-                    "#BAE1E2",
-                    "#F8C0AA",
-                    "#DD7755",
-                    "#C22E00"
-                  ],
-                  "reversed": false
-                },
-                "radiusRange": [
-                  0,
-                  50
-                ],
-                "hi-precision": false
-              }
-            },
-            "visualChannels": {
-              "colorField": {
-                "name": "2016",
-                "type": "integer"
-              },
-              "colorScale": "quantize",
-              "sizeField": null,
-              "sizeScale": "linear"
-            }
-          },
-          {
-            "id": "6rkgfob",
-            "type": "point",
-            "config": {
-              "dataId": "vvzpce4kr",
-              "label": "2015",
-              "color": [
-                255,
-                203,
-                153
-              ],
-              "columns": {
-                "lat": "Latitude",
-                "lng": "Longitude",
-                "altitude": "2015"
-              },
-              "isVisible": true,
-              "visConfig": {
-                "radius": 40,
-                "fixedRadius": false,
-                "opacity": 1,
-                "outline": false,
-                "thickness": 2,
-                "colorRange": {
-                  "name": "Uber Viz Diverging 1.5",
-                  "type": "diverging",
-                  "category": "Uber",
-                  "colors": [
-                    "#00939C",
-                    "#5DBABF",
-                    "#BAE1E2",
-                    "#F8C0AA",
-                    "#DD7755",
-                    "#C22E00"
-                  ],
-                  "reversed": false
-                },
-                "radiusRange": [
-                  0,
-                  50
-                ],
-                "hi-precision": false
-              }
-            },
-            "visualChannels": {
-              "colorField": {
-                "name": "2015",
-                "type": "integer"
-              },
-              "colorScale": "quantize",
-              "sizeField": null,
-              "sizeScale": "linear"
-            }
-          },
-          {
-            "id": "gj02nln",
-            "type": "point",
-            "config": {
-              "dataId": "vvzpce4kr",
-              "label": "2014",
-              "color": [
-                119,
-                110,
-                87
-              ],
-              "columns": {
-                "lat": "Latitude",
-                "lng": "Longitude",
-                "altitude": "2014"
-              },
-              "isVisible": true,
-              "visConfig": {
-                "radius": 50,
-                "fixedRadius": false,
-                "opacity": 1,
-                "outline": false,
-                "thickness": 2,
-                "colorRange": {
-                  "name": "Uber Viz Diverging 1.5",
-                  "type": "diverging",
-                  "category": "Uber",
-                  "colors": [
-                    "#00939C",
-                    "#5DBABF",
-                    "#BAE1E2",
-                    "#F8C0AA",
-                    "#DD7755",
-                    "#C22E00"
-                  ],
-                  "reversed": false
-                },
-                "radiusRange": [
-                  0,
-                  50
-                ],
-                "hi-precision": false
-              }
-            },
-            "visualChannels": {
-              "colorField": {
-                "name": "2017",
-                "type": "integer"
-              },
-              "colorScale": "quantize",
-              "sizeField": null,
-              "sizeScale": "linear"
-            }
+            "type": "integer"
           }
         ],
-        "interactionConfig": {
-          "tooltip": {
-            "fieldsToShow": {
-              "vvzpce4kr": [
-                "Country",
-                "2014",
-                "2015",
-                "2016",
-                "2017"
-              ]
-            },
-            "enabled": true
-          },
-          "brush": {
-            "size": 0.5,
-            "enabled": false
-          }
-        },
-        "layerBlending": "normal",
-        "splitMaps": []
+        "id": "vvzpce4kr",
+        "label": "Top Expat Destinations.csv"
       },
-      "mapState": {
-        "bearing": 0,
-        "dragRotate": false,
-        "latitude": 15.961342680719374,
-        "longitude": 26.963756185099957,
-        "pitch": 0,
-        "zoom": 2,
-        "isSplit": false
-      },
-      "mapStyle": {
-        "styleType": "muted_night",
-        "topLayerGroups": {},
-        "visibleLayerGroups": {
-          "label": true,
-          "road": false,
-          "border": true,
-          "building": false,
-          "water": true,
-          "land": true
-        },
-        "mapStyles": {}
-      }
+      "version": "v1"
     }
-  },
+  ],
   "info": {
-    "app": "kepler.gl",
-    "created_at": "Fri Jun 01 2018 23:26:15 GMT+0100 (GMT Daylight Time)"
+    "app": "GeoDataViewer",
+    "created_at": "Mon, 10 Feb 2020 13:33:33 GMT"
   }
 }
