@@ -368,8 +368,18 @@ export class MapView {
           });
           let sheetName: string = workBook.SheetNames[0];
           const workSheet: xlsx.Sheet = workBook.Sheets[sheetName];
-          this._mapData = xlsx.utils.sheet_to_json(workSheet);
-          this.logDataStats(this._mapData);
+          const sheetData = xlsx.utils.sheet_to_json(workSheet);
+          this.logDataStats(sheetData);
+          this._mapData = [{
+              data : {
+                allData: [],
+                color: [],
+                fields: [],
+                id: 'xxx',
+                label: this._fileName
+              },
+              version: 'v1'
+          }];
           break;
       }
 
