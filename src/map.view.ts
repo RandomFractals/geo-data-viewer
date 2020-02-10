@@ -135,6 +135,9 @@ export class MapView {
         .replace(/\{scripts\}/g, scriptsPath);
     }
 
+    // initialize base map config for geo data files loading
+    this._mapConfig = config.mapConfigTemplate;
+
     // initialize webview panel
     this._panel = this.initWebview(viewType, viewColumn, panel);
     this.configure();

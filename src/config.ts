@@ -20,6 +20,62 @@ export const saveFileFilters: any = {
 
 export const KEPLER_GL_VERSION: string = '1.1.13';
 
+export const mapConfigTemplate: any = {
+  "config": {
+    "mapState": {
+      "bearing": 0,
+      "dragRotate": false,
+      "isSplit": false,
+      "latitude": 10.5117765,
+      "longitude": 34.269600000000004,
+      "pitch": 0,
+      "zoom": 2
+    },
+    "mapStyle": {
+      "mapStyles": {},
+      "styleType": "muted_night",
+      "threeDBuildingColor": [
+        9.665468314072013,
+        17.18305478057247,
+        31.1442867897876
+      ],
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "border": true,
+        "building": false,
+        "label": true,
+        "land": true,
+        "road": false,
+        "water": true
+      }
+    },
+    "visState": {
+      "animationConfig": {
+        "currentTime": null,
+        "speed": 1
+      },
+      "filters": [],
+      "interactionConfig": {
+        "brush": {
+          "enabled": false,
+          "size": 0.5
+        },
+        "coordinate": {
+          "enabled": false
+        },
+        "tooltip": {
+          "enabled": true,
+          "fieldsToShow": {}
+        }
+      },
+      "layerBlending": "normal",
+      "layers": [],
+      "splitMaps": []
+    }
+  },
+  "version": "v1"
+};
+
 /**
  * Creates an html file content for standalone kepler.gl map preview
  * @param {Object} options Map data and html config options
