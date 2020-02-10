@@ -344,6 +344,11 @@ export class MapView {
             // must be map data
             this._mapData = data;
           }
+          else if (data['datasets'] !== undefined) {
+            // must be keplergl json with map data and config
+            this._mapData = data['datasets'];
+            this._mapConfig = data['config'];
+          }
           else {
             // assume map config
             this._mapConfig = data;
