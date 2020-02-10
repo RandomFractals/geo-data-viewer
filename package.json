@@ -146,6 +146,7 @@
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.7.0",
+    "@types/superagent": "^4.1.6",
     "@types/vscode": "^1.42.0",
     "glob": "^7.1.6",
     "mocha": "^7.0.1",
