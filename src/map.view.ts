@@ -347,7 +347,7 @@ export class MapView {
             // must be map data
             this._mapData = data;
           }
-          else if (data['datasets'] !== undefined) {
+          else if (data['datasets'] !== undefined) { // add more checks here ???
             // must be keplergl json with map data and config
             this._mapData = data['datasets'];
             this._mapConfig = data['config'];
@@ -362,24 +362,7 @@ export class MapView {
           break;
         case '.csv':
           // get csv map data
-          const workBook: xlsx.WorkBook = xlsx.read(this._content, {
-            type: 'string',
-            cellDates: true,
-          });
-          let sheetName: string = workBook.SheetNames[0];
-          const workSheet: xlsx.Sheet = workBook.Sheets[sheetName];
-          const sheetData = xlsx.utils.sheet_to_json(workSheet);
-          this.logDataStats(sheetData);
-          this._mapData = [{
-              data : {
-                allData: [],
-                color: [],
-                fields: [],
-                id: 'xxx',
-                label: this._fileName
-              },
-              version: 'v1'
-          }];
+          this._mapData = this.getCsvData(this._content);
           break;
       }
 
@@ -397,6 +380,34 @@ export class MapView {
       this.webview.postMessage({error: error});
     }
   } // end of refreshView()
+
+  /**
+   * Transforms csv data for keplergl map data load and display.
+   * @param csvText CSV text data file content.
+   * TODO: move this to utils/csv.utils.js if it grows ...
+   */
+  private getCsvData(csvText: string): any {
+    // read csv data with xlsx
+    const workBook: xlsx.WorkBook = xlsx.read(csvText, {
+      type: 'string',
+      cellDates: true,
+    });
+    let sheetName: string = workBook.SheetNames[0];
+    const workSheet: xlsx.Sheet = workBook.Sheets[sheetName];
+    const sheetData = xlsx.utils.sheet_to_json(workSheet);
+    this.logDataStats(sheetData);
+    const mapData = [{
+      data : {
+        allData: [],
+        color: [],
+        fields: [],
+        id: 'xxx',
+        label: this._fileName
+      },
+      version: 'v1'
+    }];
+    return mapData;
+  }
 
    /**
    * Logs data stats and optional data schema or metadata for debug 
