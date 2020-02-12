@@ -169,7 +169,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = KeplerGl.processCsvData(data);
       break;
     case '.geojson':
-      // TODO: KeplerGl.processGeoJson
+      data = KeplerGl.processGeojson(data);
       break;
   }
   
