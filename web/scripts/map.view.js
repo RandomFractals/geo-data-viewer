@@ -89,7 +89,7 @@ const app = (function createReactReduxProvider(
 let vscode, title, message,
   dataUrlInput, saveFileTypeSelector,
   map, mapConfig = {}, mapData = [],
-  dataUrl, dataFileName;
+  dataUrl, dataFileName, dataType;
 
 // initialize vs code api for messaging
 vscode = acquireVsCodeApi();
@@ -145,24 +145,35 @@ window.addEventListener('message', event => {
       dataUrl = event.data.uri;
       mapConfig = event.data.mapConfig;
       mapData = event.data.mapData;
+      dataType = event.data.dataType;
       view(mapConfig, mapData);
       break;
   }
 });
 
 // map view update
-function view(mapConfig, mapData) {
+function view(mapConfig, mapData, dataType) {
   try {
     // load data into keplergl map
-    initializeMap(KeplerGl, store, mapConfig, mapData);
+    initializeMap(KeplerGl, store, mapConfig, mapData, dataType);
   } catch (error) {
     console.error('map.view:error: ', error.message);
     showMessage(error.message);
   }
 }
 
-function initializeMap(keplerGl, store, config, data) {
+function initializeMap(keplerGl, store, config, data, dataType) {
   console.log('initializing map ...');
+  switch (dataType) {
+    case '.csv':
+      data = KeplerGl.processCsvData(data);
+      break;
+    case '.geojson':
+      // TODO: KeplerGl.processGeoJson
+      break;
+  }
+  
+  // load map data
   const loadedData = keplerGl.KeplerGlSchema.load(data, config);
   store.dispatch(keplerGl.addDataToMap({
     datasets: loadedData.datasets,

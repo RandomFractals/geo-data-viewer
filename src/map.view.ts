@@ -340,6 +340,11 @@ export class MapView {
     try {
       // load map data
       switch (this._fileExtension) {
+        case '.csv':
+        case '.geojson':
+          // just pass through raw csv and geojson data to webview
+          this._mapData = this._content;
+          break;
         case '.json':
           // parse json data content
           const data = JSON.parse(this._content);
@@ -357,13 +362,6 @@ export class MapView {
             this._mapConfig = data;
           }
           break;
-        case '.geojson':
-          // TODO
-          break;
-        case '.csv':
-          // get csv map data
-          this._mapData = this.getCsvData(this._content);
-          break;
       }
 
       // update map view
@@ -372,7 +370,8 @@ export class MapView {
         fileName: this._fileName,
         uri: this._uri.toString(),
         mapConfig: this._mapConfig,
-        mapData: this._mapData
+        mapData: this._mapData,
+        dataType: this._fileExtension
       });
     }
     catch (error) {
