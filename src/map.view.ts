@@ -12,10 +12,8 @@ import {
   WebviewPanelSerializer,
   commands
 } from 'vscode';
-import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as xlsx from 'xlsx';
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
 import {Logger, LogLevel} from './logger';
@@ -379,34 +377,6 @@ export class MapView {
       this.webview.postMessage({error: error});
     }
   } // end of refreshView()
-
-  /**
-   * Transforms csv data for keplergl map data load and display.
-   * @param csvText CSV text data file content.
-   * TODO: move this to utils/csv.utils.js if it grows ...
-   */
-  private getCsvData(csvText: string): any {
-    // read csv data with xlsx
-    const workBook: xlsx.WorkBook = xlsx.read(csvText, {
-      type: 'string',
-      cellDates: true,
-    });
-    let sheetName: string = workBook.SheetNames[0];
-    const workSheet: xlsx.Sheet = workBook.Sheets[sheetName];
-    const sheetData = xlsx.utils.sheet_to_json(workSheet);
-    this.logDataStats(sheetData);
-    const mapData = [{
-      data : {
-        allData: [],
-        color: [],
-        fields: [],
-        id: 'xxx',
-        label: this._fileName
-      },
-      version: 'v1'
-    }];
-    return mapData;
-  }
 
    /**
    * Logs data stats and optional data schema or metadata for debug 
