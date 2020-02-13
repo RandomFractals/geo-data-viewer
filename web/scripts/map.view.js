@@ -146,7 +146,7 @@ window.addEventListener('message', event => {
       mapConfig = event.data.mapConfig;
       mapData = event.data.mapData;
       dataType = event.data.dataType;
-      view(mapConfig, mapData);
+      view(mapConfig, mapData, dataType);
       break;
   }
 });
@@ -157,27 +157,46 @@ function view(mapConfig, mapData, dataType) {
     // load data into keplergl map
     initializeMap(KeplerGl, store, mapConfig, mapData, dataType);
   } catch (error) {
-    console.error('map.view:error: ', error.message);
+    console.error(`map.view:error: ${error}`);
     showMessage(error.message);
   }
 }
 
 function initializeMap(keplerGl, store, config, data, dataType) {
-  console.log('initializing map ...');
+  console.log(`initializeMap: loading ${dataType} data ...`);
+  let dataSets = {};
+  let dataConfig = config;
+  let tagData = false;
   switch (dataType) {
     case '.csv':
       data = KeplerGl.processCsvData(data);
+      tagData = true;
       break;
     case '.geojson':
       data = KeplerGl.processGeojson(data);
+      tagData = true;
       break;
+    case '.json':
+      const loadedData = keplerGl.KeplerGlSchema.load(data, config);
+      dataSets = loadedData.datasets;
+      dataConfig = loadedData.config;
+      break;
+  }
+
+  if (tagData) {
+    // create dataset with processed data and info tag
+    dataSets = {
+      data,
+      info: {
+        id: dataFileName
+      }
+    }
   }
   
   // load map data
-  const loadedData = keplerGl.KeplerGlSchema.load(data, config);
   store.dispatch(keplerGl.addDataToMap({
-    datasets: loadedData.datasets,
-    config: loadedData.config,
+    datasets: dataSets,
+    config: dataConfig,
     options: {
       centerMap: false
     }
