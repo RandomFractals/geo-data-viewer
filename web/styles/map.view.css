@@ -93,3 +93,11 @@ select {
   font-size: 12px !important;
   font-weight: bold;
 }
+.bottom-widget--container {
+  bottom: 32px !important;
+  padding-left: 36px !important;
+  padding-right: 18px !important;
+}
+.map-attributions {
+  bottom: 0px !important;
+}
