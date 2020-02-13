@@ -122,7 +122,7 @@
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(geojson|kgl)/",
+          "when": "resourceFilename =~ /.*(.geojson|.kgl.json|keplergl.json|keplergl_time.json|.map.json)/",
           "group": "navigation"
         }
       ],
