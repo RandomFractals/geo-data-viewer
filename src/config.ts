@@ -32,7 +32,7 @@ export const mapList: Array<any> = [
   },
   {
     name: 'Top Expat Desitinations over Time',
-    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations-time.map.json',
     description: 'Top expat destinations ranked by country for 2014 through 2017',
   },
 ];
