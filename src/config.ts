@@ -18,6 +18,25 @@ export const saveFileFilters: any = {
   'Html': ['html']
 };
 
+// map list for the map gallery
+export const mapList: Array<any> = [
+  {
+    name: 'Chicago Green Roofs',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/chicago-green-roofs.map.json',
+    description: 'Chicago green roofs sustainable development for 2012',
+  },
+  {
+    name: 'Top Expat Desitinations',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json',
+    description: 'Top expat destinations ranked by country for 2014 through 2017',
+  },
+  {
+    name: 'Top Expat Desitinations over Time',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json',
+    description: 'Top expat destinations ranked by country for 2014 through 2017',
+  },
+];
+
 export const KEPLER_GL_VERSION: string = '1.1.13';
 
 export const mapConfigTemplate: any = {
