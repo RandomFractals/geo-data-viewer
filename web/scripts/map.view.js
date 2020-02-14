@@ -4,7 +4,8 @@ const reducers = (function createReducers(redux, keplerGl) {
     // mount keplerGl reducer
     keplerGl: keplerGl.keplerGlReducer.initialState({
       uiState: {
-        readOnly: false
+        readOnly: false,
+        currentModal: null
       }
     })
   });
