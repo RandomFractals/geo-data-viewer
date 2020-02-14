@@ -46,6 +46,7 @@
   "activationEvents": [
     "onCommand:map.view",
     "onCommand:map.view.url",
+    "onCommand:map.gallery",
     "onWebviewPanel:map.view",
     "onLanguage:csv",
     "onLanguage:json",
@@ -99,6 +100,11 @@
         "command": "map.view.url",
         "title": "View Map from URL",
         "category": "Geo"
+      },
+      {
+        "command": "map.gallery",
+        "title": "Map Gallery",
+        "category": "Geo"
       }
     ],
     "keybindings": [
@@ -109,6 +115,10 @@
       {
         "command": "map.view",
         "key": "ctrl+alt+m"
+      },
+      {
+        "command": "map.gallery",
+        "key": "ctrl+alt+g"
       }
     ],
     "menus": {

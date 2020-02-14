@@ -4,7 +4,8 @@ import {
   window, 
   commands, 
   ExtensionContext,
-  Disposable,
+	Disposable,
+	QuickPickItem,
   Uri, 
   ViewColumn, 
   TextDocument,
@@ -57,6 +58,11 @@ export function activate(context: ExtensionContext) {
 		});
 	});
 	context.subscriptions.push(viewRemoteMap);
+
+	// add Geo: Map Gallery command
+	const mapGalleryCommand: Disposable = 
+		commands.registerCommand('map.gallery', () => createMapGalleryCommand());
+	context.subscriptions.push(mapGalleryCommand);
 
 	// refresh associated map view on geo data file save
 	workspace.onDidSaveTextDocument((document: TextDocument) => {
@@ -121,6 +127,28 @@ function createMapViewCommand(viewType: string,
     return mapView.webview;
   });
   return mapWebview;
+}
+
+/**
+ * Displays map gallery quick pick list.
+ */
+async function createMapGalleryCommand(): Promise<void> {
+  const mapQuickPickItems: Array<QuickPickItem> = [];
+  config.mapList.forEach(map => mapQuickPickItems.push({
+		label: `$(preview) ${map.name}`,
+		description: map.description,
+		detail: map.url
+	}));
+	const selectedMap: QuickPickItem | undefined = 
+		await window.showQuickPick(mapQuickPickItems, {canPickMany: false});
+	if (selectedMap) {
+		const mapUrl: string | undefined = selectedMap.detail;
+		if (mapUrl) {
+			const mapUri: Uri = Uri.parse(mapUrl);
+			// launch new remote map view
+			commands.executeCommand('map.view', mapUri);	
+		}
+	}
 }
 
 /**
