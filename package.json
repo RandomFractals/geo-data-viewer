@@ -1,7 +1,7 @@
 {
   "name": "geo-data-viewer",
   "displayName": "Geo Data Viewer",
-  "description": "Geo Data 🗺️ Viewer",
+  "description": "🗺️ Geo Data Viewer w/0 Py 🐍 || pyWidgets || pandas 🐼 ||  @reactjs  ⚛️ required to gen. some snazzy maps 🗺️ with keplerGL ...",
   "version": "1.1.0",
   "icon": "images/map.png",
   "publisher": "RandomFractalsInc",
