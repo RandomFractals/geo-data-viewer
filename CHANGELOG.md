@@ -1,9 +1,9 @@
 # Change Log
 
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
-for the brief versions information and feature details with screen pics for this [Geo Data Viewer ](https://github.com/RandomFractals/geo-data-viewer) VSCode extension.
+for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
-## v1.1.0 Docs update release (2020-02-15)
+## v1.1.0 - Docs update release (2020-02-15)
 
 - [#42](https://github.com/RandomFractals/geo-data-viewer/issues/42)
 Add installation section to docs
