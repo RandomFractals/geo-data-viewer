@@ -18,7 +18,8 @@
 
 - Map View 🗺️ for [GeoJSON](https://geojson.org/), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) and CSV geo data files
 - [Map Gallery](https://github.com/RandomFractals/geo-data-viewer#map-gallery) with public [kepler.gl](https://kepler.gl/) map configs to try
-- Save map in html, JSON data and map config formats
+- Save map 🗺️ in standalone html format to share with others, or email :)
+- Save [kepler.gl JSON data and map config](https://github.com/RandomFractals/geo-data-viewer#supported-file-formats) for loading online via [kepler.gl demo app](https://kepler.gl/demo) or in this geo data tool
 - Load map config from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gists](https://gist.github.com/search?l=JSON&q=keplergl)
 - View map from ⭐️ Starred Gists in [GistPad 📘](https://github.com/vsls-contrib/gistpad)
 - View CSV and JSON data with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid and charts 📊
