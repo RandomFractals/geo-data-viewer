@@ -3,6 +3,23 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer ](https://github.com/RandomFractals/geo-data-viewer) VSCode extension.
 
+## v1.1.0 (2020-02-15)
+
+- [#42](https://github.com/RandomFractals/geo-data-viewer/issues/42)
+Add installation section to docs
+- [#43](https://github.com/RandomFractals/geo-data-viewer/issues/43)
+Add geo data viewer visual studio marketplace badges to docs
+- [#44](https://github.com/RandomFractals/geo-data-viewer/issues/44)
+Send PR to vsls gistPad team to add geo data viewer to recommended extensions in their docs
+- [#45](https://github.com/RandomFractals/geo-data-viewer/issues/45)
+Add map gallery section to docs
+- [#46](https://github.com/RandomFractals/geo-data-viewer/issues/46)
+Refine save map features description in docs
+- [#47](https://github.com/RandomFractals/geo-data-viewer/issues/47)
+Add view map gallery button to map view toolbar UI
+- [#48](https://github.com/RandomFractals/geo-data-viewer/issues/48)
+Update changelog for v1.1.0 docs update release
+
 ## v1.0.0 (2020-02-14)
 
 - [#1](https://github.com/RandomFractals/geo-data-viewer/issues/1)
