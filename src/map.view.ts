@@ -194,6 +194,9 @@ export class MapView {
         case 'openGeoDataFile':
           this.openGeoDataFile();
           break;
+        case 'showMapGallery':
+          commands.executeCommand('map.gallery');
+          break;
         case 'loadView':
           // launch new view
           this.loadView(message.viewName, message.uri);

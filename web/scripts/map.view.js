@@ -296,6 +296,13 @@ function openGeoDataFile() {
   vscode.postMessage({command: 'openGeoDataFile'});
 }
 
+// show map gallery
+function showMapGallery() {
+  vscode.postMessage({
+    command: 'showMapGallery'
+  });
+}
+
 // show help page
 function showHelp() {
   vscode.postMessage({
