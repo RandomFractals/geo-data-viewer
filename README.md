@@ -29,14 +29,20 @@
 - Use `Geo: View Map from Url` (`ctrl/cmd + alt + u`) command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
 - Run `Geo: Map Gallery` (`ctrl/cmd + alt + g`) command to view a list of public keplergl map configs 🗺️
 
-**Note:** Share kepler.gl maps 🗺️ you find on the web 🌐 and would like to see included in our maps gallery in ticket [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
-
 ![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true 
  "Geo Data Viewer Gist")
 
 # Supported File Formats
 
 See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) documentation for the supported geo data files.
+
+# Map Gallery
+
+[Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) comes with a built-in map gallery for devs to try kepler.gl maps 🗺️
+found in the wild 🌐:
+
+**Note:** if you'd like to see your public keplerg.gl map config included in our maps gallery, please post a link to your kepler.gl maps 🗺️ data github repo || gist in ticket [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
+
 
 # Installation
 
