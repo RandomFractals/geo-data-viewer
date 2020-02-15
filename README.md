@@ -34,6 +34,12 @@
 
 See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) documentation for the supported geo data files.
 
+# Installation
+
+Install [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via vscode Extensions tab (`Ctrl+Shift+X`) by searching for `keplerGL`|| via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=keplergl&target=VSCode&category=All%20categories&sortBy=Relevance). It's the only 1 out there! ;)
+
+List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vscode UI context menus, added geo data Language mappings and supported geo data files:
+
 # Recommended Extensions
 
 Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
