@@ -38,11 +38,12 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 # Map Gallery
 
-[Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) comes with a built-in map gallery for devs to try kepler.gl maps 🗺️
-found in the wild 🌐:
+[Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) comes with a built-in map gallery for devs to try [kepler.gl](https://kepler.gl/) maps 🗺️ found in the wild 🌐:
 
-**Note:** if you'd like to see your public keplerg.gl map config included in our maps gallery, please post a link to your kepler.gl maps 🗺️ data github repo || gist in ticket [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
+![Geo Data Viewer Map Gallery Quick Pick List](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery-quick-pick-list.png?raw=true 
+ "Geo Data Viewer Map Gallery Quick Pick List")
 
+**Note:** if you'd like to see your public [keplerg.gl](https://kepler.gl/) map config featured in our maps gallery, please post a link to your [kepler.gl](https://kepler.gl/) maps 🗺️ data & config github repo || gist in ticket [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
 
 # Installation
 
