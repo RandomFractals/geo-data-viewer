@@ -40,6 +40,9 @@ Install [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?it
 
 List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vscode UI context menus, added geo data Language mappings and supported geo data files:
 
+![Geo Data Viewer Contributions](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-contributions.png?raw=true 
+ "Geo Data Viewer Contributions")
+
 # Recommended Extensions
 
 Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
