@@ -173,6 +173,11 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = KeplerGl.processCsvData(data);
       tagData = true;
       break;
+    case '.topo.json':
+    case '.topojson':
+      // TODO
+      break;
+    case 'geo.json':
     case '.geojson':
       data = KeplerGl.processGeojson(data);
       tagData = true;

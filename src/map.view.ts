@@ -343,6 +343,7 @@ export class MapView {
       switch (this._fileExtension) {
         case '.csv':
         case '.geojson':
+        case '.topojson':
           // just pass through raw csv and geojson data to webview
           this._mapData = this._content;
           break;
