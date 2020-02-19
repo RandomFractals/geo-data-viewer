@@ -51,6 +51,7 @@
     "onLanguage:csv",
     "onLanguage:json",
     "onLanguage:geojson",
+    "onLanguage:topojson",
     "onLanguage:kgl"
   ],
   "main": "./out/extension.js",
@@ -70,12 +71,14 @@
         "extensions": [
           ".json",
           ".geojson",
-          ".kgl"
+          ".kgl",
+          ".topojson"
         ],
         "aliases": [
           "JSON",
           "GeoJSON",
-          "KeplerGL JSON"
+          "KeplerGL JSON",
+          "Topology JSON"
         ],
         "configuration": "./json-language-configuration.json"
       }
@@ -125,21 +128,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*(.geojson|.kgl.json|keplergl.json|keplergl_time.json|.map.json)/",
+          "when": "resourceFilename =~ /.*(.geo.json|.geojson|.kgl.json|keplergl.json|keplergl_time.json|.map.json|.topo.json|.topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|topojson)/",
           "group": "navigation"
         }
       ]
