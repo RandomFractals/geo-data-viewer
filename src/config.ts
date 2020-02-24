@@ -21,6 +21,11 @@ export const saveFileFilters: any = {
 // map list for the map gallery
 export const mapList: Array<any> = [
   {
+    name: 'Chicago Bike Routes',
+    url: 'https://raw.githubusercontent.com/classicmatsuo/keplerGL-bikeRoute/master/src/data/bikeRouteWConfig.json',
+    description: 'Chicago bike routes for 2019',
+  },
+  {
     name: 'Chicago Green Roofs',
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/chicago-green-roofs.map.json',
     description: 'Chicago green roofs sustainable development for 2012',
