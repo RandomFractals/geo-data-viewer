@@ -40,6 +40,11 @@ export const mapList: Array<any> = [
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations-time.map.json',
     description: 'Top expat destinations ranked by country for 2014 through 2017',
   },
+  {
+    name: 'Georgia Population Map',
+    url: 'https://gist.githubusercontent.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456/raw/214c8e5b047aa6443a2e18607a216f52e02cfe0b/keplergl.json',
+    description: 'Georgia Population Map',
+  },
 ];
 
 export const KEPLER_GL_VERSION: string = '1.1.13';

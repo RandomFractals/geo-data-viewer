@@ -6,7 +6,7 @@
 | [Chicago Green Roofs](https://github.com/classicmatsuo/keplerGL-chi-greenRoofs/blob/master/src/data/keplergl.json) | [@classicmatsuo/keplerGL-chi-greenRoofs](https://github.com/classicmatsuo/keplerGL-chi-greenRoofs) [@classicmatsuo/greenRoofsWConfig.json](https://gist.github.com/classicmatsuo/dbfdfc9759c6314b986c7e788ba7f07c) | [Green Roofs](https://data.cityofchicago.org/Environment-Sustainable-Development/Green-Roofs/q3z3-udcz) | Chicago green roofs for 2012 |
 | [Top Expat Desitinations](https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json) | [@JesperDramsch/expat_keplergl.json.json](https://gist.github.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f) | ??? | Top expat destinations ranked by country for 2014 through 2017 |
 | [Top Expat Desitinations Over Time](https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations-time.map.json) | [@JesperDramsch/expat_keplergl_time.json](https://gist.github.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f#file-expat_keplergl_time-json) | ??? | Top expat destinations over time ranked by country for 2014 through 2017 |
-
+| [Georgia Population Map](https://gist.githubusercontent.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456/raw/214c8e5b047aa6443a2e18607a216f52e02cfe0b/keplergl.json) | [@bumbeishvili/keplergl.json](https://gist.github.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456) | ??? | Georgia Population Map |
 
 See other kepler.gl maps created by the uber-web dev team:
 
