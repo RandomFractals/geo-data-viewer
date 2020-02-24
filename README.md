@@ -44,7 +44,7 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 ![Geo Data Viewer Map Gallery Quick Pick List](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery-quick-pick-list.png?raw=true 
  "Geo Data Viewer Map Gallery Quick Pick List")
 
-**Note:** if you'd like to see your public [keplerg.gl](https://kepler.gl/) map config featured in our maps gallery, please post a link to your [kepler.gl](https://kepler.gl/) maps 🗺️ data & config github repo || gist in ticket [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
+**Note:** if you'd like to see your public [keplerg.gl](https://kepler.gl/) map config featured in our maps gallery, please send us a PR with links to your [kepler.gl](https://kepler.gl/) maps 🗺️ data & config github repo || gist in the [/data/README.md](https://github.com/RandomFractals/geo-data-viewer/tree/master/data) map list.
 
 # Installation
 
