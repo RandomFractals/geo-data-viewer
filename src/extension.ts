@@ -137,14 +137,18 @@ async function createMapGalleryCommand(): Promise<void> {
   config.mapList.forEach(map => mapQuickPickItems.push({
 		label: `$(preview) ${map.name}`,
 		description: map.description,
-		detail: map.url.replace('https://raw.githubusercontent.com/', '@')
+		detail: map.url.replace('https://raw.githubusercontent.com/', 'github@')
+			.replace('https://gist.githubusercontent.com/', 'gist@')
 	}));
 	const selectedMap: QuickPickItem | undefined = 
 		await window.showQuickPick(mapQuickPickItems, {canPickMany: false});
 	if (selectedMap) {
 		const mapUrl: string | undefined = selectedMap.detail;
 		if (mapUrl) {
-			const mapUri: Uri = Uri.parse(mapUrl.replace('@', 'https://raw.githubusercontent.com/'));
+			const mapUri: Uri = Uri.parse(
+				mapUrl.replace('github@', 'https://raw.githubusercontent.com/')
+				.replace('gist@', 'https://gist.githubusercontent.com/')
+					);
 			// launch new remote map view
 			commands.executeCommand('map.view', mapUri);	
 		}
