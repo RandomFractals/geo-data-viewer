@@ -359,7 +359,12 @@ export class MapView {
             this._mapData = data['datasets'];
             this._mapConfig = data['config'];
           }
-          else {
+          else if (data['type'] === 'FeatureCollection') {
+            // must be geojson saved as plain .json file
+            this._mapData = this._content;
+            // reset file extension
+            this._fileExtension = '.geojson';
+          } else {
             // assume map config
             this._mapConfig = data;
           }
