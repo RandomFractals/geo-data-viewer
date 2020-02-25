@@ -158,12 +158,12 @@
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.1",
-    "@types/node": "^13.7.2",
+    "@types/node": "^13.7.5",
     "@types/superagent": "^4.1.7",
     "@types/vscode": "^1.42.0",
     "glob": "^7.1.6",
     "mocha": "^7.0.1",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.2",
     "tslint": "^6.0.0",
     "vscode-test": "^1.3.0"
   },
