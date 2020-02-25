@@ -3,7 +3,7 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
-## v1.2.0 - Map gallery update release (2020-02-25)
+## v1.1.1 - Map gallery enhancements release (2020-02-24)
 
 - [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
 Add more public kepler.gl map examples to map gallery
