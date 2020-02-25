@@ -11,3 +11,11 @@
 See other kepler.gl maps created by the uber-web dev team:
 
 https://github.com/uber-web/kepler.gl-data
+
+# Contributors
+
+List of [kepler.gl](kepler.gl) enthusiasts who made their map configs public for us to craft this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
+
+| [<img src="https://avatars2.githubusercontent.com/u/13067641?s=460&v=4" width="80">](https://github.com/classicmatsuo) | [<img src="https://avatars0.githubusercontent.com/u/2620316?s=460&v=4" width="80">](https://github.com/JesperDramsch) | [<img src="https://avatars1.githubusercontent.com/u/6873202?s=400&v=4" width="80">](https://github.com/bumbeishvili) |
+|:-:|:-:|:-:|
+| [classicmatsuo](https://github.com/classicmatsuo) | [Jesper Dramsch](https://github.com/JesperDramsch) | [David Bumbeishvili](https://github.com/bumbeishvili) |
