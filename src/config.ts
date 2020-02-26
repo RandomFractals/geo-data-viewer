@@ -31,6 +31,11 @@ export const mapList: Array<any> = [
     description: 'Chicago green roofs sustainable development for 2012',
   },
   {
+    name: 'Chicago Traffic Crashes',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/chicago-traffic-crashes.map.json',
+    description: 'Chicago traffic crashes for 2016 through 2019',
+  },
+  {
     name: 'Top Expat Desitinations',
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json',
     description: 'Top expat destinations ranked by country for 2014 through 2017',
