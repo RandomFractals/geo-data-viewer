@@ -342,11 +342,11 @@ export class MapView {
       // load map data
       switch (this._fileExtension) {
         case '.csv':
-        case '.geojson':
-        case '.topojson':
-          // just pass through raw csv and geojson data to webview
+          // just pass through raw csv string content
           this._mapData = this._content;
           break;
+        case '.geojson':
+        case '.topojson':
         case '.json':
           // parse json data content
           const data = JSON.parse(this._content);
@@ -361,7 +361,7 @@ export class MapView {
           }
           else if (data['type'] === 'FeatureCollection') {
             // must be geojson saved as plain .json file
-            this._mapData = this._content;
+            this._mapData = data;
             // reset file extension
             this._fileExtension = '.geojson';
           } else {
