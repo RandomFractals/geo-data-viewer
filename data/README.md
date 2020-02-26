@@ -7,6 +7,7 @@
 | [Top Expat Desitinations](https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations.map.json) | [@JesperDramsch/expat_keplergl.json.json](https://gist.github.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f) | ??? | Top expat destinations ranked by country for 2014 through 2017 |
 | [Top Expat Desitinations Over Time](https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/top-expat-destinations-time.map.json) | [@JesperDramsch/expat_keplergl_time.json](https://gist.github.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f#file-expat_keplergl_time-json) | ??? | Top expat destinations over time ranked by country for 2014 through 2017 |
 | [Georgia Population Map](https://gist.githubusercontent.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456/raw/214c8e5b047aa6443a2e18607a216f52e02cfe0b/keplergl.json) | [@bumbeishvili/keplergl.json](https://gist.github.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456) | ??? | Georgia Population Map |
+| [USA Airports](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/csv/usa-airports.map.json) | [@RandomFractals/usa-airports.map.json](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/csv/usa-airports.map.json) | [USA Ariports](https://github.com/vega/vega-datasets/blob/master/data/airports.csv) | USA Airports |
 
 See other kepler.gl maps created by the uber-web dev team:
 
