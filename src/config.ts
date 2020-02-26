@@ -45,6 +45,11 @@ export const mapList: Array<any> = [
     url: 'https://gist.githubusercontent.com/bumbeishvili/fac2b30e3be09259a9b27d8c139b1456/raw/214c8e5b047aa6443a2e18607a216f52e02cfe0b/keplergl.json',
     description: 'Georgia Population Map',
   },
+  {
+    name: 'USA Airports',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/csv/usa-airports.map.json',
+    description: 'USA Airports',
+  },
 ];
 
 export const KEPLER_GL_VERSION: string = '1.1.13';
