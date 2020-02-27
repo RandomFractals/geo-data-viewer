@@ -3,7 +3,7 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
-## v1.2.0 - Geojson & CSV data loading enhancements release (2020-02-27)
+## v1.2.0 - keplerGL v2.0.0 & GeoJSON & CSV data loading enhancements (2020-02-27)
 
 - [#52](https://github.com/RandomFractals/geo-data-viewer/issues/52)
 Refine geojson detection and map data loading
@@ -21,7 +21,7 @@ Center map on data load and use blank config for geojson and csv data loads
 Update changelog for v1.2.0 release
 
 
-## v1.1.1 - Map gallery enhancements release (2020-02-24)
+## v1.1.1 - Map gallery enhancements (2020-02-24)
 
 - [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
 Add more public kepler.gl map examples to map gallery
@@ -32,7 +32,7 @@ Shorten map source link in map gallery quick list dipslay
 - [#51](https://github.com/RandomFractals/geo-data-viewer/issues/51)
 Update changelog for v1.1.1 release
 
-## v1.1.0 - Docs update release (2020-02-15)
+## v1.1.0 - Docs update (2020-02-15)
 
 - [#42](https://github.com/RandomFractals/geo-data-viewer/issues/42)
 Add installation section to docs
@@ -51,7 +51,7 @@ Update changelog for v1.1.0 docs update release
 - [#49](https://github.com/RandomFractals/geo-data-viewer/issues/49)
 Add proper ext. description to package.json for this geo data tool
 
-## v1.0.0 - MVP release (2020-02-14)
+## v1.0.0 - MVP (2020-02-14)
 
 - [#1](https://github.com/RandomFractals/geo-data-viewer/issues/1)
 Add brief geo-data-viewer extension features outline to docs
