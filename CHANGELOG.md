@@ -9,6 +9,8 @@ for the brief versions information and feature details with screen pics for this
 Refine geojson detection and map data loading
 - [#53](https://github.com/RandomFractals/geo-data-viewer/issues/53)
 Add more prominent contributors section to [/data doc](https://github.com/RandomFractals/geo-data-viewer/tree/master/data#contributors)
+- [#54](https://github.com/RandomFractals/geo-data-viewer/issues/54)
+Add gistpad.viewers contribs to package.json
 - [#55](https://github.com/RandomFractals/geo-data-viewer/issues/55)
 Update kepler.gl umd js library to their latest [v2.0.0](https://github.com/keplergl/kepler.gl/releases)
 - [#56](https://github.com/RandomFractals/geo-data-viewer/issues/56)
