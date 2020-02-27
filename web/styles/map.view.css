@@ -78,7 +78,7 @@ select {
   background-color: var(--vscode-editor-background);
 }
 
-/* kepler.gl map styles */
+/* kepler.gl map styles override */
 .side-panel--container {
   padding: 0px !important;
 }
@@ -87,6 +87,9 @@ select {
   right: 4px !important;
 }
 .side-panel__panel-header {
+  height: 38px !important;
+}
+.side-panel__panel-header__action {
   display: none !important;
 }
 .side-panel__content__title {

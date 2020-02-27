@@ -17,6 +17,8 @@ Add USA airports keplergl map config to gallery, /data and docs
 Add Chicago traffic crashes map config and data info to map gallery and /data docs
 - [#58](https://github.com/RandomFractals/geo-data-viewer/issues/58)
 Center map on data load and use blank config for geojson and csv data loads
+- [#59](https://github.com/RandomFractals/geo-data-viewer/issues/59)
+Add keplergl toggle panel logo header back
 - [#60](https://github.com/RandomFractals/geo-data-viewer/issues/60)
 Update changelog for v1.2.0 release
 
