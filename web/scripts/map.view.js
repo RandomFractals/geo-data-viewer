@@ -166,7 +166,7 @@ function view(mapConfig, mapData, dataType) {
 function initializeMap(keplerGl, store, config, data, dataType) {
   console.log(`initializeMap: loading ${dataType} data ...`);
   let dataSets = {};
-  let dataConfig = config;
+  let dataConfig;
   let tagData = false;
   switch (dataType) {
     case '.csv':
@@ -197,6 +197,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
         id: dataFileName
       }
     }
+    console.log(JSON.stringify(dataSets));
   }
   
   // load map data
@@ -204,7 +205,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
     datasets: dataSets,
     config: dataConfig,
     options: {
-      centerMap: false
+      centerMap: true
     }
   }));
 }
