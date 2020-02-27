@@ -3,6 +3,22 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.2.0 - Geojson & CSV data loading enhancements release (2020-02-27)
+
+- [#52](https://github.com/RandomFractals/geo-data-viewer/issues/52)
+Refine geojson detection and map data loading
+- [#53](https://github.com/RandomFractals/geo-data-viewer/issues/53)
+Add more prominent contributors section to [/data doc](https://github.com/RandomFractals/geo-data-viewer/tree/master/data#contributors)
+- [#56](https://github.com/RandomFractals/geo-data-viewer/issues/56)
+Add USA airports keplergl map config to gallery, /data and docs
+- [#57](https://github.com/RandomFractals/geo-data-viewer/issues/57)
+Add Chicago traffic crashes map config and data info to map gallery and /data docs
+- [#58](https://github.com/RandomFractals/geo-data-viewer/issues/58)
+Center map on data load and use blank config for geojson and csv data loads
+- [#60](https://github.com/RandomFractals/geo-data-viewer/issues/60)
+Update changelog for v1.2.0 release
+
+
 ## v1.1.1 - Map gallery enhancements release (2020-02-24)
 
 - [#39](https://github.com/RandomFractals/geo-data-viewer/issues/39)
@@ -11,6 +27,8 @@ Add more public kepler.gl map examples to map gallery
 Add map data sources doc
 - [#50](https://github.com/RandomFractals/geo-data-viewer/issues/50)
 Shorten map source link in map gallery quick list dipslay
+- [#51](https://github.com/RandomFractals/geo-data-viewer/issues/51)
+Update changelog for v1.1.1 release
 
 ## v1.1.0 - Docs update release (2020-02-15)
 
