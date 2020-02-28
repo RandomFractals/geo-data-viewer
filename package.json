@@ -26,8 +26,9 @@
     "deckGL",
     "mapbox",
     "geojson",
-    "gis",
-    "gisPad 📘",
+    "topojson",
+    "GIS",
+    "GISPad 📘",
     "map gist",
     "preview",
     "dataViz",
@@ -156,7 +157,9 @@
           ".kgl.json",
           "keplergl.json",
           "keplergl_time.json",
-          ".map.json"
+          ".map.json",
+          ".topo.json",
+          ".topojson"
         ],
         "command": "map.view"
       }
