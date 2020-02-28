@@ -197,7 +197,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
         id: dataFileName
       }
     }
-    console.log(JSON.stringify(dataSets));
+    // console.log(JSON.stringify(dataSets));
   }
   
   // load map data
