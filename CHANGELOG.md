@@ -3,6 +3,13 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.3.0 - topoJSON support (2020-02-28)
+
+- [#61](https://github.com/RandomFractals/geo-data-viewer/issues/63)
+Add topoJSON map view
+- [#63](https://github.com/RandomFractals/geo-data-viewer/issues/63)
+Add USA counties topoJSON example to map gallery and /data docs
+
 ## v1.2.0 - keplerGL v2.0.0 & GeoJSON & CSV data loading enhancements (2020-02-27)
 
 - [#52](https://github.com/RandomFractals/geo-data-viewer/issues/52)
