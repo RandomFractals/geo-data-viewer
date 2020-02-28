@@ -175,8 +175,8 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       break;
     case '.topo.json':
     case '.topojson':
-      // convert topology to geojson
-      const geoData = topojson.feature(data, 'data');
+      // convert topology to geojson feature collection
+      const geoData = topojson.feature(data, Object.keys(data.objects)[0]);
       // console.log(JSON.stringify(geoData));
       // convert geojson data to keplergl geo data
       data = KeplerGl.processGeojson(geoData);
