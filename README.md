@@ -9,26 +9,26 @@
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 
-🗺️ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl) to gen. some snazzy 🗺️s  w/0 `Py` 🐍 || `pyWidgets` || `pandas` 🐼 || `@reactjs` ⚛️ required ...
+🗺️ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl) to gen. some snazzy 🗺️s  w/0 `Py` 🐍 || `pyWidgets` ⚙️ || `pandas` 🐼 || `@reactjs` ⚛️ required ...
 
 ![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
  "Geo Data Viewer")
 
 # Features
 
-- Map View 🗺️ for [GeoJSON](https://geojson.org/), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) and CSV geo data files
+- Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) and CSV geo data files
 - [Map Gallery](https://github.com/RandomFractals/geo-data-viewer#map-gallery) with public [kepler.gl](https://kepler.gl/) map configs to try
-- Save map 🗺️ in standalone html format to share with others, or email :)
+- Save map 🗺️ in standalone html format to share with others via Slack or email :)
 - Save [kepler.gl JSON data and map config](https://github.com/RandomFractals/geo-data-viewer#supported-file-formats) for loading online via [kepler.gl demo app](https://kepler.gl/demo) or in this geo data tool
-- Load map config from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gists](https://gist.github.com/search?l=JSON&q=keplergl)
+- Load map config or geo data from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json), github or [gists](https://gist.github.com/search?l=JSON&q=keplergl)
 - View map from ⭐️ Starred Gists in [GistPad 📘](https://github.com/vsls-contrib/gistpad)
 - View CSV and JSON data with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid and charts 📊
 
 # Usage 
 
 - Run `Geo: View Map` (`ctrl/cmd + alt + m`) command on an open geo data document to view 🗺️
-- Use `Geo: View Map from Url` (`ctrl/cmd + alt + u`) command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json) or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
-- Run `Geo: Map Gallery` (`ctrl/cmd + alt + g`) command to view a list of public keplergl map configs 🗺️
+- Use `Geo: View Map from Url` (`ctrl/cmd + alt + u`) command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json), github or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
+- Run `Geo: Map Gallery` (`ctrl/cmd + alt + g`) command to view a list of built-in public keplergl map configs 🗺️
 
 ![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true 
  "Geo Data Viewer Gist")
