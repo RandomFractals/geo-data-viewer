@@ -360,11 +360,18 @@ export class MapView {
             this._mapConfig = data['config'];
           }
           else if (data['type'] === 'FeatureCollection') {
-            // must be geojson saved as plain .json file
+            // must be geojson
             this._mapData = data;
             // reset file extension
             this._fileExtension = '.geojson';
-          } else {
+          }
+          else if (data['type'] === 'Topology') {
+              // must be topojson
+              this._mapData = data;
+              // reset file extension
+              this._fileExtension = '.topojson';
+          } 
+          else {
             // assume map config
             this._mapConfig = data;
           }
