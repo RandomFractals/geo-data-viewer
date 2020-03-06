@@ -3,6 +3,19 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.4.0 - KML and GPX support (2020-03-06)
+
+- [#65](https://github.com/RandomFractals/geo-data-viewer/issues/65)
+Add KML map view support
+- [#66](https://github.com/RandomFractals/geo-data-viewer/issues/66)
+Move topojson to geojson data conversion to map webview ts
+- [#68](https://github.com/RandomFractals/geo-data-viewer/issues/68)
+Add GPX geo data format support
+- [#69](https://github.com/RandomFractals/geo-data-viewer/issues/69)
+Add GPX example to /data docs and map gallery
+- [#70](https://github.com/RandomFractals/geo-data-viewer/issues/70)
+Update changelog for v1.4.0 release
+
 ## v1.3.0 - topoJSON support (2020-02-28)
 
 - [#61](https://github.com/RandomFractals/geo-data-viewer/issues/61)
