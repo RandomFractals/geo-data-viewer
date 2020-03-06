@@ -2,7 +2,7 @@
   "name": "geo-data-viewer",
   "displayName": "Geo Data Viewer",
   "description": "🗺️ Geo Data Viewer w/0 Py 🐍 || pyWidgets || pandas 🐼 ||  @reactjs  ⚛️ required to gen. some snazzy maps 🗺️ with keplerGL ...",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "icon": "images/map.png",
   "publisher": "RandomFractalsInc",
   "author": "Taras Novak a.k.a. dataPixy devTools maker :)",
