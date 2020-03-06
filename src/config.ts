@@ -62,6 +62,11 @@ export const mapList: Array<any> = [
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/topojson/usa-albers-counties.topo.json',
     description: 'USA Counties',
   },
+  {
+    name: 'Blue Hills Hiking',
+    url: 'https://raw.githubusercontent.com/mapbox/togeojson/master/test/data/blue_hills.gpx',
+    description: 'Blue Hills Hiking',
+  },
 ];
 
 export const KEPLER_GL_VERSION: string = '1.1.13';
