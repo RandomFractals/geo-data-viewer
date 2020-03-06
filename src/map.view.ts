@@ -14,7 +14,9 @@ import {
 } from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
+import * as xmldom from 'xmldom';
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
 import {Logger, LogLevel} from './logger';
@@ -346,9 +348,15 @@ export class MapView {
           // just pass through raw csv string content
           this._mapData = this._content;
           break;
+        case '.kml':
+          // parse kml
+          const kml = new xmldom.DOMParser().parseFromString(this._content);
+          // convert it to geojson
+          this._mapData = togeojson.kml(kml, {styles: true});
+          break;
         case '.geojson':
-        case '.topojson':
         case '.json':
+        case '.topojson':
           // parse json data content
           const data = JSON.parse(this._content);
           if (Array.isArray(data)) {
