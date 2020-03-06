@@ -22,6 +22,8 @@
     "geo data viewer",
     "transform geo data",
     "map view 🗺️",
+    "kgl",
+    "kml",
     "keplerGL",
     "deckGL",
     "mapbox",
@@ -54,7 +56,8 @@
     "onLanguage:json",
     "onLanguage:geojson",
     "onLanguage:topojson",
-    "onLanguage:kgl"
+    "onLanguage:kgl",
+    "onLanguage:kml"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -83,6 +86,15 @@
           "Topology JSON"
         ],
         "configuration": "./json-language-configuration.json"
+      },
+      {
+        "id": "kml",
+        "extensions": [
+          ".kml"
+        ],
+        "aliases": [
+          "KML"
+        ]
       }
     ],
     "jsonValidation": [
@@ -130,21 +142,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|topojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|kml|topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*(.geo.json|.geojson|.kgl.json|keplergl.json|keplergl_time.json|.map.json|.topo.json|.topojson)/",
+          "when": "resourceFilename =~ /.*(.geo.json|.geojson|.kgl.json|keplergl.json|keplergl_time.json|.kml|.map.json|.topo.json|.topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|topojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|json|geojson|kgl|kml|topojson)/",
           "group": "navigation"
         }
       ]
@@ -157,6 +169,7 @@
           ".kgl.json",
           "keplergl.json",
           "keplergl_time.json",
+          ".kml",
           ".map.json",
           ".topo.json",
           ".topojson"
