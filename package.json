@@ -190,6 +190,7 @@
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.7.7",
     "@types/superagent": "^4.1.7",
+    "@types/topojson-client": "3.0.0",
     "@types/vscode": "^1.42.0",
     "glob": "^7.1.6",
     "mocha": "^7.1.0",

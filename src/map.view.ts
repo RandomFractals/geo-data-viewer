@@ -14,6 +14,7 @@ import {
 } from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as topojson from 'topojson-client';
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
 import {Logger, LogLevel} from './logger';
@@ -366,10 +367,12 @@ export class MapView {
             this._fileExtension = '.geojson';
           }
           else if (data['type'] === 'Topology') {
-              // must be topojson
-              this._mapData = data;
-              // reset file extension
-              this._fileExtension = '.topojson';
+            // convert topology to geojson feature collection
+            const geoOjbects: any = Object.keys(data.objects)[0];
+            const geoData = topojson.feature(data, geoOjbects);
+            this._mapData = geoData;
+            // reset file extension
+            this._fileExtension = '.topojson';
           } 
           else {
             // assume map config
