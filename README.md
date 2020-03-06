@@ -16,7 +16,7 @@
 
 # Features
 
-- Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml) and CSV geo data files
+- Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp) and CSV geo data files
 - [Map Gallery](https://github.com/RandomFractals/geo-data-viewer#map-gallery) with public [kepler.gl](https://kepler.gl/) map configs to try
 - Save map 🗺️ in standalone html format to share with others via Slack or email :)
 - Save [kepler.gl JSON data and map config](https://github.com/RandomFractals/geo-data-viewer#supported-file-formats) for loading online via [kepler.gl demo app](https://kepler.gl/demo) or in this geo data tool
