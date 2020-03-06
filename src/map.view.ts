@@ -348,6 +348,12 @@ export class MapView {
           // just pass through raw csv string content
           this._mapData = this._content;
           break;
+        case '.gpx':
+          // parse gpx
+          const gpx = new xmldom.DOMParser().parseFromString(this._content);
+          // convert it to geojson
+          this._mapData = togeojson.gpx(gpx, {styles: true});
+          break;  
         case '.kml':
           // parse kml
           const kml = new xmldom.DOMParser().parseFromString(this._content);

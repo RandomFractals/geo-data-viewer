@@ -175,6 +175,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       break;
     case 'geo.json':
     case '.geojson':
+    case '.gpx':
     case '.kml':
     case '.topo.json':
     case '.topojson':    
