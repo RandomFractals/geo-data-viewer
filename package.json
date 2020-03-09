@@ -213,6 +213,7 @@
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
+    "shapefile": "^0.6.6",
     "superagent": "^5.2.2",
     "topojson-client": "3.1.0",
     "xmldom": "^0.3.0"
