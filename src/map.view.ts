@@ -14,6 +14,7 @@ import {
 } from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as shapefile from 'shapefile';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
 import * as xmldom from 'xmldom';
@@ -347,18 +348,28 @@ export class MapView {
         case '.csv':
           // just pass through raw csv string content
           this._mapData = this._content;
+          this.refreshMapView();
           break;
         case '.gpx':
           // parse gpx
           const gpx = new xmldom.DOMParser().parseFromString(this._content);
           // convert it to geojson
           this._mapData = togeojson.gpx(gpx, {styles: true});
+          this.refreshMapView();
           break;  
         case '.kml':
           // parse kml
           const kml = new xmldom.DOMParser().parseFromString(this._content);
           // convert it to geojson
           this._mapData = togeojson.kml(kml, {styles: true});
+          this.refreshMapView();
+          break;
+        case '.shp': 
+          // read shapefile geo data
+          shapefile.read(this._url).then((result: any) => {
+            this._mapData = result.value.geometry;
+            this.refreshMapView();
+          });
           break;
         case '.geojson':
         case '.json':
@@ -392,24 +403,30 @@ export class MapView {
             // assume map config
             this._mapConfig = data;
           }
+          this.refreshMapView();
           break;
       }
-
-      // update map view
-      this.webview.postMessage({
-        command: 'refresh',
-        fileName: this._fileName,
-        uri: this._uri.toString(),
-        mapConfig: this._mapConfig,
-        mapData: this._mapData,
-        dataType: this._fileExtension
-      });
     }
     catch (error) {
       this._logger.debug('refresh():', error.message);
       this.webview.postMessage({error: error});
     }
   } // end of refreshView()
+
+  /**
+   * Refreshes map view with loaded geo data.
+   */
+  private refreshMapView() {
+    // update map view
+    this.webview.postMessage({
+      command: 'refresh',
+      fileName: this._fileName,
+      uri: this._uri.toString(),
+      mapConfig: this._mapConfig,
+      mapData: this._mapData,
+      dataType: this._fileExtension
+    });
+  }
 
    /**
    * Logs data stats and optional data schema or metadata for debug 
