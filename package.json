@@ -200,7 +200,7 @@
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^13.7.7",
+    "@types/node": "^13.9.0",
     "@types/superagent": "^4.1.7",
     "@types/topojson-client": "3.0.0",
     "@types/vscode": "^1.42.0",
