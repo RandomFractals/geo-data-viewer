@@ -14,7 +14,7 @@ import {
 } from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as shapefile from 'shapefile';
+import * as shapefile from 'shpjs';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
 import * as xmldom from 'xmldom';
@@ -323,12 +323,15 @@ export class MapView {
   public async refresh(): Promise<void> {
     // reveal corresponding map view panel
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
+
+    // determine data file encoding
+    const dataEncoding: string = (this._fileExtension.endsWith('.shp')) ? null: 'utf8'; // default
     if (this._url.startsWith('https://')) {
       // load remote keplergl map data and config file
-      this._content = String(await fileUtils.readDataFile(this._url, 'utf8'));
+      this._content = String(await fileUtils.readDataFile(this._url, dataEncoding));
       this.refreshView();
     }
-    else { 
+    else if (!this._fileExtension.endsWith('.shp')) { 
       // open map view data text document
       workspace.openTextDocument(this.uri).then(document => {
         this._logger.debug('refresh(): file:', this._fileName);
@@ -336,12 +339,15 @@ export class MapView {
         this.refreshView();
       });
     }
+    else { // load shapefiles
+      this.refreshView();
+    }
   }
 
   /**
    * Sends updated map config and data to map webview.
    */
-  public refreshView() {
+  public async refreshView() {
     try {
       // load map data
       switch (this._fileExtension) {
@@ -365,11 +371,19 @@ export class MapView {
           this.refreshMapView();
           break;
         case '.shp': 
-          // read shapefile geo data
-          shapefile.read(this._url).then((result: any) => {
-            this._mapData = result.value.geometry;
+          // read shapefiles
+          const shapefileData = await fileUtils.readDataFile(this._uri.fsPath, null);
+          const prjData = 
+            await fileUtils.readDataFile(this._uri.fsPath.replace('.shp', '.prj'), null);
+          const dbfData = 
+            await fileUtils.readDataFile(this._uri.fsPath.replace('.shp', '.dbf'), null);
+            this._mapData = shapefile.combine([
+              shapefile.parseShp(shapefileData),
+              prjData,
+              shapefile.parseDbf(dbfData)
+            ]);
+            this._logger.logMessage(LogLevel.Info, 'geo data:', this._mapData);
             this.refreshMapView();
-          });
           break;
         case '.geojson':
         case '.json':
