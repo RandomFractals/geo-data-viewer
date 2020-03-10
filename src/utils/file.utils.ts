@@ -22,7 +22,7 @@ export async function readDataFile(dataFilePath: string, encoding:string = 'utf8
   const isRemoteData: boolean = isRemoteDataUrl(dataFilePath);
   logger.debug('readDataFile():', dataFilePath);
   if (!isRemoteData && !config.supportedDataFiles.test(fileName)) {
-    window.showErrorMessage(`${dataFilePath} is not a supported data file for Data Preview!`);
+    window.showErrorMessage(`${dataFilePath} is not a supported data file for Geo Data Viewer!`);
   }
   else if (isRemoteData) {
     data = await readRemoteData(dataFilePath, encoding);

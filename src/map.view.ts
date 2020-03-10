@@ -71,7 +71,7 @@ export class MapView {
   protected _disposables: Disposable[] = [];
   private _extensionPath: string;
   private _uri: Uri;
-  private _url: string;  
+  private _url: string;
   private _fileName: string;
   private _fileExtension: string;
   private _fileSize: number = 0;
@@ -109,6 +109,11 @@ export class MapView {
     this._url = uri.toString(true);
     this._fileName = path.basename(uri.fsPath);
     this._fileExtension = path.extname(this._fileName);
+    // check for remote geo data load
+    if (this._url.startsWith('http://') || this._url.startsWith('https:')) {
+      this._isRemoteData = true;
+    }
+    // adjust for keplergl demo app url input ...
     if (this._url.startsWith('https://kepler.gl/demo?mapUrl=')) {
       // init map view uri from kepler.gl demo map config url query string
       this._url = this._url.replace('https://kepler.gl/demo?mapUrl=', '');
@@ -326,12 +331,12 @@ export class MapView {
 
     // determine data file encoding
     const dataEncoding: string = (this._fileExtension.endsWith('.shp')) ? null: 'utf8'; // default
-    if (this._url.startsWith('https://')) {
-      // load remote keplergl map data and config file
+    if (this._url.startsWith('https://') && dataEncoding === 'utf8') {
+      // load remote text geo data file
       this._content = String(await fileUtils.readDataFile(this._url, dataEncoding));
       this.refreshView();
     }
-    else if (!this._fileExtension.endsWith('.shp')) { 
+    else if (dataEncoding === 'utf8') { 
       // open map view data text document
       workspace.openTextDocument(this.uri).then(document => {
         this._logger.debug('refresh(): file:', this._fileName);
@@ -339,7 +344,8 @@ export class MapView {
         this.refreshView();
       });
     }
-    else { // load shapefiles
+    else { 
+      // delegate to refresh view for loading binary shapefiles
       this.refreshView();
     }
   }
@@ -372,17 +378,18 @@ export class MapView {
           break;
         case '.shp': 
           // read shapefiles
-          const shapefileData = await fileUtils.readDataFile(this._uri.fsPath, null);
+          // todo: move this to new data manager and geo data providers api
+          const dataUrl: string = (this._isRemoteData) ? this._url: this._uri.fsPath; // local data file path
+          const shapefileData = await fileUtils.readDataFile(dataUrl, null);
           const prjData = 
-            await fileUtils.readDataFile(this._uri.fsPath.replace('.shp', '.prj'), null);
+            await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), null);
           const dbfData = 
-            await fileUtils.readDataFile(this._uri.fsPath.replace('.shp', '.dbf'), null);
-            this._mapData = shapefile.combine([
+            await fileUtils.readDataFile(dataUrl.replace('.shp', '.dbf'), null);
+          this._mapData = shapefile.combine([
               shapefile.parseShp(shapefileData),
               prjData,
               shapefile.parseDbf(dbfData)
             ]);
-            this._logger.logMessage(LogLevel.Info, 'geo data:', this._mapData);
             this.refreshMapView();
           break;
         case '.geojson':
