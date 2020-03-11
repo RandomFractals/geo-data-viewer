@@ -13,6 +13,8 @@
 | [Blue Hills Hiking](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | [@mapbox/togeojson/blue_hills.gpx](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | [Blue Hills Hiking](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | Blue Hills Hiking |
 | [World 🌐 Cities](https://github.com/RandomFractals/geo-data-viewer/tree/master/data/shapefiles) | [@RandomFractals/World_Cities.shp](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/shapefiles/World_Cities.shp) | [World 🌐 Cities](https://hub.arcgis.com/datasets/6996f03a1b364dbab4008d99380370ed_0) | World 🌐 Cities |
 | [Major World Rivers](https://github.com/RandomFractals/geo-data-viewer/tree/master/data/shapefiles) | [@RandomFractals/MajorRivers.shp](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/shapefiles/MajorRivers.shp) | [Major World Rivers](https://datacatalog.worldbank.org/dataset/major-rivers-world) | Major World Rivers |
+| [World Lakes](https://github.com/RandomFractals/geo-data-viewer/tree/master/data/shapefiles) | [@RandomFractals/ne_10m_lakes.shp](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/shapefiles/ne_10m_lakes.shp) | [World Lakes](https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-lakes) | World Lakes |
+
 
 See other kepler.gl maps created by the uber-web dev team:
 
