@@ -1,6 +1,6 @@
 ## Collection of built-in [Map Gallery](https://github.com/RandomFractals/geo-data-viewer#map-gallery) keplerGL map configs
 
-| Map | Repository / Gist / Notebook | Data Source | Description |
+| Map | Repository / Gist / Notebook / Geo Data File | Data Source | Description |
 | ------- | ---- | ------------- | ----------- |
 | [Chicago Bike Routes](https://github.com/classicmatsuo/keplerGL-bikeRoute/blob/master/src/data/bikeRouteWConfig.json) | [@classicmatsuo/keplerGL-bikeRoute](https://github.com/classicmatsuo/keplerGL-bikeRoute) [@classicmatsuo/bikeRouteWConfig.json](https://gist.github.com/classicmatsuo/81891000d271101e66904ed7fc35f10e) | [Bike Routes](https://data.cityofchicago.org/Transportation/Bike-Routes/3w5d-sru8) | Bike routes in Chicago |
 | [Chicago Green Roofs](https://github.com/classicmatsuo/keplerGL-chi-greenRoofs/blob/master/src/data/keplergl.json) | [@classicmatsuo/keplerGL-chi-greenRoofs](https://github.com/classicmatsuo/keplerGL-chi-greenRoofs) [@classicmatsuo/greenRoofsWConfig.json](https://gist.github.com/classicmatsuo/dbfdfc9759c6314b986c7e788ba7f07c) | [Green Roofs](https://data.cityofchicago.org/Environment-Sustainable-Development/Green-Roofs/q3z3-udcz) | Chicago green roofs for 2012 |
@@ -11,6 +11,7 @@
 | [USA Airports](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/csv/usa-airports.map.json) | [@RandomFractals/usa-airports.map.json](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/csv/usa-airports.map.json) | [USA Ariports](https://github.com/vega/vega-datasets/blob/master/data/airports.csv) | USA Airports |
 | [USA Counties](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/topojson/usa-albers-counties.topo.json) | [@RandomFractals/usa-albers-counties.topo.json](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/topojson/usa-albers-counties.topo.json) | [USA Counties](https://github.com/deldersveld/topojson/blob/master/countries/united-states/us-albers-counties.json) | USA Counties |
 | [Blue Hills Hiking](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | [@mapbox/togeojson/blue_hills.gpx](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | [Blue Hills Hiking](https://github.com/mapbox/togeojson/blob/master/test/data/blue_hills.gpx) | Blue Hills Hiking |
+| [World 🌐 Cities](https://github.com/RandomFractals/geo-data-viewer/tree/master/data/shapefiles) | [@RandomFractals/World_Cities.shp](https://github.com/RandomFractals/geo-data-viewer/blob/master/data/shapefiles/World_Cities.shp) | [World 🌐 Cities](https://hub.arcgis.com/datasets/6996f03a1b364dbab4008d99380370ed_0) | World 🌐 Cities |
 
 See other kepler.gl maps created by the uber-web dev team:
 
