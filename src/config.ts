@@ -72,7 +72,12 @@ export const mapList: Array<any> = [
     name: 'World Cities',
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/World_Cities.shp',
     description: 'World Cities',
-  }
+  },
+  {
+    name: 'Major World Rivers',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/MajorRivers.shp',
+    description: 'Major World Rivers',
+  }  
 ];
 
 export const KEPLER_GL_VERSION: string = '1.1.13';
