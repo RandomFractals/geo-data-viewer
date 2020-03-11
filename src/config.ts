@@ -68,6 +68,11 @@ export const mapList: Array<any> = [
     url: 'https://raw.githubusercontent.com/mapbox/togeojson/master/test/data/blue_hills.gpx',
     description: 'Blue Hills Hiking',
   },
+  {
+    name: 'World Cities',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/World_Cities.shp',
+    description: 'World Cities',
+  }
 ];
 
 export const KEPLER_GL_VERSION: string = '1.1.13';
