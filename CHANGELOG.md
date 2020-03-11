@@ -3,6 +3,11 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.5.0 - alpha shapefiles support (2020-03-10)
+
+- [#71](https://github.com/RandomFractals/geo-data-viewer/issues/71)
+Add shapefiles geo data format support
+
 ## v1.4.0 - KML and GPX support (2020-03-06)
 
 - [#65](https://github.com/RandomFractals/geo-data-viewer/issues/65)
