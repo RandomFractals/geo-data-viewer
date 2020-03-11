@@ -77,6 +77,11 @@ export const mapList: Array<any> = [
     name: 'Major World Rivers',
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/MajorRivers.shp',
     description: 'Major World Rivers',
+  },
+  {
+    name: 'World Lakes',
+    url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/ne_10m_lakes.shp',
+    description: 'World Lakes',
   }  
 ];
 
