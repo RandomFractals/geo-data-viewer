@@ -183,6 +183,17 @@
         }
       ]
     },
+    "configuration": {
+      "type": "object",
+      "title": "Geo Data Viewer",
+      "properties": {
+        "geo.data.viewer.create.geojson": {
+          "type": "boolean",
+          "default": true,
+          "description": "Create '.geojson' data files for topojson, kml, gpx and shapefiles"
+        }
+      }
+    },
     "gistpad.viewers": [
       {
         "filenames": [

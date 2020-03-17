@@ -571,4 +571,12 @@ export class MapView {
   get html(): string {
     return this._html;
   }
+
+  /**
+   * Create JSON data files config option for Arrow, Avro & Excel binary data formats.
+   */
+  get createGeoJson(): boolean {
+    return <boolean>workspace.getConfiguration('geo.data.viewer').get('create.geojson');
+  }
+
 }
