@@ -190,7 +190,7 @@
         "geo.data.viewer.create.geojson": {
           "type": "boolean",
           "default": true,
-          "description": "Create '.geojson' data files for topojson, kml, gpx and shapefiles"
+          "description": "Creates .geojson data file for topojson, kml, gpx and shapefiles"
         }
       }
     },
