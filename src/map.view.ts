@@ -222,7 +222,7 @@ export class MapView {
   private async openGeoDataFile() {
     // display open geo data file dialog
     let openFolderUri: Uri = Uri.parse(this._url).with({scheme: 'file'});
-    const workspaceFolders: Array<WorkspaceFolder> | undefined = workspace.workspaceFolders;
+    const workspaceFolders: readonly WorkspaceFolder[] | undefined = workspace.workspaceFolders;
     if (workspaceFolders && workspaceFolders.length >= 1) {
       // change open file folder uri to the 1st workspace folder, usuallay workspace root
       openFolderUri = workspaceFolders[0].uri;
@@ -479,7 +479,7 @@ export class MapView {
 
     // create full data file path for saving data
     let dataFilePath: string = path.dirname(this._uri.fsPath);
-    const workspaceFolders: Array<WorkspaceFolder> | undefined = workspace.workspaceFolders;
+    const workspaceFolders: readonly WorkspaceFolder[] | undefined = workspace.workspaceFolders;
     if (this._isRemoteData && workspaceFolders && workspaceFolders.length > 0) {
       // use 'rootPath' workspace folder for saving remote data file
       dataFilePath = workspaceFolders[0].uri.fsPath;
