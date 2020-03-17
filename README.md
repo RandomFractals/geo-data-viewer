@@ -60,7 +60,7 @@ List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vsco
 
 | Setting | Type | Default Value | Description |
 | ------- | ---- | ------------- | ----------- |
-| `geo.data.viewer.create.geojson` | boolean | true | Create `.geojson` data files for `topojson`, `kml`, `gpx` and `shapefiles` |
+| `geo.data.viewer.create.geojson` | boolean | true | Creates `.geojson` data file for `topojson`, `kml`, `gpx` and `shapefiles` on disk during the map view of those geo data formats for raw geojson source code view |
 
 # Recommended Extensions
 
