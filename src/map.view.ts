@@ -367,6 +367,7 @@ export class MapView {
           const gpx = new xmldom.DOMParser().parseFromString(this._content);
           // convert it to geojson
           this._mapData = togeojson.gpx(gpx, {styles: true});
+          this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
           break;  
         case '.kml':
@@ -374,6 +375,7 @@ export class MapView {
           const kml = new xmldom.DOMParser().parseFromString(this._content);
           // convert it to geojson
           this._mapData = togeojson.kml(kml, {styles: true});
+          this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
           break;
         case '.shp': 
@@ -390,6 +392,7 @@ export class MapView {
               prjData,
               shapefile.parseDbf(dbfData)
             ]);
+            this.createGeoJsonFile(this._mapData);
             this.refreshMapView();
           break;
         case '.geojson':
@@ -417,6 +420,7 @@ export class MapView {
             const geoOjbects: any = Object.keys(data.objects)[0];
             const geoData = topojson.feature(data, geoOjbects);
             this._mapData = geoData;
+            this.createGeoJsonFile(this._mapData);
             // reset file extension
             this._fileExtension = '.topojson';
           } 
@@ -433,6 +437,17 @@ export class MapView {
       this.webview.postMessage({error: error});
     }
   } // end of refreshView()
+
+  /**
+   * Creates geojson data file, if it doesn't exist.
+   * @param geoJsonData Geo json data object to save.
+   */
+  private createGeoJsonFile(geoJsonData: any) {
+    const geoJsonFilePath: string = this._uri.fsPath.replace(this._fileExtension, '.geojson');
+    if (!this._isRemoteData && this.createGeoJson && !fs.existsSync(geoJsonFilePath)) {
+      fileUtils.createJsonFile(geoJsonFilePath, geoJsonData);
+    }
+  }
 
   /**
    * Refreshes map view with loaded geo data.
@@ -573,7 +588,7 @@ export class MapView {
   }
 
   /**
-   * Create JSON data files config option for Arrow, Avro & Excel binary data formats.
+   * Create geojson data file when loading topojson, kml, gpx or shapefiles.
    */
   get createGeoJson(): boolean {
     return <boolean>workspace.getConfiguration('geo.data.viewer').get('create.geojson');
