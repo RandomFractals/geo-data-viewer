@@ -384,12 +384,11 @@ export class MapView {
           const dataUrl: string = (this._isRemoteData) ? this._url: this._uri.fsPath; // local data file path
           const shapefileData = await fileUtils.readDataFile(dataUrl, null);
           const prjData = 
-            await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), null);
+            await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), 'utf8');
           const dbfData = 
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.dbf'), null);
           this._mapData = shapefile.combine([
-              shapefile.parseShp(shapefileData),
-              prjData,
+              shapefile.parseShp(shapefileData, prjData),
               shapefile.parseDbf(dbfData)
             ]);
             this.createGeoJsonFile(this._mapData);
