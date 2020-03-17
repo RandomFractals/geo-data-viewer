@@ -3,6 +3,21 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.6.0 - alpha shapefiles support (2020-03-17)
+
+- [#75](https://github.com/RandomFractals/geo-data-viewer/issues/75)
+Add optional geo.create.geojson setting for this extension
+- [#77](https://github.com/RandomFractals/geo-data-viewer/issues/77)
+Add more shapefile examples to /data folder, docs and map gallery
+- [#78](https://github.com/RandomFractals/geo-data-viewer/issues/78)
+Update keplergl version to [v2.0.1](https://github.com/keplergl/kepler.gl/releases) for save as html template
+- [#79](https://github.com/RandomFractals/geo-data-viewer/issues/79)
+Update map view kepler.gl lib to v2.0.1
+- [#80](https://github.com/RandomFractals/geo-data-viewer/issues/80)
+Add geo data viewer extension settings configuration section to docs
+- [#81](https://github.com/RandomFractals/geo-data-viewer/issues/81)
+Resolve dbf data file loading for shapefile map view
+
 ## v1.5.0 - alpha shapefiles support (2020-03-10)
 
 - [#71](https://github.com/RandomFractals/geo-data-viewer/issues/71)
