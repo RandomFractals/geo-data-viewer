@@ -55,6 +55,13 @@ List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vsco
 ![Geo Data Viewer Contributions](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-contributions.png?raw=true 
  "Geo Data Viewer Contributions")
 
+# Configuration
+[Create User or Workspace Settings in vscode](http://code.visualstudio.com/docs/customization/userandworkspace#_creating-user-and-workspace-settings) to change default Geo Data Viewer 🗺️ extension Settings:
+
+| Setting | Type | Default Value | Description |
+| ------- | ---- | ------------- | ----------- |
+| `geo.data.viewer.create.geojson` | boolean | true | Create `.geojson` data files for `topojson`, `kml`, `gpx` and `shapefiles` |
+
 # Recommended Extensions
 
 Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
