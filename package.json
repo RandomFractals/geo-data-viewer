@@ -236,6 +236,7 @@
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
+    "ol": "^6.2.1",
     "shpjs": "^3.4.3",
     "superagent": "^5.2.2",
     "topojson-client": "3.1.0",
