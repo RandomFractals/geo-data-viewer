@@ -88,7 +88,7 @@ export const mapList: Array<any> = [
   }  
 ];
 
-export const KEPLER_GL_VERSION: string = '2.0.1';
+export const KEPLER_GL_VERSION: string = '2.1.2';
 
 export const mapConfigTemplate: any = {
   "config": {
