@@ -187,6 +187,15 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = KeplerGl.processGeojson(data);
       tagData = true;
       break;
+    case '.gml':
+      // read GML data
+      const gmlFormat = new ol.format.GML32();
+      const gmlFeatures = gmlFormat.readFeatures(data, {});
+      geoDataFeatures = geoJsonFormat.writeFeatures(gmlFeatures);
+      data = JSON.parse(geoDataFeatures);
+      data = KeplerGl.processGeojson(data);
+      tagData = true;
+      break;  
     case '.wkt':
       // read WKT data
       const wktFormat = new ol.format.WKT();

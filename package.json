@@ -25,6 +25,7 @@
     "GPX",
     "IGC",
     "KML",
+    "GML",
     "WKT",
     "kgl",
     "keplerGL",
@@ -64,6 +65,7 @@
     "onLanguage:topojson",
     "onLanguage:kgl",
     "onLanguage:kml",
+    "onLanguage:gml",
     "onLanguage:shp",
     "onLanguage:wkt"
   ],
@@ -77,6 +79,15 @@
         ],
         "aliases": [
           "CSV"
+        ]
+      },
+      {
+        "id": "gml",
+        "extensions": [
+          ".gml"
+        ],
+        "aliases": [
+          "GML"
         ]
       },
       {
@@ -186,21 +197,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|igc|gpx|json|geojson|kgl|kml|shp|topojson|wkt)/",
+          "when": "resourceFilename =~ /.*\\.(csv|igc|gml|gpx|json|geojson|kgl|kml|shp|topojson|wkt)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*(gpx|.geo.json|.geojson|.igc|.kgl.json|keplergl.json|keplergl_time.json|.kml|.map.json|.shp|.topo.json|.topojson|.wkt)/",
+          "when": "resourceFilename =~ /.*(gpx|.geo.json|.geojson|.gml|.igc|.kgl.json|keplergl.json|keplergl_time.json|.kml|.map.json|.shp|.topo.json|.topojson|.wkt)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|igc|json|gpx|geojson|kgl|kml|shp|topojson|wkt)/",
+          "when": "resourceFilename =~ /.*\\.(csv|igc|json|gml|gpx|geojson|kgl|kml|shp|topojson|wkt)/",
           "group": "navigation"
         }
       ]
