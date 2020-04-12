@@ -12,6 +12,7 @@ export const openFileFilters: any = {
   'CSV': ['csv'],
   'KML': ['kml'],
   'GPX': ['gpx'],
+  'IGC': ['igc'],
   'Shapefile': ['shp']
 };
 

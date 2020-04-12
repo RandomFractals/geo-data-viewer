@@ -23,6 +23,7 @@
     "transform geo data",
     "map view 🗺️",
     "GPX",
+    "IGC",
     "KML",
     "kgl",
     "keplerGL",
@@ -56,6 +57,7 @@
     "onWebviewPanel:map.view",
     "onLanguage:csv",
     "onLanguage:gpx",
+    "onLanguage:igc",
     "onLanguage:json",
     "onLanguage:geojson",
     "onLanguage:topojson",
@@ -82,6 +84,15 @@
         ],
         "aliases": [
           "GPX"
+        ]
+      },
+      {
+        "id": "igc",
+        "extensions": [
+          ".igc"
+        ],
+        "aliases": [
+          "IGC"
         ]
       },
       {
@@ -164,21 +175,21 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|gpx|json|geojson|kgl|kml|shp|topojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|igc|gpx|json|geojson|kgl|kml|shp|topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*(gpx|.geo.json|.geojson|.kgl.json|keplergl.json|keplergl_time.json|.kml|.map.json|.shp|.topo.json|.topojson)/",
+          "when": "resourceFilename =~ /.*(gpx|.geo.json|.geojson|.igc|.kgl.json|keplergl.json|keplergl_time.json|.kml|.map.json|.shp|.topo.json|.topojson)/",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|json|gpx|geojson|kgl|kml|shp|topojson)/",
+          "when": "resourceFilename =~ /.*\\.(csv|igc|json|gpx|geojson|kgl|kml|shp|topojson)/",
           "group": "navigation"
         }
       ]
@@ -200,6 +211,7 @@
           ".gpx",
           ".geo.json",
           ".geojson",
+          ".igc",
           ".kgl.json",
           "keplergl.json",
           "keplergl_time.json",
@@ -223,20 +235,21 @@
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^13.9.3",
+    "@types/node": "^13.11.1",
     "@types/superagent": "^4.1.7",
     "@types/topojson-client": "3.0.0",
     "@types/vscode": "^1.42.0",
     "@types/xmldom": "0.1.29",
     "glob": "^7.1.6",
     "mocha": "^7.1.1",
+    "tslint": "^6.1.1",
     "typescript": "^3.8.3",
-    "tslint": "^6.1.0",
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
-    "ol": "^6.2.1",
+    "@types/ol": "^6.3.0",
+    "ol": "^6.3.1",
     "shpjs": "^3.4.3",
     "superagent": "^5.2.2",
     "topojson-client": "3.1.0",

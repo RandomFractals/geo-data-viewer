@@ -173,6 +173,18 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = KeplerGl.processCsvData(data);
       tagData = true;
       break;
+    case '.igc':
+      // read IGC data
+      const igcFormat = new ol.format.IGC();
+      const igcFeatures = igcFormat.readFeatures(data, {
+        // dataProjection: 'EPSG:4326',
+        // featureProjection: 'EPSG:3857'
+      });
+      // convert it to geojson
+      const geoJsonFormat = new ol.format.GeoJSON();
+      const geoDataFeatures = geoJsonFormat.writeFeatures(igcFeatures);
+      //console.log(geoDataFeatures);
+      data = JSON.parse(geoDataFeatures);
     case 'geo.json':
     case '.geojson':
     case '.gpx':

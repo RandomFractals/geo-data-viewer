@@ -12,12 +12,14 @@ import {
   WebviewPanelSerializer,
   commands
 } from 'vscode';
+
 import * as fs from 'fs';
 import * as path from 'path';
 import * as shapefile from 'shpjs';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
 import * as xmldom from 'xmldom';
+
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
 import {Logger, LogLevel} from './logger';
@@ -358,7 +360,8 @@ export class MapView {
       // load map data
       switch (this._fileExtension) {
         case '.csv':
-          // just pass through raw csv string content
+        case '.igc':
+          // just pass through raw string content
           this._mapData = this._content;
           this.refreshMapView();
           break;
@@ -369,7 +372,7 @@ export class MapView {
           this._mapData = togeojson.gpx(gpx, {styles: true});
           this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
-          break;  
+          break;
         case '.kml':
           // parse kml
           const kml = new xmldom.DOMParser().parseFromString(this._content);
