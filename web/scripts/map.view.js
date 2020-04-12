@@ -168,6 +168,8 @@ function initializeMap(keplerGl, store, config, data, dataType) {
   let dataSets = {};
   let dataConfig;
   let tagData = false;
+  let geoDataFeatures;
+  const geoJsonFormat = new ol.format.GeoJSON();
   switch (dataType) {
     case '.csv':
       data = KeplerGl.processCsvData(data);
@@ -180,11 +182,20 @@ function initializeMap(keplerGl, store, config, data, dataType) {
         // dataProjection: 'EPSG:4326',
         // featureProjection: 'EPSG:3857'
       });
-      // convert it to geojson
-      const geoJsonFormat = new ol.format.GeoJSON();
-      const geoDataFeatures = geoJsonFormat.writeFeatures(igcFeatures);
-      //console.log(geoDataFeatures);
+      geoDataFeatures = geoJsonFormat.writeFeatures(igcFeatures);
       data = JSON.parse(geoDataFeatures);
+      data = KeplerGl.processGeojson(data);
+      tagData = true;
+      break;
+    case '.wkt':
+      // read WKT data
+      const wktFormat = new ol.format.WKT();
+      const wktFeatures = wktFormat.readFeatures(data, {});
+      geoDataFeatures = geoJsonFormat.writeFeatures(wktFeatures);
+      data = JSON.parse(geoDataFeatures);
+      data = KeplerGl.processGeojson(data);
+      tagData = true;
+      break;
     case 'geo.json':
     case '.geojson':
     case '.gpx':

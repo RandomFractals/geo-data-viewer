@@ -361,6 +361,7 @@ export class MapView {
       switch (this._fileExtension) {
         case '.csv':
         case '.igc':
+        case '.wkt':
           // just pass through raw string content
           this._mapData = this._content;
           this.refreshMapView();
