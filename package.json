@@ -220,6 +220,15 @@
       "type": "object",
       "title": "Geo Data Viewer",
       "properties": {
+        "geo.data.viewer.theme": {
+          "type": "string",
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "default": "dark",
+          "description": "Map View UI Controls Theme"
+        },
         "geo.data.viewer.create.geojson": {
           "type": "boolean",
           "default": true,

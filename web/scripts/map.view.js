@@ -61,7 +61,8 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
         mapboxApiAccessToken: mapboxToken,
         id: 'map',
         width: windowDimension.width,
-        height: windowDimension.height
+        height: windowDimension.height,
+        theme: THEME
       })
     );
   };

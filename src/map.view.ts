@@ -143,9 +143,12 @@ export class MapView {
     const scriptsPath: string = Uri.file(path.join(this._extensionPath, 'web/scripts'))
       .with({scheme: 'vscode-resource'}).toString(true);
     if (template) {
-      this._html = template?.content.replace(/\{mapboxToken\}/g, config.mapboxToken)
-        .replace(/\{styles\}/g, stylesPath)
-        .replace(/\{scripts\}/g, scriptsPath);
+      this._html = template?.replace({
+        mapboxToken: config.mapboxToken,
+        styles: stylesPath,
+        scripts: scriptsPath,
+        theme: this.theme
+      });
     }
 
     // initialize base map config for geo data files loading
@@ -589,6 +592,15 @@ export class MapView {
    */
   get html(): string {
     return this._html;
+  }
+
+/**
+   * Gets UI theme to use for the Map View display from workspace config.
+   * see package.json 'configuration' section for more info.
+   */
+  get theme(): string {
+    const uiTheme: string = <string>workspace.getConfiguration('geo.data.viewer').get('theme');
+    return (uiTheme === 'dark' ? '': uiTheme); // default: dark
   }
 
   /**
