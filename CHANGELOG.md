@@ -3,6 +3,15 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.7.0 - WKT, themes and keplergl update (2020-04-12)
+
+- [#28](https://github.com/RandomFractals/geo-data-viewer/issues/28)
+Add light/dark map view UI theme setting support
+- [#72](https://github.com/RandomFractals/geo-data-viewer/issues/72)
+Add [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) geo data format support
+- [#84](https://github.com/RandomFractals/geo-data-viewer/issues/84)
+Update map view kepler.gl lib to v2.1.2
+
 ## v1.6.0 - enhanced shapefiles support (2020-03-17)
 
 - [#75](https://github.com/RandomFractals/geo-data-viewer/issues/75)
