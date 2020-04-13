@@ -223,11 +223,23 @@
         "geo.data.viewer.theme": {
           "type": "string",
           "enum": [
-            "light",
-            "dark"
+            "dark",
+            "light"
           ],
           "default": "dark",
           "description": "Map View UI Controls Theme"
+        },
+        "geo.data.viewer.map.style": {
+          "type": "string",
+          "enum": [
+            "dark",
+            "light",
+            "muted",
+            "muted_night",
+            "satellite"
+          ],
+          "default": "dark",
+          "description": "Default to Map Style"
         },
         "geo.data.viewer.create.geojson": {
           "type": "boolean",

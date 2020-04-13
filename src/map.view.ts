@@ -153,6 +153,9 @@ export class MapView {
 
     // initialize base map config for geo data files loading
     this._mapConfig = config.mapConfigTemplate;
+    
+    // set map style to default map style user setting
+    this._mapConfig.config.mapStyle.styleType = this.mapStyle;
 
     // initialize webview panel
     this._panel = this.initWebview(viewType, viewColumn, panel);
@@ -466,6 +469,7 @@ export class MapView {
       fileName: this._fileName,
       uri: this._uri.toString(),
       mapConfig: this._mapConfig,
+      mapStyle: this.mapStyle,
       mapData: this._mapData,
       dataType: this._fileExtension
     });
@@ -594,13 +598,21 @@ export class MapView {
     return this._html;
   }
 
-/**
+  /**
    * Gets UI theme to use for the Map View display from workspace config.
    * see package.json 'configuration' section for more info.
    */
   get theme(): string {
     const uiTheme: string = <string>workspace.getConfiguration('geo.data.viewer').get('theme');
     return (uiTheme === 'dark' ? '': uiTheme); // default: dark
+  }
+
+  /**
+   * Gets deafult map style to use for the Map View display from workspace config.
+   * see package.json 'configuration' section for more info.
+   */
+  get mapStyle(): string {
+    return <string>workspace.getConfiguration('geo.data.viewer').get('map.style');
   }
 
   /**

@@ -90,7 +90,7 @@ const app = (function createReactReduxProvider(
 // load map data and config from webview
 let vscode, title, message,
   dataUrlInput, saveFileTypeSelector,
-  map, mapConfig = {}, mapData = [],
+  map, mapStyle, mapConfig = {}, mapData = [],
   dataUrl, dataFileName, dataType;
 
 // initialize vs code api for messaging
@@ -146,6 +146,7 @@ window.addEventListener('message', event => {
       dataFileName = event.data.fileName;
       dataUrl = event.data.uri;
       mapConfig = event.data.mapConfig;
+      mapStyle = event.data.mapStyle;
       mapData = event.data.mapData;
       dataType = event.data.dataType;
       view(mapConfig, mapData, dataType);
