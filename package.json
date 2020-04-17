@@ -238,8 +238,8 @@
             "muted_night",
             "satellite"
           ],
-          "default": "dark",
-          "description": "Default to Map Style"
+          "default": "muted_night",
+          "description": "Default Map Style"
         },
         "geo.data.viewer.create.geojson": {
           "type": "boolean",
