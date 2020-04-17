@@ -168,7 +168,7 @@ function view(mapConfig, mapData, dataType) {
 function initializeMap(keplerGl, store, config, data, dataType) {
   console.log(`initializeMap: loading ${dataType} data ...`);
   let dataSets = {};
-  let dataConfig;
+  let dataConfig = config;
   let tagData = false;
   let geoDataFeatures;
   const geoJsonFormat = new ol.format.GeoJSON();
