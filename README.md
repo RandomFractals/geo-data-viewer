@@ -62,8 +62,9 @@ List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vsco
 
 | Setting | Type | Default Value | Description |
 | ------- | ---- | ------------- | ----------- |
-| `geo.data.viewer.theme` | string | dark | Map View 🗺️ Controls UI Theme: `dark` or `light` |
-| `geo.data.viewer.create.geojson` | boolean | true | Creates `.geojson` data file for `topojson`, `kml`, `gpx` and `shapefiles` on disk during the map view of those geo data formats for raw geojson source code view |
+| `geo.data.viewer.theme` | string | `dark` | Map View 🗺️ Controls UI Theme: `dark` or `light` |
+| `geo.data.viewer.map.style` | string | `muted_night` | Default Map Style: `dark`, `light`, `muted` (light), `muted_dark`, or `satellite` |
+| `geo.data.viewer.create.geojson` | boolean | `true` | Creates `.geojson` data file on disk for `topojson`, `kml`, `gpx` and `shp` map views |
 
 ![Geo Data Viewer Settings](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-settings.png?raw=true 
  "Geo Data Viewer Settings")
