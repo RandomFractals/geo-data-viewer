@@ -238,7 +238,7 @@
             "muted_night",
             "satellite"
           ],
-          "default": "muted_night",
+          "default": "dark",
           "description": "Default Map Style"
         },
         "geo.data.viewer.create.geojson": {
