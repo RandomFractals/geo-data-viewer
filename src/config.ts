@@ -112,10 +112,10 @@ export const mapConfigTemplate: any = {
       "topLayerGroups": {},
       "visibleLayerGroups": {
         "border": true,
-        "building": false,
+        "building": true,
         "label": true,
         "land": true,
-        "road": false,
+        "road": true,
         "water": true
       }
     },
