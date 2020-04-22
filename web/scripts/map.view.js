@@ -1,7 +1,7 @@
-// create keplerGL redux reducer
+// create redux reducers
 const reducers = (function createReducers(redux, keplerGl) {
+  // mount keplergl reducer
   return redux.combineReducers({
-    // mount keplerGl reducer
     keplerGl: keplerGl.keplerGlReducer.initialState({
       uiState: {
         readOnly: false,
@@ -11,10 +11,10 @@ const reducers = (function createReducers(redux, keplerGl) {
   });
 })(Redux, KeplerGl);
 
-// add keplerGL middlewares
+// create redux middlewares
 const middleWares = (function createMiddlewares(keplerGl) {
   return keplerGl.enhanceReduxMiddleware([
-    // add other middlewares here
+    // add middlewares here
   ]);
 })(KeplerGl);
 
@@ -29,17 +29,21 @@ const store = (function createStore(redux, enhancers) {
   return redux.createStore(reducers, initialState, redux.compose(enhancers));
 })(Redux, enhancers);
 
-// create kepler.gl map components
+// create keplergl app components
 let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
-  // create kepler.gl app
+  // create keplergl app
   return function App() {
-    var rootElm = react.useRef(null);
-    var _useState = react.useState({
+    const rootElm = react.useRef(null);
+    
+    // set window dimensions state
+    const windowState = react.useState({
       width: window.innerWidth,
       height: window.innerHeight
     });
-    var windowDimension = _useState[0];
-    var setDimension = _useState[1];
+    const windowDimension = windowState[0];
+    const setDimension = windowState[1];
+
+    // add window resize event handler
     react.useEffect(function sideEffect() {
       function handleResize() {
         setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -49,6 +53,8 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
         window.removeEventListener('resize', handleResize);
       };
     }, []);
+
+    // create keplergl app element
     return react.createElement('div', {
         style: {
           position: 'absolute',
@@ -68,20 +74,14 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
   };
 })(React, KeplerGl, MAPBOX_TOKEN);
 
-// create kepler.gl map app
-const app = (function createReactReduxProvider(
-  react,
-  reactRedux,
-  KeplerElement
-) {
-  return react.createElement(
-    reactRedux.Provider,
-    { store },
+// create keplergl map app
+const app = (function createReactReduxProvider(react, reactRedux, KeplerElement) {
+  return react.createElement(reactRedux.Provider, {store},
     react.createElement(KeplerElement, null)
   );
 })(React, ReactRedux, KeplerElement);
 
-// render kepler.gl map app
+// render keplergl map app
 (function render(react, reactDOM, app) {
   reactDOM.render(app, document.getElementById('app'));
   console.log('rendering map...');
