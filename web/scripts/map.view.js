@@ -54,6 +54,9 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
       };
     }, []);
 
+    // create default map styles
+    const mapStyles = createMapStyles(mapboxToken);
+
     // create keplergl app element
     return react.createElement('div', {
         style: {
@@ -68,7 +71,8 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
         id: 'map',
         width: windowDimension.width,
         height: windowDimension.height,
-        theme: THEME
+        theme: THEME,
+        mapStyles: mapStyles
       })
     );
   };
@@ -365,4 +369,46 @@ function buyCoffee() {
 
 function showMessage(text) {
   message.innerText = text;
+}
+
+// creates deafult map styles
+function createMapStyles(mapboxToken) {
+  const defaultLayerGroups = [];
+  return [
+    {
+      id: 'dark-streets',
+      label: 'Dark Streets',
+      url: 'mapbox://styles/mapbox/dark-v10',
+      icon: `https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
+      layerGroups: defaultLayerGroups
+    }, 
+    {
+      id: 'light-streets',
+      label: 'Light Streets',
+      url: 'mapbox://styles/mapbox/light-v10',
+      icon: `https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
+      layerGroups: defaultLayerGroups
+    },
+    /* { // note: looks same as outdoors
+      id: 'streets',
+      label: 'Streets',
+      url: 'mapbox://styles/mapbox/streets-v10',
+      icon: `https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
+      layerGroups: defaultLayerGroups
+    }, */
+    {
+      id: 'outdoors',
+      label: 'Outdoors',
+      url: 'mapbox://styles/mapbox/outdoors-v10',
+      icon: `https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
+      layerGroups: defaultLayerGroups
+    },
+    {
+      id: 'satellite',
+      label: 'Satellite',
+      url: 'mapbox://styles/mapbox/satellite-v9',
+      icon: `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
+      layerGroups: defaultLayerGroups
+    }
+  ];
 }
