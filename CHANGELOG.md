@@ -3,6 +3,11 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v1.8.0 - Default map styles addition (2020-04-22)
+
+- [#85](https://github.com/RandomFractals/geo-data-viewer/issues/85)
+Add default map styles extension setting
+
 ## v1.7.0 - WKT, themes and keplergl update (2020-04-12)
 
 - [#28](https://github.com/RandomFractals/geo-data-viewer/issues/28)
