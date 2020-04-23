@@ -376,14 +376,14 @@ function createMapStyles(mapboxToken) {
   const defaultLayerGroups = [];
   return [
     {
-      id: 'dark-streets',
+      id: 'dark_streets',
       label: 'Dark Streets',
       url: 'mapbox://styles/mapbox/dark-v10',
       icon: `https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
       layerGroups: defaultLayerGroups
     }, 
     {
-      id: 'light-streets',
+      id: 'light_streets',
       label: 'Light Streets',
       url: 'mapbox://styles/mapbox/light-v10',
       icon: `https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,

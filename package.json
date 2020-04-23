@@ -236,7 +236,10 @@
             "light",
             "muted",
             "muted_night",
-            "satellite"
+            "satellite",
+            "dark_streets",
+            "light_streets",
+            "outdoors"
           ],
           "default": "dark",
           "description": "Default Map Style"
