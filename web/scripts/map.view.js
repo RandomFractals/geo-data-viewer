@@ -146,7 +146,7 @@ window.addEventListener('message', event => {
       showMessage('');
       console.log('refreshing map view ...');
       vscode.setState({ uri: event.data.uri });
-      title.innerText = event.data.fileName;
+      // title.innerText = event.data.fileName;
       dataFileName = event.data.fileName;
       dataUrl = event.data.uri;
       mapConfig = event.data.mapConfig;

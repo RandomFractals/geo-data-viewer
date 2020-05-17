@@ -142,6 +142,7 @@ export class MapView {
    * @param viewType Map webview type, i.e. map.view.
    * @param viewColumn vscode IDE view column to display preview in.
    * @param viewPanel Optional web view panel to initialize.
+   * @param template Webview html template.
    */
   private initWebview(viewType: string, 
     viewColumn: ViewColumn, 
@@ -173,12 +174,16 @@ export class MapView {
       Uri.file(path.join(this._extensionPath, 'web/styles'))).toString(true);
     const scriptsPath: string = this.webview.asWebviewUri(
       Uri.file(path.join(this._extensionPath, 'web/scripts'))).toString(true);
+    const imagesPath: string = this.webview.asWebviewUri(
+        Uri.file(path.join(this._extensionPath, 'web/images'))).toString(true);
     const cspSource: string = this.webview.cspSource;
     if (template) {
       this._html = template?.replace({
         cspSource: cspSource,
         styles: stylesPath,
         scripts: scriptsPath,
+        images: imagesPath,
+        fileName: this._fileName,
         mapboxToken: config.mapboxToken,
         theme: this.theme
       });
@@ -261,9 +266,10 @@ export class MapView {
     else if (!this.uri.scheme || this.uri.scheme === 'file') {
       localResourceRoots.push(Uri.file(path.dirname(this.uri.fsPath)));
     }
-    // add web view styles and scripts folders
+    // add web view images, styles and scripts folders
     localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/styles')));
     localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/scripts')));
+    localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/images')));
     this._logger.debug('getLocalResourceRoots():', localResourceRoots);
     return localResourceRoots;
   }

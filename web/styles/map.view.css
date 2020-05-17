@@ -24,7 +24,7 @@ body {
 }
 #toolbar {
   margin: 0px;
-  margin-top: 5px;
+  margin-top: 3px;
   padding: 0px;
   padding-left: 7px;
   font-size: 10pt;
@@ -38,7 +38,7 @@ body {
 }
 #toolbar-right {
   position: absolute;
-  top: 7px;
+  top: 5px;
   right: 0px;
   width: 130px;
   height: 25px;
@@ -49,6 +49,10 @@ body {
   color: dodgerblue;
   text-decoration: none;
   padding: 2px 5px 2px 5px;
+}
+#map-icon {
+  vertical-align: text-bottom;
+  padding-right: 5px;
 }
 #title {
   margin: 0px;

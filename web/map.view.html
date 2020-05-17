@@ -55,7 +55,10 @@
       </div>
       <div id="toolbar-left">
         <a id="title" title="View Map Source" href="#" 
-          onClick="viewMapSource()">...</a>
+          onClick="viewMapSource()">
+          <img id="map-icon" src="{images}/map.svg" width="18" height="18" alt="map" />
+          {fileName}
+        </a>
         <!-- |
         <a title="Undo" href="#" onclick="undoConfig()"> ↩ </a>
         <a title="Redo" href="#" onclick="redoConfig()"> ↪ </a>
@@ -66,7 +69,7 @@
           onclick="reloadMap()">🔃</a>
         -->
         <a id="open-file-button" title="Open Geo Data File" href="#"
-          onClick="openGeoDataFile()">📤</a>
+          onClick="openGeoDataFile()"><span class="label">📤</span></a>
         <input id="data-url-input" type="text" title="Enter new Geo Data File Path or URL"
           onKeyPress="loadMapViewFromUrl()" />
         <a id="show-map-gallery-button" title="View Map Gallery Quick Pick List" href="#"
