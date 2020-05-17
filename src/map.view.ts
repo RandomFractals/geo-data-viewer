@@ -103,8 +103,7 @@ export class MapView {
     uri: Uri, 
     viewColumn: ViewColumn, 
     template: Template | undefined, 
-    panel?: WebviewPanel) {
-
+    panel?: WebviewPanel) {      
     // save ext path, document uri, and create view uri
     this._extensionPath = extensionPath;
     this._uri = uri;
@@ -127,30 +126,6 @@ export class MapView {
     this._viewUri = this._uri.with({scheme: 'map.view'});
     this._logger = new Logger(`${viewType}:`, config.logLevel);
 
-    // create webview panel title
-    switch (viewType) {
-      case 'map.view':
-        this._title = this._fileName;
-        break;
-      default: // map.help
-        this._title = 'Map Help';
-        break;
-    }
-
-    // create html template for the webview
-    const stylesPath: string = Uri.file(path.join(this._extensionPath, 'web/styles'))
-      .with({scheme: 'vscode-resource'}).toString(true);
-    const scriptsPath: string = Uri.file(path.join(this._extensionPath, 'web/scripts'))
-      .with({scheme: 'vscode-resource'}).toString(true);
-    if (template) {
-      this._html = template?.replace({
-        mapboxToken: config.mapboxToken,
-        styles: stylesPath,
-        scripts: scriptsPath,
-        theme: this.theme
-      });
-    }
-
     // initialize base map config for geo data files loading
     this._mapConfig = config.mapConfigTemplate;
     
@@ -158,7 +133,7 @@ export class MapView {
     this._mapConfig.config.mapStyle.styleType = this.mapStyle;
 
     // initialize webview panel
-    this._panel = this.initWebview(viewType, viewColumn, panel);
+    this._panel = this.initWebview(viewType, viewColumn, panel, template);
     this.configure();
   } // end of constructor()
 
@@ -170,7 +145,19 @@ export class MapView {
    */
   private initWebview(viewType: string, 
     viewColumn: ViewColumn, 
-    viewPanel: WebviewPanel | undefined): WebviewPanel {
+    viewPanel: WebviewPanel | undefined,
+    template: Template): WebviewPanel {
+
+    // create webview panel title
+    switch (viewType) {
+      case 'map.view':
+        this._title = this._fileName;
+        break;
+      default: // map.help
+        this._title = 'Map Help';
+        break;
+    }
+
     if (!viewPanel) {
       // create new webview panel
       viewPanel = window.createWebviewPanel(viewType, this._title, viewColumn, this.getWebviewOptions());
@@ -179,6 +166,22 @@ export class MapView {
     }
     else {
       this._panel = viewPanel;
+    }
+
+    // create webview html template
+    const stylesPath: string = this.webview.asWebviewUri(
+      Uri.file(path.join(this._extensionPath, 'web/styles'))).toString(true);
+    const scriptsPath: string = this.webview.asWebviewUri(
+      Uri.file(path.join(this._extensionPath, 'web/scripts'))).toString(true);
+    const cspSource: string = this.webview.cspSource;
+    if (template) {
+      this._html = template?.replace({
+        cspSource: cspSource,
+        styles: stylesPath,
+        scripts: scriptsPath,
+        mapboxToken: config.mapboxToken,
+        theme: this.theme
+      });
     }
 
     // dispose view
@@ -223,6 +226,47 @@ export class MapView {
 
     return viewPanel;
   } // end of initWebview()
+
+  /**
+   * Configures webview html for view display.
+   */
+  public configure(): void {
+    this.webview.html = this.html;
+    // NOTE: let webview fire refresh message
+    // when map view DOM content is initialized
+    // see: this.refresh();
+  }
+
+  /**
+   * Creates webview options with local resource roots, etc. for map webview display.
+   */
+  private getWebviewOptions(): any {
+    return {
+      enableScripts: true,
+      enableCommandUris: true,
+      retainContextWhenHidden: true,
+      localResourceRoots: this.getLocalResourceRoots()
+    };
+  }
+
+  /**
+   * Creates local resource roots for loading scripts in map webview.
+   */
+  private getLocalResourceRoots(): Uri[] {
+    const localResourceRoots: Uri[] = [];
+    const workspaceFolder: WorkspaceFolder | undefined = workspace.getWorkspaceFolder(this.uri);
+    if (workspaceFolder) {
+      localResourceRoots.push(workspaceFolder.uri);
+    }
+    else if (!this.uri.scheme || this.uri.scheme === 'file') {
+      localResourceRoots.push(Uri.file(path.dirname(this.uri.fsPath)));
+    }
+    // add web view styles and scripts folders
+    localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/styles')));
+    localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/scripts')));
+    this._logger.debug('getLocalResourceRoots():', localResourceRoots);
+    return localResourceRoots;
+  }
 
   /**
    * Shows open file dialog for launchign new geo data map view.
@@ -289,47 +333,6 @@ export class MapView {
     }
   } // end of loadView()
   
-  /**
-   * Creates webview options with local resource roots, etc. for map webview display.
-   */
-  private getWebviewOptions(): any {
-    return {
-      enableScripts: true,
-      enableCommandUris: true,
-      retainContextWhenHidden: true,
-      localResourceRoots: this.getLocalResourceRoots()
-    };
-  }
-
-  /**
-   * Creates local resource roots for loading scripts in map webview.
-   */
-  private getLocalResourceRoots(): Uri[] {
-    const localResourceRoots: Uri[] = [];
-    const workspaceFolder: WorkspaceFolder | undefined = workspace.getWorkspaceFolder(this.uri);
-    if (workspaceFolder) {
-      localResourceRoots.push(workspaceFolder.uri);
-    }
-    else if (!this.uri.scheme || this.uri.scheme === 'file') {
-      localResourceRoots.push(Uri.file(path.dirname(this.uri.fsPath)));
-    }
-    // add web view styles and scripts folders
-    localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/styles')));
-    localResourceRoots.push(Uri.file(path.join(this._extensionPath, './web/scripts')));
-    this._logger.debug('getLocalResourceRoots():', localResourceRoots);
-    return localResourceRoots;
-  }
-
-  /**
-   * Configures webview html for view display.
-   */
-  public configure(): void {
-    this.webview.html = this.html;
-    // NOTE: let webview fire refresh message
-    // when map view DOM content is initialized
-    // see: this.refresh();
-  }
-
   /**
    * Reload map view on map data save changes or vscode IDE reload.
    */
