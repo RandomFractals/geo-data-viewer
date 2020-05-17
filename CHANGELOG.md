@@ -3,7 +3,22 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
-## v1.8.0 - Default map styles addition (2020-04-22)
+## v1.9.0 - map view toolbar UI and loading enhancements (2020-05-17)
+
+- [#88](https://github.com/RandomFractals/geo-data-viewer/issues/88)
+Adopt VS Code's 'asWebviewUri' API
+- [#89](https://github.com/RandomFractals/geo-data-viewer/issues/89)
+Update open layers library to v6.3.1
+- [#90](https://github.com/RandomFractals/geo-data-viewer/issues/90)
+Update shapefile-js to v3.5.0
+- [#91](https://github.com/RandomFractals/geo-data-viewer/issues/91)
+Refactor map view panel initialization
+- [#92](https://github.com/RandomFractals/geo-data-viewer/issues/92)
+Refine map view toolbar display
+- [#93](https://github.com/RandomFractals/geo-data-viewer/issues/93)
+Add © kepler.gl to map view attributions footer
+
+## v1.8.0 - default map styles addition (2020-04-22)
 
 - [#85](https://github.com/RandomFractals/geo-data-viewer/issues/85)
 Add default map styles extension setting
