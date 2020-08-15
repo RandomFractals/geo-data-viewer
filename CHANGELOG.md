@@ -3,6 +3,15 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.1.0 - vscode v1.48.0 dependencies and SEO update (2020-08-15)
+
+- [#99](https://github.com/RandomFractals/geo-data-viewer/issues/99)
+Update vscode dependencies to v1.48.0
+- [#100](https://github.com/RandomFractals/geo-data-viewer/issues/100)
+Update superagent library to v6.0.0
+- [#101](https://github.com/RandomFractals/geo-data-viewer/issues/101)
+Add Data Science and Visualization categories to this extension manifest
+
 ## v2.0.0 - keplerGL and remote data/config loading dependencies update (2020-08-08)
 
 - [#87](https://github.com/RandomFractals/geo-data-viewer/issues/87)
