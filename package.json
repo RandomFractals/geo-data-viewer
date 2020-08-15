@@ -50,7 +50,9 @@
     "node": ">=10.2.0"
   },
   "categories": [
-    "Programming Languages"
+    "Data Science",
+    "Programming Languages",
+    "Visualization"
   ],
   "activationEvents": [
     "onCommand:map.view",
