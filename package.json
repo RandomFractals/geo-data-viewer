@@ -2,7 +2,7 @@
   "name": "geo-data-viewer",
   "displayName": "Geo Data Viewer",
   "description": "🗺️ Geo Data Viewer w/0 Py 🐍 || pyWidgets || pandas 🐼 ||  @reactjs  ⚛️ required to gen. some snazzy maps 🗺️ with keplerGL ...",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "icon": "images/map.png",
   "publisher": "RandomFractalsInc",
   "author": "Taras Novak a.k.a. dataPixy devTools maker :)",
@@ -46,7 +46,7 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.42.0",
+    "vscode": "^1.48.0",
     "node": ">=10.2.0"
   },
   "categories": [
@@ -279,18 +279,18 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^7.0.2",
-    "@types/node": "^14.0.1",
-    "@types/superagent": "^4.1.7",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.2",
+    "@types/node": "^14.0.27",
+    "@types/superagent": "^4.1.9",
     "@types/topojson-client": "3.0.0",
-    "@types/vscode": "^1.42.0",
-    "@types/xmldom": "0.1.29",
+    "@types/vscode": "^1.48.0",
+    "@types/xmldom": "0.1.30",
     "glob": "^7.1.6",
-    "mocha": "^7.1.2",
-    "tslint": "^6.1.2",
-    "typescript": "^3.9.2",
-    "vscode-test": "^1.3.0"
+    "mocha": "^8.1.1",
+    "tslint": "^6.1.3",
+    "typescript": "^3.9.7",
+    "vscode-test": "^1.4.0"
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
