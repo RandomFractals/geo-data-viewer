@@ -297,7 +297,7 @@
     "@types/ol": "^6.3.1",
     "ol": "^6.3.1",
     "shpjs": "^3.5.0",
-    "superagent": "^5.3.1",
+    "superagent": "^6.0.0",
     "topojson-client": "3.1.0",
     "xmldom": "^0.3.0"
   }
