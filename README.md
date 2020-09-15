@@ -14,6 +14,9 @@
 ![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
  "Geo Data Viewer")
 
+![Geo Data Viewer Ultri Wide](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-ultri-wide.png?raw=true 
+ "Geo Data Viewer Ultri Wide")
+
 # Features
 
 - Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp), [shapefiles](https://en.wikipedia.org/wiki/Shapefile), [IGC](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) and CSV geo data files
