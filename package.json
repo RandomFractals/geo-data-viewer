@@ -297,6 +297,7 @@
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
     "@types/ol": "^6.4.0",
+    "flatgeobuf": "3.5.2",
     "ol": "^6.4.3",
     "shpjs": "^3.5.0",
     "superagent": "^6.1.0",
