@@ -19,6 +19,7 @@ import * as shapefile from 'shpjs';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
 import * as xmldom from 'xmldom';
+// import * as flatgeobuf from 'flatgeobuf';
 
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
@@ -371,6 +372,7 @@ export class MapView {
    * Sends updated map config and data to map webview.
    */
   public async refreshView() {
+    const dataUrl: string = (this._isRemoteData) ? this._url: this._uri.fsPath; // local data file path
     try {
       // load map data
       switch (this._fileExtension) {
@@ -398,10 +400,16 @@ export class MapView {
           this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
           break;
+        case '.fgb':
+          // read flat geo buggers file
+          const flatGeoBufferData = await fileUtils.readDataFile(dataUrl, null);
+          //this._mapData = flatgeobuf.geojson.deserialize(flatGeoBufferData);
+          this.createGeoJsonFile(this._mapData);
+          this.refreshMapView();
+          break;
         case '.shp': 
           // read shapefiles
           // todo: move this to new data manager and geo data providers api
-          const dataUrl: string = (this._isRemoteData) ? this._url: this._uri.fsPath; // local data file path
           const shapefileData = await fileUtils.readDataFile(dataUrl, null);
           const prjData = 
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), 'utf8');
