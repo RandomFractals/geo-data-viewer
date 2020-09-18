@@ -15,11 +15,12 @@ import {
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+import * as flatgeobuf from 'flatgeobuf/lib/cjs/geojson';
 import * as shapefile from 'shpjs';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
 import * as xmldom from 'xmldom';
-// import * as flatgeobuf from 'flatgeobuf';
 
 import * as config from './config';
 import * as fileUtils from './utils/file.utils';
@@ -403,7 +404,7 @@ export class MapView {
         case '.fgb':
           // read flat geo buggers file
           const flatGeoBufferData = await fileUtils.readDataFile(dataUrl, null);
-          //this._mapData = flatgeobuf.geojson.deserialize(flatGeoBufferData);
+          this._mapData = flatgeobuf.deserialize(flatGeoBufferData);
           this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
           break;

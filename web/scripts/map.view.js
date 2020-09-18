@@ -216,6 +216,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
     case '.gpx':
     case '.kml':
     case '.shp':
+    case '.fgb':
     case '.topo.json':
     case '.topojson':    
       // convert geojson data to keplergl geo data
