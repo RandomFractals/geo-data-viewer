@@ -349,7 +349,8 @@ export class MapView {
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
 
     // determine data file encoding
-    const dataEncoding: string = (this._fileExtension.endsWith('.shp')) ? null: 'utf8'; // default
+    const dataEncoding: string = 
+      (this._fileExtension.endsWith('.shp') || this._fileExtension.endsWith('.fgb')) ? null: 'utf8'; // default
     if (this._url.startsWith('https://') && dataEncoding === 'utf8') {
       // load remote text geo data file
       this._content = String(await fileUtils.readDataFile(this._url, dataEncoding));
