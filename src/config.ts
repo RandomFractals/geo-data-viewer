@@ -16,7 +16,7 @@ export const openFileFilters: any = {
   'IGC': ['igc'],
   'Shapefile': ['shp'],
   'WKT': ['wkt'],
-  'FGB': ['fgb']
+  'FlatGeobuf': ['fgb']
 };
 
 export const saveFileFilters: any = {

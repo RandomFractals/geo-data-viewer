@@ -22,6 +22,7 @@
     "geo data viewer",
     "transform geo data",
     "map view 🗺️",
+    "FGB",
     "GPX",
     "IGC",
     "KML",
@@ -33,6 +34,7 @@
     "mapbox",
     "geojson",
     "topojson",
+    "flatgeobuf",
     "shapefiles",
     "GIS",
     "GISPad 📘",
@@ -90,7 +92,7 @@
           ".fgb"
         ],
         "aliases": [
-          "FGB"
+          "FlatGeobuf"
         ]
       },
       {
@@ -223,7 +225,7 @@
       "editor/title/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|fbg|igc|json|gml|gpx|geojson|kgl|kml|shp|topojson|wkt)/",
+          "when": "resourceFilename =~ /.*\\.(csv|fgb|igc|json|gml|gpx|geojson|kgl|kml|shp|topojson|wkt)/",
           "group": "navigation"
         }
       ]
@@ -259,7 +261,7 @@
         "geo.data.viewer.create.geojson": {
           "type": "boolean",
           "default": true,
-          "description": "Creates .geojson data file for topojson, kml, gpx and shapefiles"
+          "description": "Creates .geojson data file for topojson, kml, gpx, fgb and shapefiles"
         }
       }
     },
