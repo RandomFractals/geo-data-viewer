@@ -86,7 +86,12 @@ export const mapList: Array<any> = [
     name: 'World Lakes',
     url: 'https://raw.githubusercontent.com/RandomFractals/geo-data-viewer/master/data/shapefiles/ne_10m_lakes.shp',
     description: 'World Lakes',
-  }  
+  },
+  {
+    name: 'Countries',
+    url: 'https://raw.githubusercontent.com/bjornharrtell/flatgeobuf/master/test/data/countries.fgb',
+    description: 'Countries',
+  }
 ];
 
 export const KEPLER_GL_VERSION: string = '2.3.2';
