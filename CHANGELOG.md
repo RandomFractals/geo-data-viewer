@@ -3,6 +3,17 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.2.0 - alpha flatgeobuf map view support (2020-09-18)
+
+- [#98](https://github.com/RandomFractals/geo-data-viewer/issues/98)
+Add flatgeobuf geo data fromat support
+- [#107](https://github.com/RandomFractals/geo-data-viewer/issues/107)
+Update vscode, ts, node, mocha, superagent and open layers dependencies to latest
+- [#108](https://github.com/RandomFractals/geo-data-viewer/issues/108)
+Update keplergl library to v2.3.2 for the map view display
+- [#109](https://github.com/RandomFractals/geo-data-viewer/issues/109)
+Add another geo data viewer pic with geo data formats you can load in it to docs
+
 ## v2.1.0 - vscode v1.48.0 dependencies and SEO update (2020-08-15)
 
 - [#99](https://github.com/RandomFractals/geo-data-viewer/issues/99)
