@@ -3,6 +3,11 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.3.0 - local flatgeobuf files map view support (2020-09-18)
+
+- [#110](https://github.com/RandomFractals/geo-data-viewer/issues/110)
+Load local .fgb files as binary
+
 ## v2.2.0 - alpha flatgeobuf map view support (2020-09-18)
 
 - [#98](https://github.com/RandomFractals/geo-data-viewer/issues/98)
