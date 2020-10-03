@@ -9,6 +9,8 @@
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 
+[![Trending-Weekly](https://vsmarketplacebadge.apphb.com/trending-weekly/RandomFractalsInc.geo-data-viewer.svg?logo=tinder&logoColor=white&label=trending%20weekly)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) [![Trending-Monthly](https://vsmarketplacebadge.apphb.com/trending-monthly/RandomFractalsInc.geo-data-viewer.svg?logo=tinder&logoColor=white&label=monthly)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
+
 🗺️ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl) to gen. some snazzy 🗺️s  w/0 `Py` 🐍 || `pyWidgets` ⚙️ || `pandas` 🐼 || `@reactjs` ⚛️ required ...
 
 ![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
