@@ -94,7 +94,7 @@ export const mapList: Array<any> = [
   }
 ];
 
-export const KEPLER_GL_VERSION: string = '2.3.2';
+export const KEPLER_GL_VERSION: string = '2.4.0';
 
 export const mapConfigTemplate: any = {
   "config": {
