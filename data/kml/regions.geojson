@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.5,
+            45,
+            0
+          ],
+          [
+            33.75,
+            45,
+            0
+          ],
+          [
+            33.75,
+            56.25,
+            0
+          ],
+          [
+            22.5,
+            56.25,
+            0
+          ],
+          [
+            22.5,
+            45,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ukraineRegion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.5,
+            45,
+            0
+          ],
+          [
+            28.125,
+            45,
+            0
+          ],
+          [
+            28.125,
+            50.625,
+            0
+          ],
+          [
+            22.5,
+            50.625,
+            0
+          ],
+          [
+            22.5,
+            45,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "romaniaRegion"
+      }
+    }
+  ]
+}
