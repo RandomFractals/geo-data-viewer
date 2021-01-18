@@ -91,6 +91,11 @@ export const mapList: Array<any> = [
     name: 'Countries',
     url: 'https://raw.githubusercontent.com/bjornharrtell/flatgeobuf/master/test/data/countries.fgb',
     description: 'Countries',
+  },
+  {
+    name: 'Geologic Lines',
+    url: 'https://raw.githubusercontent.com/google/libkml/master/examples/kml/lines.kml',
+    description: 'Marine County, CA Geologic Lines'
   }
 ];
 
