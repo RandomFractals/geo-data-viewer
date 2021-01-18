@@ -141,8 +141,8 @@
       {
         "id": "xml",
         "extensions": [
-          ".xml", 
-          ".gml", 
+          ".xml",
+          ".gml",
           ".kml"
         ],
         "aliases": [
