@@ -139,12 +139,14 @@
         "configuration": "./json-language-configuration.json"
       },
       {
-        "id": "kml",
+        "id": "xml",
         "extensions": [
+          ".xml", 
+          ".gml", 
           ".kml"
         ],
         "aliases": [
-          "KML"
+          "XML"
         ]
       },
       {
