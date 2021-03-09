@@ -278,7 +278,8 @@ function saveData() {
         "config": KeplerGl.KeplerGlSchema.getConfigToSave(mapInfo),
         "datasets": KeplerGl.KeplerGlSchema.getDatasetToSave(mapInfo),
         "info": {
-          "app": "GeoDataViewer",
+          "app": "kepler.gl",
+          "source": "GeoDataViewer",
           "created_at": new Date(Date.now()).toUTCString()
         }
       }
