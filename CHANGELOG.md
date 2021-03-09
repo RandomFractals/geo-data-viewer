@@ -3,6 +3,25 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.4.0 - kepler.gl map export and dependencies update (2021-03-08)
+
+- [#112](https://github.com/RandomFractals/geo-data-viewer/issues/112)
+Add vscode marketplace trending weekly and monthly stats badges to docs
+- [#117](https://github.com/RandomFractals/geo-data-viewer/issues/117)
+Update keplergl to v2.4.0 for the map view display and html map export
+- [#119](https://github.com/RandomFractals/geo-data-viewer/issues/119)
+Update vscode, ts, node, mocha, superagent and mapping libraries to latest for v2.4.0 release
+- [#120](https://github.com/RandomFractals/geo-data-viewer/issues/120)
+Add .gml and .kml file and language/editor associations
+- [#121](https://github.com/RandomFractals/geo-data-viewer/issues/121)
+Change flatgeobuf docs link to point to new site
+- [#122](https://github.com/RandomFractals/geo-data-viewer/issues/122)
+Add kgl examples for testing
+- [#123](https://github.com/RandomFractals/geo-data-viewer/issues/123)
+Change map config with data export to use kepler.gl for info.app field
+- [#124](https://github.com/RandomFractals/geo-data-viewer/issues/124)
+Updated changelog, package and publish v2.4.0 release
+
 ## v2.3.0 - local flatgeobuf files map view support (2020-09-18)
 
 - [#110](https://github.com/RandomFractals/geo-data-viewer/issues/110)
