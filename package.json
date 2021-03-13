@@ -316,6 +316,6 @@
     "shpjs": "^3.6.3",
     "superagent": "^6.1.0",
     "topojson-client": "3.1.0",
-    "xmldom": "^0.4.0"
+    "xmldom": "^0.5.0"
   }
 }
