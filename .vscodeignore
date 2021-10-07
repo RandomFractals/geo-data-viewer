@@ -8,3 +8,6 @@ data/**
 **/tslint.json
 **/*.map
 **/*.ts
+
+node_modules
+images/geo-*.png
