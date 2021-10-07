@@ -1,15 +1,15 @@
 .vscode/**
 .vscode-test/**
-out/test/**
+out/**
+node_modules/**
 src/**
 data/**
+
 .gitignore
+webpack.config.js
 **/tsconfig.json
 **/tslint.json
 **/*.map
 **/*.ts
 
-test
-webpack.config.js
-node_modules
 images/geo-*.png
