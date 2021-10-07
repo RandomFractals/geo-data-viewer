@@ -75,7 +75,7 @@
     "onLanguage:shp",
     "onLanguage:wkt"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "languages": [
       {
@@ -289,10 +289,13 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile",
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "npm run test-compile",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
@@ -307,7 +310,10 @@
     "mocha": "^9.1.2",
     "tslint": "^6.1.3",
     "typescript": "^4.4.3",
-    "vscode-test": "^1.6.1"
+    "vscode-test": "^1.6.1",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0"
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",

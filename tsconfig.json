@@ -2,10 +2,10 @@
 	"compilerOptions": {
 		"types": ["node"],
 		"module": "commonjs",
-		"target": "esnext",
+		"target": "ES2019",
 		"outDir": "out",
 		"lib": [
-			"esnext"
+			"ES2019"
 		],
 		"sourceMap": true,
 		"rootDir": "src",

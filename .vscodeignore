@@ -9,5 +9,7 @@ data/**
 **/*.map
 **/*.ts
 
+test
+webpack.config.js
 node_modules
 images/geo-*.png
