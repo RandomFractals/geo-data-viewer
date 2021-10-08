@@ -105,6 +105,7 @@ select {
 }
 .side-panel__content {
   padding: 10px !important;
+  margin-bottom: 32px !important;
 }
 .bottom-widget--container {
   bottom: 32px !important;
