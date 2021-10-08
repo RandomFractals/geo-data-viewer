@@ -3,6 +3,23 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.5.0 - vscode, data loading, and map display dependencies update (2021-10-08)
+
+- [#131](https://github.com/RandomFractals/geo-data-viewer/issues/131)
+Update vscode, glob, ts, node, mocha, and other extension dev dependecies to vscode v1.60.0
+- [#132](https://github.com/RandomFractals/geo-data-viewer/issues/132)
+Update geo and data loading libraries to latest for v2.5 release
+- [#133](https://github.com/RandomFractals/geo-data-viewer/issues/133)
+Update keplergl to v2.5.5
+- [#134](https://github.com/RandomFractals/geo-data-viewer/issues/134)
+Optimize Geo Data Viewer extension package size
+- [#135](https://github.com/RandomFractals/geo-data-viewer/issues/135)
+Update OpenLayers to v6.8.1 in map.view.html
+- [#136](https://github.com/RandomFractals/geo-data-viewer/issues/136)
+Patch map view sidebar styles
+- [#137](https://github.com/RandomFractals/geo-data-viewer/issues/137)
+Package and publish v2.5.0 release
+
 ## v2.4.0 - kepler.gl map export and dependencies update (2021-03-08)
 
 - [#112](https://github.com/RandomFractals/geo-data-viewer/issues/112)
