@@ -87,8 +87,8 @@ select {
   padding: 0px !important;
 }
 .side-bar__close {
-  top: 4px !important;
-  right: 4px !important;
+  top: 8px !important;
+  right: 8px !important;
 }
 .side-panel__panel-header {
   display: none !important;
