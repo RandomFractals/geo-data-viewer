@@ -91,14 +91,20 @@ select {
   right: 4px !important;
 }
 .side-panel__panel-header {
-  height: 38px !important;
+  display: none !important;
 }
 .side-panel__panel-header__action {
   display: none !important;
 }
+.side-side-panel__header__bottom {
+  padding-top: 10px !important;
+}
 .side-panel__content__title {
   font-size: 12px !important;
   font-weight: bold;
+}
+.side-panel__content {
+  padding: 10px !important;
 }
 .bottom-widget--container {
   bottom: 32px !important;
