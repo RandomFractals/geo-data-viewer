@@ -382,6 +382,7 @@ export class MapView {
         case '.igc':
         case '.gml':
         case '.wkt':
+        case '.wkb':
           // just pass through raw string content
           this._mapData = this._content;
           this.refreshMapView();
