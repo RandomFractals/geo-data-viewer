@@ -1,14 +1,14 @@
 'use strict';
-import { 
-  workspace, 
-  window, 
-  Disposable, 
-  Uri, 
-  ViewColumn, 
-  WorkspaceFolder, 
+import {
+  workspace,
+  window,
+  Disposable,
+  Uri,
+  ViewColumn,
+  WorkspaceFolder,
   Webview,
-  WebviewPanel, 
-  WebviewPanelOnDidChangeViewStateEvent, 
+  WebviewPanel,
+  WebviewPanelOnDidChangeViewStateEvent,
   WebviewPanelSerializer,
   commands
 } from 'vscode';
@@ -34,15 +34,15 @@ import {Template} from './template.manager';
 export class MapViewSerializer implements WebviewPanelSerializer {
 
   private _logger: Logger;
-  
+
   /**
    * Creates new webview serializer.
    * @param viewType Web view type.
    * @param extensionPath Extension path for loading scripts, examples and data.
    * @param template Webview html template.
    */
-  constructor(private viewType: string, 
-    private extensionPath: string, 
+  constructor(private viewType: string,
+    private extensionPath: string,
     private template: Template | undefined) {
     this._logger = new Logger(`${this.viewType}.serializer:`, config.logLevel);
   }
@@ -58,10 +58,10 @@ export class MapViewSerializer implements WebviewPanelSerializer {
     viewManager.add(
       new MapView(
         this.viewType,
-        this.extensionPath, 
+        this.extensionPath,
         Uri.parse(state.uri),
-        viewColumn, 
-        this.template, 
+        viewColumn,
+        this.template,
         webviewPanel
     ));
   }
@@ -71,7 +71,7 @@ export class MapViewSerializer implements WebviewPanelSerializer {
  * Map view implementation for this vscode extension.
  */
 export class MapView {
-    
+
   protected _disposables: Disposable[] = [];
   private _extensionPath: string;
   private _uri: Uri;
@@ -101,11 +101,11 @@ export class MapView {
    */
   constructor(
     viewType: string,
-    extensionPath: string, 
-    uri: Uri, 
-    viewColumn: ViewColumn, 
-    template: Template | undefined, 
-    panel?: WebviewPanel) {      
+    extensionPath: string,
+    uri: Uri,
+    viewColumn: ViewColumn,
+    template: Template | undefined,
+    panel?: WebviewPanel) {
     // save ext path, document uri, and create view uri
     this._extensionPath = extensionPath;
     this._uri = uri;
@@ -130,7 +130,7 @@ export class MapView {
 
     // initialize base map config for geo data files loading
     this._mapConfig = config.mapConfigTemplate;
-    
+
     // set map style to default map style user setting
     this._mapConfig.config.mapStyle.styleType = this.mapStyle;
 
@@ -146,8 +146,8 @@ export class MapView {
    * @param viewPanel Optional web view panel to initialize.
    * @param template Webview html template.
    */
-  private initWebview(viewType: string, 
-    viewColumn: ViewColumn, 
+  private initWebview(viewType: string,
+    viewColumn: ViewColumn,
     viewPanel: WebviewPanel | undefined,
     template: Template): WebviewPanel {
 
@@ -227,7 +227,7 @@ export class MapView {
         case 'loadView':
           // launch new view
           this.loadView(message.viewName, message.uri);
-          break;          
+          break;
       }
     }, null, this._disposables);
 
@@ -290,7 +290,7 @@ export class MapView {
     const selectedFiles: Array<Uri> | undefined = await window.showOpenDialog({
       defaultUri: openFolderUri,
       canSelectMany: false,
-      canSelectFolders: false, 
+      canSelectFolders: false,
       filters: config.openFileFilters
     });
     if (selectedFiles && selectedFiles.length >= 1) {
@@ -308,7 +308,7 @@ export class MapView {
   private loadView(viewName: string, url: string): void {
     const fileUri: Uri = Uri.parse(url);
     try {
-      this._logger.debug(`loadView(): loading view... \n ${viewName}`, url); 
+      this._logger.debug(`loadView(): loading view... \n ${viewName}`, url);
         //fileUri.toString(true)); // skip encoding
       if (url.startsWith('http://') || url.startsWith('https://')) {
         // launch requested remote data view command
@@ -319,7 +319,7 @@ export class MapView {
         // launch requested local data view command
         this._logger.debug(`loadView():executeCommand: \n ${viewName}`, fileUri.fsPath);
         commands.executeCommand(viewName, fileUri);
-      } 
+      }
       else {
         // try to find requested data file(s) in open workspace
         workspace.findFiles(`**/${url}`).then(files => {
@@ -340,7 +340,7 @@ export class MapView {
       window.showErrorMessage(`Failed to load '${viewName}' for document: '${url}'! Error:\n${error.message}`);
     }
   } // end of loadView()
-  
+
   /**
    * Reload map view on map data save changes or vscode IDE reload.
    */
@@ -349,14 +349,14 @@ export class MapView {
     this._panel.reveal(this._panel.viewColumn, true); // preserve focus
 
     // determine data file encoding
-    const dataEncoding: string = 
+    const dataEncoding: string =
       (this._fileExtension.endsWith('.shp') || this._fileExtension.endsWith('.fgb')) ? null: 'utf8'; // default
     if (this._url.startsWith('https://') && dataEncoding === 'utf8') {
       // load remote text geo data file
       this._content = String(await fileUtils.readDataFile(this._url, dataEncoding));
       this.refreshView();
     }
-    else if (dataEncoding === 'utf8') { 
+    else if (dataEncoding === 'utf8') {
       // open map view data text document
       workspace.openTextDocument(this.uri).then(document => {
         this._logger.debug('refresh(): file:', this._fileName);
@@ -364,7 +364,7 @@ export class MapView {
         this.refreshView();
       });
     }
-    else { 
+    else {
       // delegate to refresh view for loading binary shapefiles
       this.refreshView();
     }
@@ -409,13 +409,13 @@ export class MapView {
           this.createGeoJsonFile(this._mapData);
           this.refreshMapView();
           break;
-        case '.shp': 
+        case '.shp':
           // read shapefiles
           // todo: move this to new data manager and geo data providers api
           const shapefileData = await fileUtils.readDataFile(dataUrl, null);
-          const prjData = 
+          const prjData =
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), 'utf8');
-          const dbfData = 
+          const dbfData =
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.dbf'), null);
           this._mapData = shapefile.combine([
               shapefile.parseShp(shapefileData, prjData),
@@ -452,7 +452,7 @@ export class MapView {
             this.createGeoJsonFile(this._mapData);
             // reset file extension
             this._fileExtension = '.topojson';
-          } 
+          }
           else {
             // assume map config
             this._mapConfig = data;
@@ -495,7 +495,7 @@ export class MapView {
   }
 
    /**
-   * Logs data stats and optional data schema or metadata for debug 
+   * Logs data stats and optional data schema or metadata for debug
    * and updates map view status bar item.
    * @param dataRows Data rows array.
    * @param dataSchema Optional data schema or metadata for debug logging.
@@ -540,7 +540,7 @@ export class MapView {
     if (dataFileUri) {
       // create file data to save
       let fileData = mapData;
-      let fileEncoding = 'utf8';
+      let fileEncoding = null; // 'utf8'
       switch (fileType) {
         case '.kgl.html':
           fileData = config.mapDataToHtml(mapData);
@@ -555,7 +555,7 @@ export class MapView {
       }
 
       // write map data to disk
-      fs.writeFile(dataFileUri.fsPath, fileData, fileEncoding, (error) => {
+      fs.writeFile(dataFileUri.fsPath, fileData, {encoding: fileEncoding}, (error) => {
         if (error) {
           this._logger.error(`saveData(): Error saving '${dataFileUri.fsPath}'. \n\t Error:`, error.message);
           window.showErrorMessage(`Unable to save data file: '${dataFileUri.fsPath}'. \n\t Error: ${error.message}`);
@@ -595,7 +595,7 @@ export class MapView {
   get webview(): Webview {
     return this._panel.webview;
   }
-    
+
   /**
    * Gets the source data uri for this view.
    */
@@ -604,12 +604,12 @@ export class MapView {
   }
 
   /**
-   * Gets the view uri to load on commands triggers or vscode IDE reload. 
+   * Gets the view uri to load on commands triggers or vscode IDE reload.
    */
   get viewUri(): Uri {
     return this._viewUri;
   }
-  
+
   /**
    * Gets the html content to load for this preview.
    */

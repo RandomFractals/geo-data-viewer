@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 // create redux reducers
 const reducers = (function createReducers(redux, keplerGl) {
   // mount keplergl reducer
@@ -34,7 +35,7 @@ let KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
   // create keplergl app
   return function App() {
     const rootElm = react.useRef(null);
-    
+
     // set window dimensions state
     const windowState = react.useState({
       width: window.innerWidth,
@@ -116,7 +117,7 @@ document.addEventListener('readystatechange', event => {
 			// web page is fully loaded
 			console.log('document.readystatechange complete: map.view:complete!');
 			break;
-	}      
+	}
 });
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', event => {
   title = document.getElementById('title');
   message = document.getElementById('message');
   dataUrlInput = document.getElementById('data-url-input');
-  saveFileTypeSelector = document.getElementById('save-file-type-selector');  
+  saveFileTypeSelector = document.getElementById('save-file-type-selector');
   map = document.getElementById('map');
   try {
     // notify webview
@@ -201,7 +202,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = JSON.parse(geoDataFeatures);
       data = KeplerGl.processGeojson(data);
       tagData = true;
-      break;  
+      break;
     case '.wkt':
       // read WKT data
       const wktFormat = new ol.format.WKT();
@@ -218,7 +219,7 @@ function initializeMap(keplerGl, store, config, data, dataType) {
     case '.shp':
     case '.fgb':
     case '.topo.json':
-    case '.topojson':    
+    case '.topojson':
       // convert geojson data to keplergl geo data
       data = KeplerGl.processGeojson(data);
       tagData = true;
@@ -237,10 +238,10 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       info: {
         id: dataFileName
       }
-    }
+    };
     // console.log(JSON.stringify(dataSets));
   }
-  
+
   // load map data
   store.dispatch(keplerGl.addDataToMap({
     datasets: dataSets,
@@ -282,7 +283,7 @@ function saveData() {
           "source": "GeoDataViewer",
           "created_at": new Date(Date.now()).toUTCString()
         }
-      }
+      };
       postMapData('saveData', mapData, dataFileType);
       break;
     case '.geojson':
@@ -301,7 +302,7 @@ function saveData() {
       const mapNode = document.getElementById('kepler-gl__map');
       domtoimage.toPng(mapNode).then(dataUrl => {
         postMapData('saveData', dataUrl, dataFileType);
-      })
+      });
       //.catch(error => showMessage(error.message));
       break;
   }
@@ -327,9 +328,9 @@ function viewMapSource() {
 
 // launch map view for url
 function loadMapViewFromUrl(e) {
-  if (!e) e = window.event;
+  if (!e) { e = window.event; }
   const keyCode = e.keyCode || e.which;
-  if (keyCode == '13') { // enter key
+  if (keyCode === '13') { // enter key
     const url = dataUrlInput.value;
     vscode.postMessage({
       command: 'loadView',
@@ -383,7 +384,7 @@ function createMapStyles(mapboxToken) {
       url: 'mapbox://styles/mapbox/dark-v10',
       icon: `https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/-87.623177,41.881832,9.19,0,0/400x300?access_token=${mapboxToken}&logo=false&attribution=false`,
       layerGroups: defaultLayerGroups
-    }, 
+    },
     {
       id: 'light_streets',
       label: 'Light Streets',

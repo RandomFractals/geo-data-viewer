@@ -6,7 +6,6 @@ import * as config from '../config';
 import {Logger, LogLevel} from '../logger';
 import {window, workspace, Uri} from 'vscode';
 
-const readFileAsync = util.promisify(fs.readFile);
 const fileSizeLabels: string[] = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 const logger: Logger = new Logger(`file.utils:`, config.logLevel);
 
@@ -26,11 +25,11 @@ export async function readDataFile(dataFilePath: string, encoding:string = 'utf8
   }
   else if (isRemoteData) {
     data = await readRemoteData(dataFilePath, encoding);
-  } 
+  }
   else if (fs.existsSync(fileUri.fsPath)) {
     // read local data file via fs.readFile() api
     data = await readLocalData(fileUri.fsPath, encoding);
-  } 
+  }
   else {
     // try to find requested data file(s) in open workspace
     workspace.findFiles(`**/${dataFilePath}`).then(files => {
@@ -64,7 +63,7 @@ export function getFileSize(dataFilePath: string): number {
   if (fs.existsSync(fileUri.fsPath)) {
     const stats: fs.Stats = fs.statSync(fileUri.fsPath);
     fileSize = stats.size;
-  } 
+  }
   return fileSize;
 }
 
@@ -89,7 +88,7 @@ export function formatBytes(bytes: number, decimals: number): string {
  */
 export function createJsonFile(jsonFilePath: string, jsonData: any): void {
   if (!fs.existsSync(jsonFilePath)) {
-    const jsonString: string = JSON.stringify(jsonData, null, 2); 
+    const jsonString: string = JSON.stringify(jsonData, null, 2);
     try {
       // TODO: rework this to async file write later
       const jsonFileWriteStream: fs.WriteStream = fs.createWriteStream(jsonFilePath, {encoding: 'utf8'});
@@ -111,8 +110,13 @@ export function createJsonFile(jsonFilePath: string, jsonData: any): void {
  */
 async function readLocalData(dataFilePath: string, encoding: string = 'utf8'): Promise<string | Buffer> {
   logger.debug('readLocalData():', dataFilePath);
-  // read local data file via fs read file api
-  return await readFileAsync(dataFilePath, encoding);
+  // read local data file via workspace fs api
+  const data: Uint8Array = await workspace.fs.readFile(Uri.file(dataFilePath));
+  const dataBuffer: Buffer = Buffer.from(data);
+  if (encoding === 'utf8') {
+    return dataBuffer.toString('utf8');
+  }
+  return dataBuffer;
 }
 
 /**
@@ -124,7 +128,7 @@ async function readRemoteData(dataUrl: string, encoding: string = 'utf8'): Promi
   logger.debug('readRemoteData(): url:', dataUrl);
   if (encoding) { // must be text request
     return await superagent.get(dataUrl).then(response => response.text);
-  } 
+  }
   else { // binary data request
     return await superagent.get(dataUrl)
       .buffer(true).parse(superagent.parse.image)
