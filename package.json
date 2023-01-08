@@ -2,7 +2,7 @@
   "name": "geo-data-viewer",
   "displayName": "Geo Data Viewer",
   "description": "🗺️ Geo Data Viewer w/0 Py 🐍 || pyWidgets || pandas 🐼 ||  @reactjs  ⚛️ required to gen. some snazzy maps 🗺️ with keplerGL ...",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "icon": "images/map.png",
   "publisher": "RandomFractalsInc",
   "author": "Taras Novak aka dataPixy :)",
@@ -48,8 +48,8 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.60.0",
-    "node": ">=12.16.2"
+    "vscode": "^1.74.0",
+    "node": ">=14.16.0"
   },
   "categories": [
     "Data Science",
@@ -300,23 +300,23 @@
 		"test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.4",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^14.14.21",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
     "@types/superagent": "^4.1.13",
     "@types/topojson-client": "3.1.0",
-    "@types/vscode": "^1.60.0",
+    "@types/vscode": "^1.74.0",
     "@types/xmldom": "0.1.31",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-		"@typescript-eslint/parser": "^4.31.1",
-		"eslint": "^7.32.0",    
-    "glob": "^7.2.0",
-    "mocha": "^9.1.2",
-    "typescript": "^4.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+		"@typescript-eslint/parser": "^5.4.0",
+		"eslint": "^8.3.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.4",
     "vscode-test": "^1.6.1",
-    "ts-loader": "^9.2.6",
-    "webpack": "^5.58.0",
-    "webpack-cli": "^4.9.0"
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
