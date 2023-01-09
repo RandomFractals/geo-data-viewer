@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" 
+    <meta http-equiv="Content-Security-Policy"
       content="default-src 'self' {cspSource} https://*;
         script-src {cspSource} https: 'unsafe-inline' 'unsafe-eval';
         style-src {cspSource} https: 'unsafe-inline';
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
     <link href="{styles}/map.view.css" rel="stylesheet">
-    <script src="https://openlayers.org/en/v6.8.1/build/ol.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js" crossorigin></script>
     <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
@@ -28,7 +28,7 @@
   <body>
     <div id="toolbar">
       <div id="toolbar-right">
-        <select id="save-file-type-selector" 
+        <select id="save-file-type-selector"
           title="Save Map View"
           onChange="saveData()">
           <option value="">📥&nbsp;Save</option>
@@ -54,7 +54,7 @@
           onClick="buyCoffee()">☕️</a>
       </div>
       <div id="toolbar-left">
-        <a id="title" title="View Map Source" href="#" 
+        <a id="title" title="View Map Source" href="#"
           onClick="viewMapSource()">
           <img id="map-icon" src="{images}/map.svg" width="18" height="18" alt="map" />
           {fileName}
