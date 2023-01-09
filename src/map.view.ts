@@ -16,7 +16,7 @@ import {
 import * as fs from 'fs';
 import * as path from 'path';
 
-import * as flatgeobuf from 'flatgeobuf/lib/cjs/geojson';
+import * as flatgeobuf from 'flatgeobuf/lib/mjs/geojson';
 import * as shapefile from 'shpjs';
 import * as togeojson from '@mapbox/togeojson';
 import * as topojson from 'topojson-client';
