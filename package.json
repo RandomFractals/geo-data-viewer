@@ -324,7 +324,7 @@
     "flatgeobuf": "3.17.4",
     "ol": "^6.8.1",
     "shpjs": "^4.0.2",
-    "superagent": "^8.0.6",
+    "superagent": "^6.1.0",
     "topojson-client": "3.1.0",
     "xmldom": "^0.6.0"
   }
