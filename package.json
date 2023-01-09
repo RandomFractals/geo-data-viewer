@@ -303,8 +303,8 @@
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
-    "@types/superagent": "^4.1.13",
-    "@types/topojson-client": "3.1.0",
+    "@types/superagent": "^4.1.16",
+    "@types/topojson-client": "3.1.1",
     "@types/vscode": "^1.74.0",
     "@types/xmldom": "0.1.31",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -324,7 +324,7 @@
     "flatgeobuf": "3.17.4",
     "ol": "^6.8.1",
     "shpjs": "^4.0.2",
-    "superagent": "^6.1.0",
+    "superagent": "^8.0.6",
     "topojson-client": "3.1.0",
     "xmldom": "^0.6.0"
   }
