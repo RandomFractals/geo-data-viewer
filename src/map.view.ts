@@ -534,7 +534,7 @@ export class MapView {
 
     // display save file dialog
     const dataFileUri: Uri | undefined = await window.showSaveDialog({
-      defaultUri: Uri.parse(dataFilePath).with({scheme: 'file'})
+      defaultUri: Uri.file(dataFilePath)
     });
 
     if (dataFileUri) {
