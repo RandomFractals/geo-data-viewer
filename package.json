@@ -289,15 +289,15 @@
     ]
   },
   "scripts": {
-		"vscode:prepublish": "npm run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p -w . --outDir out",
-		"pretest": "npm run compile-tests && npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p -w . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/glob": "^8.0.0",
@@ -308,21 +308,21 @@
     "@types/vscode": "^1.74.0",
     "@types/xmldom": "0.1.31",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
-		"@typescript-eslint/parser": "^5.4.0",
-		"eslint": "^8.3.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
     "glob": "^8.0.3",
     "mocha": "^10.2.0",
+    "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "vscode-test": "^1.6.1",
-    "ts-loader": "^9.4.2",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@mapbox/togeojson": "^0.16.0",
     "flatgeobuf": "3.24.1",
+    "node-fetch": "^3.3.0",
     "shpjs": "^4.0.4",
-    "superagent": "^6.1.0",
     "topojson-client": "3.1.0",
     "xmldom": "^0.6.0"
   }
