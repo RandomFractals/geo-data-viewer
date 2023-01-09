@@ -5,18 +5,18 @@
 <a href='https://ko-fi.com/dataPixy' target='_blank' title='support: https://ko-fi.com/dataPixy'>
   <img height='24' style='border:0px;height:20px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=2' alt='https://ko-fi.com/dataPixy' /></a>
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/RandomFractalsInc.geo-data-viewer.svg?color=orange&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/RandomFractalsInc.geo-data-viewer.svg?color=orange&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 
 [![Trending-Weekly](https://vsmarketplacebadge.apphb.com/trending-weekly/RandomFractalsInc.geo-data-viewer.svg?logo=tinder&logoColor=white&label=trending%20weekly)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) [![Trending-Monthly](https://vsmarketplacebadge.apphb.com/trending-monthly/RandomFractalsInc.geo-data-viewer.svg?logo=tinder&logoColor=white&label=monthly)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 
 🗺️ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl) to gen. some snazzy 🗺️s  w/0 `Py` 🐍 || `pyWidgets` ⚙️ || `pandas` 🐼 || `@reactjs` ⚛️ required ...
 
-![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true 
+![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true
  "Geo Data Viewer")
 
-![Geo Data Viewer Ultri Wide](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-ultri-wide.png?raw=true 
+![Geo Data Viewer Ultri Wide](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-ultri-wide.png?raw=true
  "Geo Data Viewer Ultri Wide")
 
 # Features
@@ -32,13 +32,13 @@
 - View map from ⭐️ Starred Gists in [GistPad 📘](https://github.com/vsls-contrib/gistpad)
 - View CSV and JSON data with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid and charts 📊
 
-# Usage 
+# Usage
 
 - Run `Geo: View Map` (`ctrl/cmd + alt + m`) command on an open geo data document to view 🗺️
 - Use `Geo: View Map from Url` (`ctrl/cmd + alt + u`) command to load a map from [kepler.gl demo app](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json), github or [gist](https://gist.github.com/search?l=JSON&q=keplergl)
 - Run `Geo: Map Gallery` (`ctrl/cmd + alt + g`) command to view a list of built-in public keplergl map configs 🗺️
 
-![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true 
+![Geo Data Viewer Gist](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-gist.png?raw=true
  "Geo Data Viewer Gist")
 
 # Supported File Formats
@@ -49,7 +49,7 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) comes with a built-in map gallery for devs to try [kepler.gl](https://kepler.gl/) maps 🗺️ found in the wild 🌐:
 
-![Geo Data Viewer Map Gallery Quick Pick List](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery-quick-pick-list.png?raw=true 
+![Geo Data Viewer Map Gallery Quick Pick List](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery-quick-pick-list.png?raw=true
  "Geo Data Viewer Map Gallery Quick Pick List")
 
 **Note:** if you'd like to see your public [keplerg.gl](https://kepler.gl/) map config featured in our maps gallery, please send us a PR with links to your [kepler.gl](https://kepler.gl/) maps 🗺️ data & config github repo || gist in the [/data/README.md](https://github.com/RandomFractals/geo-data-viewer/tree/master/data) map list.
@@ -60,7 +60,7 @@ Install [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?it
 
 List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vscode UI context menus, added geo data Language mappings and supported geo data files:
 
-![Geo Data Viewer Contributions](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-contributions.png?raw=true 
+![Geo Data Viewer Contributions](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-contributions.png?raw=true
  "Geo Data Viewer Contributions")
 
 # Configuration
@@ -72,7 +72,7 @@ List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vsco
 | `geo.data.viewer.map.style` | string | `dark` | Default Map Style: `dark`, `light`, `muted` (light), `muted_night`, `satellite`, `dark_streets`, `light_streets`, `outdoors` |
 | `geo.data.viewer.create.geojson` | boolean | `true` | Creates `.geojson` data file on disk for `topojson`, `kml`, `gpx`, `fgb` and `shp` map views |
 
-![Geo Data Viewer Settings](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-settings.png?raw=true 
+![Geo Data Viewer Settings](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-settings.png?raw=true
  "Geo Data Viewer Settings")
 
 # Recommended Extensions
@@ -103,6 +103,6 @@ $ code .
 
 # Contributions
 
-Any & all test, code || feedback contributions are welcome. 
+Any & all test, code || feedback contributions are welcome.
 
 Open an issue || create a pull request to make this Geo Data Viewer 🗺️ vscode extension work better for all. 🤗
