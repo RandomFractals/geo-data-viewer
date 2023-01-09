@@ -1,7 +1,9 @@
 import * as fs from 'fs';
 import * as util from 'util';
-import * as superagent from 'superagent';
 import * as path from 'path';
+import fetch from 'node-fetch';
+import { buffer } from 'node:stream/consumers';
+
 import * as config from '../config';
 import {Logger, LogLevel} from '../logger';
 import {window, workspace, Uri} from 'vscode';
@@ -126,12 +128,13 @@ async function readLocalData(dataFilePath: string, encoding: string = 'utf8'): P
  */
 async function readRemoteData(dataUrl: string, encoding: string = 'utf8'): Promise<string | Buffer> {
   logger.debug('readRemoteData(): url:', dataUrl);
-  if (encoding) { // must be text request
-    return await superagent.get(dataUrl).then(response => response.text);
+  const dataResponse = await fetch(dataUrl);
+  if (encoding) {
+    // text data request
+    return await dataResponse.text();
   }
-  else { // binary data request
-    return await superagent.get(dataUrl)
-      .buffer(true).parse(superagent.parse.image)
-      .then(response => response.body);
+  else {
+    // binary data request
+    return await buffer(dataResponse.body);
   }
 }
