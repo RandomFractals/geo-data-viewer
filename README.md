@@ -41,7 +41,7 @@
 
 # Supported File Formats
 
-See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) documentation for the supported geo data files in addition to the geo data formats this extension provides for kepler.gl map 🗺️ views: [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp), [FlatGeobuf](https://flatgeobuf.org), [shapefiles](https://en.wikipedia.org/wiki/Shapefile), [IGC](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)
+See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats) documentation for the supported geo data files in addition to the geo data formats this extension provides for kepler.gl map 🗺️ views: [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp), [FlatGeobuf](https://flatgeobuf.org), [shapefiles](https://en.wikipedia.org/wiki/Shapefile), [IGC](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry).
 
 # Map Gallery
 
@@ -54,7 +54,11 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 # Installation
 
-Install [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via VSCode Extensions tab (`Ctrl+Shift+X`) by searching for `geo`, or via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=geo&target=VSCode&category=All%20categories&sortBy=Relevance) in your browser.
+Install [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via VSCode Extensions tab (`Ctrl+Shift+X`) by searching for `geo`, or via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=geo&target=VSCode&category=All%20categories&sortBy=Relevance) in your browser.
+
+Users of [VSCodium](https://vscodium.com/), [Azure Data Studio](https://github.com/microsoft/azuredatastudio), and other VSCode-based IDEs can install Geo Data Viewer 🗺️ using .vsix extension package attached to the Assets section in published [releases](https://github.com/RandomFractals/geo-data-viewer/releases) of this extension on github. Follow [install from .vsix](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix) instructions in your VSCode extensions compatible IDE or online container service to install it.
+
+**Note:** VSCodium and other VSCode extension compatible IDE flavors are not officially supported as they require additional testing in those IDE variants.
 
 # Contributions
 
