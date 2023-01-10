@@ -3,6 +3,27 @@
 See [releases](https://github.com/RandomFractals/vscode-vega-viewer/releases)
 for the brief versions information and feature details with screen pics for this [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) VSCode extension.
 
+## v2.6.0 - vscode, data loading, map display dependencies and documentation update (2023-01-10)
+
+- [#142](https://github.com/RandomFractals/geo-data-viewer/issues/142)
+Update vscode, node, ts and other extension dev dependencies to the latest vscode v1.74
+- [#143](https://github.com/RandomFractals/geo-data-viewer/issues/143)
+Update geo data loading libraries to latest
+- [#144](https://github.com/RandomFractals/geo-data-viewer/issues/144)
+Use Uri.file to create local file path when saving map, config, data, and html map versions
+- [#145](https://github.com/RandomFractals/geo-data-viewer/issues/145)
+Use node-fetch library to load remote geo data
+- [#146](https://github.com/RandomFractals/geo-data-viewer/issues/146)
+Use shields.io for version, installs, and downloads badges in docs
+- [#147](https://github.com/RandomFractals/geo-data-viewer/issues/147)
+Add new Support/Sponsor section to README.md
+- [#148](https://github.com/RandomFractals/geo-data-viewer/issues/148)
+Refine documentation sections in README.md
+- [#149](https://github.com/RandomFractals/geo-data-viewer/issues/149)
+Adjust map view toolbar padding on the right
+- [#150](https://github.com/RandomFractals/geo-data-viewer/issues/150)
+Package and publish Geo Data Viewer v2.6.0 release
+
 ## v2.5.0 - vscode, data loading, and map display dependencies update (2021-10-08)
 
 - [#131](https://github.com/RandomFractals/geo-data-viewer/issues/131)
