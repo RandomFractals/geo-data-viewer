@@ -87,7 +87,7 @@ Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for w
 
 # Dev Log
 
-See [#GeoDataViewer 🗺️ tag on Twitter](https://twitter.com/hashtag/GeoDataViewer) for the latest & greatest updates on this vscode extension & what's in store next.
+See [#GeoDataViewer 🗺️ tag on Twitter](https://twitter.com/search?f=live&q=(%23GeoDataViewer)%20(from%3ATarasNovak)&src=typed_query) for the latest and greatest updates on this vscode extension development, new features, and usage statistics.
 
 # Dev Build
 
