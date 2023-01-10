@@ -47,8 +47,8 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) comes with built-in [Map Gallery](https://github.com/RandomFractals/geo-data-viewer/tree/master/data) for data analysts and devs to try [kepler.gl](https://kepler.gl/) maps 🗺️ found in the wild 🌐:
 
-![Geo Data Viewer Map Gallery Quick Pick List](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery-quick-pick-list.png?raw=true
- "Geo Data Viewer Map Gallery Quick Pick List")
+![Geo Data Viewer Map Gallery](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-map-gallery.gif?raw=true
+ "Geo Data Viewer Map Gallery")
 
 **Note:** you can submit a PR with your [kepler.gl](https://kepler.gl/) maps 🗺️ data and config github repo or a  gist to be added to the [/data/README.md](https://github.com/RandomFractals/geo-data-viewer/tree/master/data) map gallery list.
 

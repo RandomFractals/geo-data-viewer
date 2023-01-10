@@ -13,3 +13,4 @@ webpack.config.js
 **/*.ts
 
 images/geo-*.png
+images/geo-*.gif
