@@ -99,8 +99,8 @@ $ code .
 ```
 `F5` to launch Geo Data Viewer 🗺️ extension VSCode debug session.
 
-# Contributions
+# Support
 
-Any & all test, code || feedback contributions are welcome.
+Become a [Fan](https://github.com/sponsors/RandomFractals/sponsorships?tier_id=18883&preview=false) to sponsor our dev efforts on this and other [Random Fractals, Inc.](https://twitter.com/search?q=%23RandomFractalsInc&src=typed_query&f=live) code and [data viz extensions](https://marketplace.visualstudio.com/publishers/RandomFractalsInc) if you find them useful, educational, or enhancing your daily dataViz dev code workflows and geo spatial analysis:
 
-Open an issue || create a pull request to make this Geo Data Viewer 🗺️ vscode extension work better for all. 🤗
+☕️ https://ko-fi.com/dataPixy 💖 https://github.com/sponsors/RandomFractals
