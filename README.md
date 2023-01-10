@@ -9,7 +9,7 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/RandomFractalsInc.geo-data-viewer.svg?color=orange)](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer)
 
-🗺️ Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) with [kepler.gl](https://kepler.gl) to gen. some snazzy 🗺️s  w/0 `Py` 🐍 || `pyWidgets` ⚙️ || `pandas` 🐼 || `@reactjs` ⚛️ required ...
+Geo Data Analytics tool for [VSCode](https://code.visualstudio.com/) IDE with [kepler.gl](https://kepler.gl) support to generate and view maps 🗺️  without any `Python` 🐍, `IPyWidgets` ⚙️, `pandas` 🐼, `Jupyter notebooks` 📚, or `ReactJS` ⚛️ app code.
 
 ![Geo Data Viewer](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer.png?raw=true
  "Geo Data Viewer")
