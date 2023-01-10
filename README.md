@@ -75,7 +75,7 @@ List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vsco
 
 # Recommended Extensions
 
-Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for working with geo data formats in [VSCode](https://code.visualstudio.com/):
+Other [VSCode](https://code.visualstudio.com/) extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for geo spatial analysis and working with geo data formats:
 
 | Extension | Description |
 | --- | --- |
