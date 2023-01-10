@@ -1,7 +1,7 @@
 {
   "name": "geo-data-viewer",
   "displayName": "Geo Data Viewer",
-  "description": "🗺️ Geo Data Viewer w/0 Py 🐍 || pyWidgets || pandas 🐼 ||  @reactjs  ⚛️ required to gen. some snazzy maps 🗺️ with keplerGL ...",
+  "description": "Geo Data Analytics tool for VSCode IDE with kepler.gl support to generate and view maps 🗺️ without any Python 🐍, IPyWidgets ⚙️, pandas 🐼, Jupyter notebooks 📚, or ReactJS ⚛️ app code.",
   "version": "2.6.0",
   "icon": "images/map.png",
   "publisher": "RandomFractalsInc",
