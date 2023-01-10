@@ -19,16 +19,16 @@
 
 # Features
 
-- Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp), [shapefiles](https://en.wikipedia.org/wiki/Shapefile), [FlatGeobuf](https://flatgeobuf.org), [IGC](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) and CSV geo data files
+- Map View 🗺️ for [GeoJSON](https://geojson.org/), [TopoJSON](https://github.com/topojson/topojson/wiki), [keplerg.gl JSON](https://github.com/keplergl/kepler.gl/blob/master/docs/user-guides/b-kepler-gl-workflow/a-add-data-to-the-map.md#supported-file-formats), [KML](https://developers.google.com/kml), [GPX](https://www.topografix.com/gpx.asp), [shapefiles](https://en.wikipedia.org/wiki/Shapefile), [FlatGeobuf](https://flatgeobuf.org), [IGC](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), and `CSV` geo data files
 - Create `.geojson` file for `.topojson`, `.kml`, `.gpx`, `.fgb`, `.shp` `.prj` and `.dbf` shapefiles
-- Dark & Light Map View 🗺️ Controls [UI Themes](https://github.com/RandomFractals/geo-data-viewer#configuration)
-- Dark, Light, Satellite & Outdoors [Map Styles](https://github.com/RandomFractals/geo-data-viewer#configuration)
+- Dark and Light Map View 🗺️ Controls [UI Themes](https://github.com/RandomFractals/geo-data-viewer#configuration)
+- Dark, Light, Satellite and Outdoors [Map Styles](https://github.com/RandomFractals/geo-data-viewer#configuration)
 - [Map Gallery](https://github.com/RandomFractals/geo-data-viewer#map-gallery) with public [kepler.gl](https://kepler.gl/) map configs to try
-- Save map 🗺️ in standalone html format to share with others via Slack or email :)
+- Save map 🗺️ in `html` format to share with others via Slack or email
 - Save [kepler.gl JSON data and map config](https://github.com/RandomFractals/geo-data-viewer#supported-file-formats) for loading online via [kepler.gl demo app](https://kepler.gl/demo) or in this geo data tool
-- Load map config or geo data from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json), github or [gists](https://gist.github.com/search?l=JSON&q=keplergl)
-- View map from ⭐️ Starred Gists in [GistPad 📘](https://github.com/vsls-contrib/gistpad)
-- View CSV and JSON data with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid and charts 📊
+- Load map config or geo data from [kepler.gl demo app url](https://kepler.gl/demo?mapUrl=https://gist.githubusercontent.com/JesperDramsch/73a2f437cfc1e6e968cddfbb4793167f/raw/66550b932db2a93a495b3e362309e676b084991b/expat_keplergl.json), github repository, or [gists](https://gist.github.com/search?l=JSON&q=keplergl)
+- View map from Starred ⭐️ Gists in [GistPad 📘](https://github.com/vsls-contrib/gistpad)
+- View `CSV` and `JSON` data with [Data Preview 🈸](https://github.com/RandomFractals/vscode-data-preview) grid and charts 📊
 
 # Usage
 
@@ -54,9 +54,9 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 # Installation
 
-Install [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via VSCode Extensions tab (`Ctrl+Shift+X`) by searching for `geo`, or via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=geo&target=VSCode&category=All%20categories&sortBy=Relevance) in your browser.
+Install [Geo Data Viewer 🗺️](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via VSCode Extensions tab (`ctrl+shift+x`) by searching for `geo`, or via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=geo&target=VSCode&category=All%20categories&sortBy=Relevance) in your browser.
 
-Users of [VSCodium](https://vscodium.com/), [Azure Data Studio](https://github.com/microsoft/azuredatastudio), and other VSCode-based IDEs can install Geo Data Viewer 🗺️ using .vsix extension package attached to the Assets section in published [releases](https://github.com/RandomFractals/geo-data-viewer/releases) of this extension on github. Follow [install from .vsix](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix) instructions in your VSCode extensions compatible IDE or online container service to install it.
+Users of [VSCodium](https://vscodium.com/), [Azure Data Studio](https://github.com/microsoft/azuredatastudio), and other VSCode-based IDEs can install Geo Data Viewer 🗺️ using `.vsix` extension package attached to the Assets section in published [releases](https://github.com/RandomFractals/geo-data-viewer/releases) of this extension on github. Follow [install from .vsix](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix) instructions in your VSCode extensions compatible IDE or online container service to install it.
 
 **Note:** VSCodium and other VSCode extension compatible IDE flavors are not officially supported as they require additional testing in those IDE variants.
 
