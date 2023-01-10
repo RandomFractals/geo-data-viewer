@@ -56,7 +56,9 @@ See [kepler.gl file formats](https://github.com/keplergl/kepler.gl/blob/master/d
 
 Install [Geo Data Viewer 🗺️ ](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.geo-data-viewer) via VSCode Extensions tab (`Ctrl+Shift+X`) by searching for `geo`, or via [VSCode marketplace search results](https://marketplace.visualstudio.com/search?term=geo&target=VSCode&category=All%20categories&sortBy=Relevance) in your browser.
 
-List of the Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented vscode UI context menus, added geo data Language mappings and supported geo data files:
+# Contributions
+
+List of Geo Data Viewer 🗺️ commands, keyboard shortcuts, augmented VSCode UI context menus, added geo data Language mappings, and supported geo data files:
 
 ![Geo Data Viewer Contributions](https://github.com/RandomFractals/geo-data-viewer/blob/master/images/geo-data-viewer-contributions.png?raw=true
  "Geo Data Viewer Contributions")
