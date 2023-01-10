@@ -80,6 +80,7 @@ Other extensions Geo Data Viewer 🗺️ replaces, enhances or supplements for w
 | Extension | Description |
 | --- | --- |
 | [Data Preivew 🈸](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-data-preview) | Data Preview 🈸 extension for importing 📤, viewing 🔎, slicing 🔪, dicing 🎲, charting 📊, and exporting 📥 large JSON array/config, YAML, Apache Arrow, Avro & Excel data files. |
+| [Vega Viewer 📈](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-vega-viewer) | VSCode extension for Interactive Preview of Vega and Vega-Lite maps 🗺️ and graphs 📈. |
 | [GistPad 📘](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) | VS Code extension for managing and sharing code snippets, notes and interactive samples using GitHub Gists. |
 | [VSCode Map Preview](https://marketplace.visualstudio.com/items?itemName=jumpinjackie.vscode-map-preview) | VSCode extension for visually previewing geospatial file content (GeoJSON, KML, etc) on a map. |
 | [Geo Tools](https://marketplace.visualstudio.com/items?itemName=SmartMonkey.geotools) | Geo Tools VSCode extension allows you to easily interact with geographical data. |
