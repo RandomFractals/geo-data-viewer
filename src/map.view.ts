@@ -417,9 +417,13 @@ export class MapView {
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.prj'), 'utf8');
           const dbfData =
             await fileUtils.readDataFile(dataUrl.replace('.shp', '.dbf'), null);
+          const cpgFilePath = dataUrl.replace('.shp', '.cpg');
+          const encoding = fs.existsSync(cpgFilePath)
+            ? await fileUtils.readDataFile(cpgFilePath, 'utf8')
+            : undefined;
           this._mapData = shapefile.combine([
               shapefile.parseShp(shapefileData, prjData),
-              shapefile.parseDbf(dbfData)
+              shapefile.parseDbf(dbfData, encoding)
             ]);
             this.createGeoJsonFile(this._mapData);
             this.refreshMapView();
