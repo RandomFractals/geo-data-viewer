@@ -73,7 +73,8 @@
     "onLanguage:kml",
     "onLanguage:gml",
     "onLanguage:shp",
-    "onLanguage:wkt"
+    "onLanguage:wkt",
+    "onLanguage:wkb"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -214,7 +215,7 @@
       "explorer/context": [
         {
           "command": "map.view",
-          "when": "resourceFilename =~ /.*\\.(csv|fgb|igc|gml|gpx|json|geojson|kgl|kml|shp|topojson|wkt)/",
+          "when": "resourceFilename =~ /.*\\.(csv|fgb|igc|gml|gpx|json|geojson|kgl|kml|shp|topojson|wkt|wkb)/",
           "group": "navigation"
         }
       ],

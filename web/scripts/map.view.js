@@ -212,6 +212,15 @@ function initializeMap(keplerGl, store, config, data, dataType) {
       data = KeplerGl.processGeojson(data);
       tagData = true;
       break;
+    case '.wkb':
+      // read WKB data
+      const wkbFormat = new ol.format.WKB();
+      const wkbFeatures = wkbFormat.readFeatures(data, {hex: true});
+      geoDataFeatures = geoJsonFormat.writeFeatures(wkbFeatures);
+      data = JSON.parse(geoDataFeatures);
+      data = KeplerGl.processGeojson(data);
+      tagData = true;
+      break;
     case 'geo.json':
     case '.geojson':
     case '.gpx':
